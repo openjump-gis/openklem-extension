@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 /**
@@ -32,7 +31,7 @@ public class FlowDirsCalculator {
         this.bluelinesWeight = bluelinesWeight;
     }
     
-    public FlowDirBasicGrid calculate() throws InterruptedException, ExecutionException, Exception {
+    public FlowDirBasicGrid calculate() throws Exception {
         
         int rowCount = demGrid.getRowCount();
         int colCount = demGrid.getColumnCount();
@@ -40,7 +39,7 @@ public class FlowDirsCalculator {
         int stripeRowCount = execBuilder.getRowPerStripeCount();
         int stripeCount = execBuilder.getStripeCount();
         
-        List<Callable<FlowDirBasicGrid>> flowDirToDos_l = new ArrayList<Callable<FlowDirBasicGrid>>();
+        List<Callable<FlowDirBasicGrid>> flowDirToDos_l = new ArrayList<>();
         
         DoubleBasicGrid[] demStripes = GridStriper.stripeDoubleGrid(demGrid, stripeRowCount);
 

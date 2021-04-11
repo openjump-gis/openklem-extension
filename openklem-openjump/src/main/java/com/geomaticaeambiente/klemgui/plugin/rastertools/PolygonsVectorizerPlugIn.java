@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.geom.NoninvertibleTransformException;
 import java.io.File;
-import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
@@ -123,8 +122,7 @@ public class PolygonsVectorizerPlugIn extends AbstractInputKlemPlugin {
                                 }
 
                                 @Override
-                                public boolean execute(PlugInContext context)
-                                        throws Exception {
+                                public boolean execute(PlugInContext context) {
                                     return true;
                                 }
 
@@ -270,7 +268,7 @@ public class PolygonsVectorizerPlugIn extends AbstractInputKlemPlugin {
     }
 
     private void checkValues(String raster, String rasterOut)
-            throws IOException, Exception {
+            throws Exception {
 
         GUIUtils.checkStringValue(raster, RASTER_IN_LABEL);
 
@@ -344,7 +342,7 @@ public class PolygonsVectorizerPlugIn extends AbstractInputKlemPlugin {
             final ColorScheme colorScheme = ColorUtil
                     .createRandomColorSchema(featDataset.size());
 
-            final Map<Object, BasicStyle> attributeToStyleMap = new TreeMap<Object, BasicStyle>();
+            final Map<Object, BasicStyle> attributeToStyleMap = new TreeMap<>();
             for (final Iterator<Feature> i = featDataset.iterator(); i
                     .hasNext();) {
                 final Feature feature = i.next();

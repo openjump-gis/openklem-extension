@@ -1,7 +1,6 @@
 package com.geomaticaeambiente.klemgui.plugin.hydrology.hydrographs.klem;
 
 import com.geomaticaeambiente.klemgui.plugin.hydrology.hydrographs.klem.KlemProperties.RainfallType;
-import com.geomaticaeambiente.openjump.klem.units.Length;
 import it.geomaticaeambiente.klem.HyetographGenerator;
 import it.geomaticaeambiente.klem.InitialAbstraction;
 import it.geomaticaeambiente.klem.LsppCalculator;
@@ -28,7 +27,7 @@ public class XMLCreatorKlem {
     List myData;
     Document dom;
 
-    public XMLCreatorKlem(KlemProperties klemProperties) throws ParserConfigurationException, IOException {
+    public XMLCreatorKlem(KlemProperties klemProperties) {
 
         this.klemProperties = klemProperties;
     }

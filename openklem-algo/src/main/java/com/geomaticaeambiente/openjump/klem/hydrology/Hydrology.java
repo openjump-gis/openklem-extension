@@ -43,11 +43,8 @@ public class Hydrology {
         for(int t=0; t<time.length; t++) {
             time[t] = hyetograph.getStep().getInterval(TimeInterval.TimeIntervalUnit.HOUR) * t;
         }
-        
-        EffectiveRainfall effectiveRainfall = new EffectiveRainfall(
-                time, G_Pe, G_Pp, yetographVolume);    
 
-        return effectiveRainfall;
+        return new EffectiveRainfall(time, G_Pe, G_Pp, yetographVolume);
     }
     
     public static UnitHydrograph calcIuhSCS(double G_TimeStep, double G_Area, double G_QBase, 
@@ -193,15 +190,13 @@ public class Hydrology {
                 effectiveRainfall.getEffectiveRainfall()[0][0];
 
 
-        UnitHydrograph unitHydrograph = HydrographGeo.calcHydrograph(
+        return HydrographGeo.calcHydrograph(
                 effectiveRainfall.getEffectiveRainfall()[1],
                 effectiveRainfall.getDeepRainfall()[1],
                 cicloIn,
                 routingTimeGrid,
                 routingTimeGrid.getCellSize()/0.1/3600,
                 recession);
-       
-        return unitHydrograph;
         
     }
     

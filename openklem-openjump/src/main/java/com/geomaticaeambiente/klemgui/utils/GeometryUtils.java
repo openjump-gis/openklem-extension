@@ -19,7 +19,7 @@ public class GeometryUtils {
     
     public static LineString[] getLineStringsFromFeatures(FeatureCollection featColl) {
         
-        List<LineString> lineStrings_l = new ArrayList<LineString>();
+        List<LineString> lineStrings_l = new ArrayList<>();
         Iterator iter = featColl.iterator();
         while(iter.hasNext()) {
             Feature feature = (Feature) iter.next();
@@ -37,7 +37,7 @@ public class GeometryUtils {
                 }
             }
         }
-        return lineStrings_l.toArray(new LineString[lineStrings_l.size()]);
+        return lineStrings_l.toArray(new LineString[0]);
 
     }
     

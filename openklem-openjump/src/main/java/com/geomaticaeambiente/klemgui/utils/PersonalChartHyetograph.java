@@ -62,7 +62,7 @@ public class PersonalChartHyetograph extends PersonalChart{
     private double step;
     private TimeInterval.TimeIntervalUnit units;   
 
-    public enum Type {HYETOGRAPH};
+    public enum Type {HYETOGRAPH}
    
     private Type type;
     
@@ -148,10 +148,9 @@ public class PersonalChartHyetograph extends PersonalChart{
 //        xyBarRenderer.setBarPainter(xyBarPainter);
 
         plot.setRenderer(xyBarRenderer);
-        ChartPanel chartPanel = new ChartPanel(chart);
-       
-                
-        return chartPanel;
+
+
+         return new ChartPanel(chart);
     }
      
     

@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 
 import javax.swing.JTable;
 
@@ -35,19 +36,19 @@ public class TextUtils {
     }
     
     
-    public static void saveCSV(JTable table, String filename) throws Exception {
+    public static void saveCSV(JTable table, String filename) {
 
         try {
             final File file = new File(filename);
             final BufferedWriter bw = new BufferedWriter(
                     new OutputStreamWriter(new FileOutputStream(
-                            file.getAbsoluteFile()), "UTF-8"));
+                            file.getAbsoluteFile()), StandardCharsets.UTF_8));
 
             for (int j = 0; j < table.getColumnCount(); j++) {
                 bw.write(table.getModel().getColumnName(j) + ",");
             }
             bw.newLine();
-            ;
+
             for (int i = 0; i < table.getRowCount(); i++) {
                 for (int j = 0; j < table.getColumnCount(); j++) {
                     bw.write(table.getModel().getValueAt(i, j) + ",");

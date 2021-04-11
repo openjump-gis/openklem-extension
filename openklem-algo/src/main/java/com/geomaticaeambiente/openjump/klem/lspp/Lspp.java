@@ -46,7 +46,7 @@ public class Lspp {
         
     }
     
-    public class LsppParams {
+    public static class LsppParams {
 
         public LsppParams(double a, double n) {
             this.a = a;

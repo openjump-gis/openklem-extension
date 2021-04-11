@@ -1,10 +1,8 @@
 package com.geomaticaeambiente.klemgui.plugin.rastertools;
 
-import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -19,7 +17,6 @@ import javax.swing.JTextField;
 
 import org.openjump.core.rasterimage.RasterImageLayer;
 
-import com.geomaticaeambiente.klemgui.exceptions.WarningException;
 import com.geomaticaeambiente.klemgui.ui.CustomComboBox;
 import com.geomaticaeambiente.klemgui.ui.GUIUtils;
 import com.geomaticaeambiente.klemgui.ui.InitialDialog;
@@ -303,14 +300,12 @@ public class RasterizeVectorLayerPlugIn extends AbstractInputKlemPlugin {
                         }
 
                         @Override
-                        public boolean execute(PlugInContext context)
-                                throws Exception {
+                        public boolean execute(PlugInContext context) {
                             return true;
                         }
 
                         @Override
-                        public void run(TaskMonitor monitor,
-                                PlugInContext context) throws Exception {
+                        public void run(TaskMonitor monitor, PlugInContext context) {
                             monitor.report(PluginUtils.getResources()
                                     .getString("OpenKlem.executing-process"));
                             // monitor.allowCancellationRequests();
@@ -356,7 +351,7 @@ public class RasterizeVectorLayerPlugIn extends AbstractInputKlemPlugin {
     }
 
     private void checksValues(String vectorLayer, String attributes,
-            String snapRaster, String outRaster) throws IOException, Exception {
+            String snapRaster, String outRaster) throws Exception {
 
         GUIUtils.checkStringValue(vectorLayer, VECTOR_LAYER_LABEL);
         GUIUtils.checkStringValue(attributes, ATTRIBUTE_LABEL);
@@ -370,7 +365,7 @@ public class RasterizeVectorLayerPlugIn extends AbstractInputKlemPlugin {
     private MainPanel mainPanel;
     private final PlugInContext context;
     private Layer[] layers;
-    private final Map<Integer, Integer> attribHt = new HashMap<Integer, Integer>();
+    private final Map<Integer, Integer> attribHt = new HashMap<>();
 
     private final String VECTOR_LAYER_LABEL = PluginUtils.getResources()
             .getString("RasterizeCevtorLayerPlugin.ComboBox1Label.text");

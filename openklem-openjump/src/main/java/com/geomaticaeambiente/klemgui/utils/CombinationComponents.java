@@ -17,7 +17,6 @@ import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.text.BadLocationException;
-import org.openjump.core.rasterimage.RasterImageLayer;
 
 /**
  * Class for creating an object formed by a label and and object.
@@ -119,7 +118,7 @@ public class CombinationComponents {
      
     public ComponentEntry[] createComponents(CombinationComponents components_Mod) throws BadLocationException{
         
-        List<ComponentEntry> componentEntry_list = new ArrayList<ComponentEntry>();
+        List<ComponentEntry> componentEntry_list = new ArrayList<>();
         
         CombinationComponents.CombinationType type = components_Mod.getType();
         int count = 1;
@@ -312,7 +311,7 @@ public class CombinationComponents {
              
         }
         
-        return componentEntry_list.toArray(new ComponentEntry[componentEntry_list.size()]);
+        return componentEntry_list.toArray(new ComponentEntry[0]);
         
     }   
     
@@ -414,11 +413,11 @@ public class CombinationComponents {
     private CommonHydrographData hydroData;
      
     
-    public static enum CombinationElement{LINE};
+    public enum CombinationElement{LINE}
     private CombinationElement element;
     
-    public static enum CombinationType{ 
+    public enum CombinationType{
              STRING_OBJECT_ACTION, SINGLE_TABLE, COMB_RASTER_PANEL, STRING_OBJECTS, ACTION_OBJECT,
-             LABELS, LABELS_OBJS_LABELS, VERT_RADIOBUTTON, CHART, COMMON_HYDRO_DATA, LINE,MORE_ACTION};
+             LABELS, LABELS_OBJS_LABELS, VERT_RADIOBUTTON, CHART, COMMON_HYDRO_DATA, LINE,MORE_ACTION}
     private CombinationType type;
 }

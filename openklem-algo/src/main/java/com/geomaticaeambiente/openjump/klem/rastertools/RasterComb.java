@@ -118,8 +118,7 @@ public class RasterComb extends AbstractStripe2 {
                                                                        // Templates.
     }
 
-    private DoubleBasicGrid combine()
-            throws NotSpatiallyConsistentGridsException, Exception {
+    private DoubleBasicGrid combine() throws Exception {
 
         // Check spatial consistency of grids
         @SuppressWarnings("rawtypes")

@@ -144,9 +144,7 @@ public abstract class MainPanel extends JPanel implements LayersChangedListener 
      */
     public SubPanel getSubPanel(List<ComponentEntry[]> components, String title) {
 
-        final SubPanel tempSubPanel = new SubPanel(components, title);
-
-        return tempSubPanel;
+        return new SubPanel(components, title);
 
     }
 
@@ -403,7 +401,7 @@ public abstract class MainPanel extends JPanel implements LayersChangedListener 
 
     public enum ExtraSubPanelPosition {
         INITIAL, AFTER_INPUT, AFTER_OTHER, AFTER_OUTPUT
-    };
+    }
 
     private ExtraSubPanelPosition position = ExtraSubPanelPosition.AFTER_OUTPUT;
 

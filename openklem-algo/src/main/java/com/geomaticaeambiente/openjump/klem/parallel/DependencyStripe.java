@@ -99,7 +99,7 @@ public class DependencyStripe implements Callable<ByteBasicGrid>{
     
     public enum Origin {
         
-        WATERSHED, OUTLET;
+        WATERSHED, OUTLET
         
     }
     

@@ -11,18 +11,12 @@ import it.geomaticaeambiente.klem.LsppCalculator.LsppModel;
 import it.geomaticaeambiente.klem.TimeInterval;
 import it.geomaticaeambiente.klem.Watershed;
 
-import java.awt.geom.NoninvertibleTransformException;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.xml.parsers.ParserConfigurationException;
-
 import org.openjump.core.rasterimage.RasterImageIO;
-import org.openjump.core.rasterimage.TiffTags;
 
 import com.geomaticaeambiente.klemgui.exceptions.WarningException;
 import com.geomaticaeambiente.klemgui.plugin.hydrology.hydrographs.klem.KlemProperties.Amc_Type;
@@ -58,8 +52,7 @@ public class KlemUtils {
 
     public static void checkParams(ComponentsTreeMap componentsWithActions,
             KlemProperties klemProps, RainfallType rainfallType)
-            throws ParserConfigurationException, IOException, WarningException,
-            Exception {
+            throws Exception {
 
         // check and centerButton coordinate, area and elevation
         final double xCoord = GUIUtils.getDoubleValue(componentsWithActions
@@ -483,7 +476,7 @@ public class KlemUtils {
 
     private static double[][] calcRoutingTime(KlemProperties klemProps,
             DoubleBasicGrid demGrid, LineString[] bluelines,
-            Double bluelinesWeight) throws IOException, Exception {
+            Double bluelinesWeight) throws Exception {
 
         RoutingTimeParameters routingTimeParameters;
         // Routing time - simple kinematics
@@ -527,8 +520,7 @@ public class KlemUtils {
     }
 
     private static void calculateSlope(KlemProperties klemProps)
-            throws NoninvertibleTransformException,
-            TiffTags.TiffReadingException, Exception {
+            throws Exception {
 
         // RasterImageLayer demRil =
         // RasterUtils.getRasterImageLayerFromFile(context, dem);
@@ -621,7 +613,7 @@ public class KlemUtils {
     }
 
     public static LsppCalculator buildLsppCalculator(KlemProperties klemProps,
-            DoubleBasicGrid watershedGrid) throws IOException, Exception {
+            DoubleBasicGrid watershedGrid) throws Exception {
 
         LsppCalculator lsppCalculator = null;
         if (klemProps.getRainfallType() == RainfallType.DISTRIBUTED) {
@@ -662,7 +654,7 @@ public class KlemUtils {
     }
 
     private static Hyetograph readHyetograph(KlemProperties klemProps)
-            throws FileNotFoundException, IOException, Exception {
+            throws Exception {
 
         final BufferedReader buffReader = new BufferedReader(new FileReader(
                 klemProps.getHistoricalRainfallFile()));
@@ -672,7 +664,7 @@ public class KlemUtils {
         buffReader.readLine();
 
         // Data
-        final ArrayList<Double> rainfall_al = new ArrayList<Double>();
+        final ArrayList<Double> rainfall_al = new ArrayList<>();
         rainfall_al.add(0d);
 
         String line;

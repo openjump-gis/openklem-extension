@@ -186,8 +186,7 @@ public class UpslopeAreaPlugIn extends AbstractInputKlemPlugin {
                                 }
 
                                 @Override
-                                public boolean execute(PlugInContext context)
-                                        throws Exception {
+                                public boolean execute(PlugInContext context) {
                                     return true;
                                 }
 

@@ -7,7 +7,6 @@ import it.geomaticaeambiente.klem.SimulationOutput;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -20,9 +19,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.xml.parsers.ParserConfigurationException;
 
-import com.geomaticaeambiente.klemgui.exceptions.WarningException;
 import com.geomaticaeambiente.klemgui.plugin.hydrology.hydrographs.klem.KlemProperties.RainfallType;
 import com.geomaticaeambiente.klemgui.ui.GUIUtils;
 import com.geomaticaeambiente.klemgui.ui.InitialDialog;
@@ -70,8 +67,7 @@ public class ParamsTab extends AbstractInputKlemPlugin {
 
     public void calculateParameters(
             final ComponentsTreeMap componentsWithActions)
-            throws ParserConfigurationException, IOException, WarningException,
-            Exception {
+            throws Exception {
         KlemUtils.checkParams(componentsWithActions, klemProps,
                 rainfallParamType);
         final Klem klem = KlemUtils.buildKlem(klemProps);
@@ -124,16 +120,13 @@ public class ParamsTab extends AbstractInputKlemPlugin {
                                         }
 
                                         @Override
-                                        public boolean execute(
-                                                PlugInContext context)
-                                                throws Exception {
+                                        public boolean execute(PlugInContext context) {
                                             return true;
                                         }
 
                                         @Override
                                         public void run(TaskMonitor monitor,
-                                                PlugInContext context)
-                                                throws Exception {
+                                                PlugInContext context) {
                                             monitor.report(PluginUtils
                                                     .getResources()
                                                     .getString(
@@ -771,8 +764,7 @@ public class ParamsTab extends AbstractInputKlemPlugin {
         return personalTreeMap;
     }
 
-    public void setAndCheckParams() throws ParserConfigurationException,
-            IOException, WarningException, Exception {
+    public void setAndCheckParams() throws Exception {
         KlemUtils.checkParams(componentsWithActions, klemProps,
                 rainfallParamType);
     }

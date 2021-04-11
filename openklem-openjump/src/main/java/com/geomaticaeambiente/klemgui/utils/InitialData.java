@@ -117,13 +117,13 @@ public class InitialData {
             String id_ = PluginUtils.producerKeyMap(type, countInput);
             inputHm.put(id_ + countInput, cc);
             countInput++;
-        }else if(type.equals(GUIUtils.OTHER)){
+        } else if(type.equals(GUIUtils.OTHER)){
             
             String id_ = PluginUtils.producerKeyMap(type, countOther);
             
             otherHm.put(id_, cc);
             countOther++;            
-        }else if(type.equals(GUIUtils.OUTPUT)){
+        } else if(type.equals(GUIUtils.OUTPUT)){
             
             String id_ = PluginUtils.producerKeyMap(type, countOutput);
 

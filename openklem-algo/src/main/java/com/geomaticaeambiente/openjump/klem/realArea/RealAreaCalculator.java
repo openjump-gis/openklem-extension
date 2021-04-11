@@ -21,13 +21,9 @@ public class RealAreaCalculator {
      * Calculates the hillshade
      * 
      * @param slopeDegsGrid
-     * @param aspectDegsGrid
-     * @param zenithDegs
-     * @param azimuthDegs
      */
     public RealAreaCalculator(DoubleBasicGrid slopeDegsGrid) {
         this.slopeDegsGrid = slopeDegsGrid;
-
     }
 
     /**

@@ -9,7 +9,6 @@ import java.awt.image.Raster;
 import java.awt.image.SampleModel;
 import java.awt.image.WritableRaster;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.locationtech.jts.geom.Coordinate;
@@ -20,8 +19,6 @@ import org.openjump.core.rasterimage.RasterImageIO.CellSizeXY;
 import org.openjump.core.rasterimage.RasterImageLayer;
 import org.openjump.core.rasterimage.RasterSymbology;
 import org.openjump.core.rasterimage.Resolution;
-import org.openjump.core.rasterimage.TiffTags;
-import org.openjump.core.rasterimage.TiffTags.TiffReadingException;
 import org.openjump.util.metaData.MetaInformationHandler;
 
 import com.geomaticaeambiente.klemgui.ui.CustomComboBox.RasterComboBox;
@@ -87,12 +84,11 @@ public class RasterUtils {
     /**
      * Method to display a RasterImageLayer on OpenJUMP
      * 
-     * @param WorkbenchContext
-     * @param RasterImageLayer
+     * @param context the WorkbenchContext
      * @throws NoninvertibleTransformException
      */
     public static void addImageToOJ(WorkbenchContext context,
-            RasterImageLayer ril) throws NoninvertibleTransformException {
+            RasterImageLayer ril) {
 
         final String catName = StandardCategoryNames.WORKING;
         final int layersAsideImage = context.getLayerManager()
@@ -115,20 +111,19 @@ public class RasterUtils {
 
     /**
      * Load TIF file into OpenJUMP workbench
-     * 
-     * @param File
-     *            file to load es D:/Openjump/test.tif
-     * @param PlugInContext
+     *
+     * @param context
      *            Plugin Context
-     * @param String
-     *            Category to locate rasters
+     * @param file
+     *            file to load ex D:/Openjump/test.tif
+     * @param category
+     *            the Category to locate rasters
      * @throws NoninvertibleTransformException
      *             , TiffReadingException, Exception
      */
 
     public static void addFileToOJ(PlugInContext context, File file,
-            String category) throws NoninvertibleTransformException,
-            TiffReadingException, Exception {
+            String category) throws Exception {
 
         final RasterImageIO rasterImageIO = new RasterImageIO();
         final Viewport viewport = context.getLayerViewPanel().getViewport();
@@ -168,8 +163,7 @@ public class RasterUtils {
 
     public static void addFileToOJ(PlugInContext context, File file,
             RasterSymbology symbology, String category)
-            throws NoninvertibleTransformException, TiffReadingException,
-            Exception {
+            throws Exception {
 
         final RasterImageIO rasterImageIO = new RasterImageIO();
         final Viewport viewport = context.getLayerViewPanel().getViewport();
@@ -209,8 +203,7 @@ public class RasterUtils {
     }
 
     public static void addUpSlopeFileToOJAndSym(PlugInContext context,
-            File file, String category) throws NoninvertibleTransformException,
-            TiffReadingException, Exception {
+            File file, String category) throws Exception {
 
         final RasterImageIO rasterImageIO = new RasterImageIO();
         final Viewport viewport = context.getLayerViewPanel().getViewport();
@@ -305,8 +298,7 @@ public class RasterUtils {
         return doubleBasicGrid;
     }
 
-    public static Envelope getGridEnvelope(File gridFile) throws IOException,
-            Exception {
+    public static Envelope getGridEnvelope(File gridFile) throws Exception {
 
         final Point imageDims = RasterImageIO.getImageDimensions(gridFile
                 .getAbsolutePath());
@@ -316,7 +308,7 @@ public class RasterUtils {
     }
 
     public static DoubleBasicGrid getDoubleBasicGridFromFile(File gridFile)
-            throws IOException, Exception {
+            throws Exception {
 
         final Point imageDims = RasterImageIO.getImageDimensions(gridFile
                 .getAbsolutePath());
@@ -416,8 +408,7 @@ public class RasterUtils {
 
     public static void displayRasterFileOnOJ(WorkbenchContext context,
             File rasterFile, RasterSymbology symbology)
-            throws NoninvertibleTransformException, IOException,
-            TiffTags.TiffReadingException, Exception {
+            throws Exception {
         // Deactivated option to load/unload output raster
         // if (OptionPlugIn.loadOutputRaster()) {
         // convert DoubleBasicGrid in RasterImageLayer
@@ -623,9 +614,7 @@ public class RasterUtils {
     }
 
     public static RasterImageLayer getRasterImageLayerFromFile(
-            WorkbenchContext wContext, File rasterFile) throws IOException,
-            NoninvertibleTransformException, FileNotFoundException,
-            TiffTags.TiffReadingException, Exception {
+            WorkbenchContext wContext, File rasterFile) throws Exception {
 
         final RasterImageIO rasterImageIO = new RasterImageIO();
         // Raster raster =

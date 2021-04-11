@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -213,8 +213,7 @@ public class CurveNumberPlugIn extends AbstractInputKlemPlugin {
                                 }
 
                                 @Override
-                                public boolean execute(PlugInContext context)
-                                        throws Exception {
+                                public boolean execute(PlugInContext context) {
                                     return true;
                                 }
 
@@ -273,16 +272,15 @@ public class CurveNumberPlugIn extends AbstractInputKlemPlugin {
         return mainPanel;
     }
 
-    private DefaultTableModel cnTableModel()
-            throws UnsupportedEncodingException, IOException {
+    private DefaultTableModel cnTableModel() throws IOException {
 
         final InputStream in = getClass().getResourceAsStream(
                 "/com/geomaticaeambiente/klemgui/plugin/hydrology/"
                         + "CurveNumberTable" + ".table6");
-        final Reader reader = new InputStreamReader(in, "utf-8");
+        final Reader reader = new InputStreamReader(in, StandardCharsets.UTF_8);
         final BufferedReader buffReader = new BufferedReader(reader);
 
-        final List<String[]> data_l = new ArrayList<String[]>();
+        final List<String[]> data_l = new ArrayList<>();
         String line = null;
         while ((line = buffReader.readLine()) != null) {
 
@@ -296,9 +294,7 @@ public class CurveNumberPlugIn extends AbstractInputKlemPlugin {
         final String col[] = { FROM_LABEL, TO_LABEL, "Gr A", "Gr B", "Gr C",
                 "Gr D" };
 
-        final DefaultTableModel dtm = new DefaultTableModel(data, col);
-
-        return dtm;
+        return new DefaultTableModel(data, col);
     }
 
     private DefaultTableModel hydroGroupTableModel() {
@@ -308,9 +304,7 @@ public class CurveNumberPlugIn extends AbstractInputKlemPlugin {
                 { B_LABEL, "2", "2" }, { C_LABEL, "3", "3" },
                 { D_LABEL, "4", "4" } };
 
-        final DefaultTableModel dtm = new DefaultTableModel(data, col);
-
-        return dtm;
+        return new DefaultTableModel(data, col);
     }
 
     private ValueRangeGroup[] getValueRangeGroupFromString(String tableValues) {
@@ -354,7 +348,7 @@ public class CurveNumberPlugIn extends AbstractInputKlemPlugin {
     }
 
     private void checksValues(String dem, String flowDir, String outputRaster)
-            throws IOException, Exception {
+            throws Exception {
 
         GUIUtils.checkStringValue(dem, LAND_USE_LABEL);
         GUIUtils.checkStringValue(flowDir, HYDRO_GROUPS_LABEL);

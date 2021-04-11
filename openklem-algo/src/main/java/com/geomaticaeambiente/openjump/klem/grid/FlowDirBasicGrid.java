@@ -183,7 +183,7 @@ public class FlowDirBasicGrid extends BasicGrid {
                                 row + Shifter.getRowShift(i)));
             }
         }
-        return sinks_l.toArray(new Point[sinks_l.size()]);
+        return sinks_l.toArray(new Point[0]);
         
     }
     

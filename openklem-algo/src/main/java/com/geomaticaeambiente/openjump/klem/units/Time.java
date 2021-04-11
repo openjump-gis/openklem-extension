@@ -54,7 +54,7 @@ public class Time {
     }
 
     public enum TimeIntervalUnit {
-        s, m, h, D;
+        s, m, h, D
     }
     
     private double interval;

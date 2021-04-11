@@ -154,14 +154,14 @@ public class AggregateRastersPlugin extends AbstractInputKlemPlugin {
         //extract raster selected from combobox
         super.getInitialDialog().setCursor(new Cursor(Cursor.WAIT_CURSOR));
 
-        final List<DoubleBasicGrid> inputGrids_l = new ArrayList<DoubleBasicGrid>();
+        final List<DoubleBasicGrid> inputGrids_l = new ArrayList<>();
         for (final String fileName : fileNames) {
             inputGrids_l.add(RasterUtils.getDoubleBasicGridFromFile(new File(
                     fileName)));
         }
 
         final DoubleBasicGrid outputGrid = RasterAggregator.aggregateRasters(
-                inputGrids_l.toArray(new DoubleBasicGrid[inputGrids_l.size()]),
+                inputGrids_l.toArray(new DoubleBasicGrid[0]),
                 Double.parseDouble(cellSize),
                 AggregationMethod.valueOf(aggregMethod),
                 OverlayMethod.valueOf(overlayMethod));
@@ -209,8 +209,7 @@ public class AggregateRastersPlugin extends AbstractInputKlemPlugin {
                                 }
 
                                 @Override
-                                public boolean execute(PlugInContext context)
-                                        throws Exception {
+                                public boolean execute(PlugInContext context) {
                                     return true;
                                 }
 
@@ -349,7 +348,7 @@ public class AggregateRastersPlugin extends AbstractInputKlemPlugin {
 
     private void checkValues(String[] rasters, String aggMethos,
             String overlayMethod, String cellSize, String rasterOut)
-            throws IOException, Exception {
+            throws Exception {
 
         for (final String raster : rasters) {
             GUIUtils.checkStringValue(raster, RASTER_IN_LABEL);

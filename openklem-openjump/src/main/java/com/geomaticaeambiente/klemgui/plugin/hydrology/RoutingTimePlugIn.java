@@ -203,8 +203,7 @@ public class RoutingTimePlugIn extends AbstractInputKlemPlugin {
                                 }
 
                                 @Override
-                                public boolean execute(PlugInContext context)
-                                        throws Exception {
+                                public boolean execute(PlugInContext context) {
                                     return true;
                                 }
 
@@ -309,7 +308,7 @@ public class RoutingTimePlugIn extends AbstractInputKlemPlugin {
                             PluginUtils.plugInName, ex.toString(),
                             StringUtil.stackTrace(ex));
                 }
-            };
+            }
 
             @Override
             public void leftButton() {

@@ -55,7 +55,7 @@ public class ActionObject extends PersonalComponentAbstract{
 //    
     private String label;
     private String[] labels;
-    public enum ActionObjectType {BUTTON, RADIOBUTTON, CHECKBOX};
-    private ActionObjectType type;
+    public enum ActionObjectType {BUTTON, RADIOBUTTON, CHECKBOX}
+    private final ActionObjectType type;
     private boolean value = false;
 }

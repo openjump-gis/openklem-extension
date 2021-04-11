@@ -4,7 +4,6 @@ import java.awt.Dialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -381,8 +380,7 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
                                 }
 
                                 @Override
-                                public boolean execute(PlugInContext context)
-                                        throws Exception {
+                                public boolean execute(PlugInContext context) {
                                     return true;
                                 }
 
@@ -446,7 +444,7 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
 
     private void checkValues(JComponent component, String dem,
             boolean mouseSel, String xcoord, String ycoord, String layer,
-            String outRaster) throws IOException, Exception {
+            String outRaster) throws Exception {
 
         GUIUtils.checkStringValue(dem, DEM_LABEL);
         if (mouseSel) {

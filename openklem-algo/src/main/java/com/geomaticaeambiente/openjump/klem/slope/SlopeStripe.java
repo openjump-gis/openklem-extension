@@ -1,6 +1,5 @@
 package com.geomaticaeambiente.openjump.klem.slope;
 
-import java.io.IOException;
 import java.util.concurrent.Callable;
 
 import com.geomaticaeambiente.openjump.klem.grid.DoubleBasicGrid;
@@ -31,7 +30,7 @@ public class SlopeStripe implements Callable<DoubleBasicGrid> {
         return calcSlope();
     }
 
-    private DoubleBasicGrid calcSlope() throws IOException {
+    private DoubleBasicGrid calcSlope() {
 
         final int nRows = demStripe.getRowCount();
         final int nCols = demStripe.getColumnCount();

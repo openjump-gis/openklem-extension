@@ -2,8 +2,6 @@ package com.geomaticaeambiente.klemgui.utils;
 
 import java.awt.Cursor;
 import java.awt.Shape;
-import java.awt.geom.NoninvertibleTransformException;
-import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.List;
 
@@ -35,7 +33,7 @@ public class WatershedTool extends NClickTool {
     }
     
     @Override
-    protected Shape getShape() throws NoninvertibleTransformException {
+    protected Shape getShape() {
         //Don't want anything to show up when the user drags. [Jon Aquino]
         return null;
     }
@@ -47,7 +45,7 @@ public class WatershedTool extends NClickTool {
     }
     
     @Override
-    protected void gestureFinished() throws NoninvertibleTransformException, IOException, Exception {
+    protected void gestureFinished() throws Exception {
         reportNothingToUndoYet();
         try {
             display(getCoordinates());
@@ -57,12 +55,10 @@ public class WatershedTool extends NClickTool {
                     ex.getMessage(),
                     PluginUtils.plugInName,
                     JOptionPane.WARNING_MESSAGE);            
-        } catch(Exception ex) {
-            throw ex;
         }
     }
     
-    private void display(List coordinates) throws IOException, Exception {
+    private void display(List coordinates) throws Exception {
 
         if (coordinates.size() > 0) {            
             Coordinate coord = (Coordinate)coordinates.get(0);

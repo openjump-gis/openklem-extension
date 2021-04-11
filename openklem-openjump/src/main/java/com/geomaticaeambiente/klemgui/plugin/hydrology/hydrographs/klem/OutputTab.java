@@ -11,7 +11,6 @@ import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.geom.NoninvertibleTransformException;
 import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -30,7 +29,6 @@ import org.jfree.chart.ChartUtils;
 import org.openjump.core.rasterimage.ImageAndMetadata;
 import org.openjump.core.rasterimage.Metadata;
 import org.openjump.core.rasterimage.RasterImageIO;
-import org.openjump.core.rasterimage.TiffTags;
 
 import com.geomaticaeambiente.klemgui.plugin.hydrology.hydrographs.klem.KlemProperties.RainfallType;
 import com.geomaticaeambiente.klemgui.ui.GUIUtils;
@@ -348,16 +346,13 @@ public class OutputTab extends AbstractInputKlemPlugin {
                                         }
 
                                         @Override
-                                        public boolean execute(
-                                                PlugInContext context)
-                                                throws Exception {
+                                        public boolean execute(PlugInContext context) {
                                             return true;
                                         }
 
                                         @Override
                                         public void run(TaskMonitor monitor,
-                                                PlugInContext context)
-                                                throws Exception {
+                                                PlugInContext context) {
                                             monitor.report(PluginUtils
                                                     .getResources()
                                                     .getString(
@@ -607,7 +602,7 @@ public class OutputTab extends AbstractInputKlemPlugin {
 
     private String[] getSmulationParamLabels() {
 
-        final List<String> simuParams = new ArrayList<String>();
+        final List<String> simuParams = new ArrayList<>();
         simuParams.add(PluginUtils.getResources().getString(
                 "HydrographKlemPlugin.OutputBaseflow.label")); // baseflow
         simuParams.add(PluginUtils.getResources().getString(
@@ -709,12 +704,12 @@ public class OutputTab extends AbstractInputKlemPlugin {
                                                                            // ietogramma
         }
 
-        return simuParams.toArray(new String[simuParams.size()]);
+        return simuParams.toArray(new String[0]);
     }
 
-    private String[] getSmulationParamValues() throws Exception {
+    private String[] getSmulationParamValues() {
 
-        final List<String> simuParams = new ArrayList<String>();
+        final List<String> simuParams = new ArrayList<>();
         simuParams.add(PluginUtils.getThreeDecimalFormatToString(simOut
                 .getSimulationDischarge().getBflo_out()[1])); // baseflow
         simuParams.add(PluginUtils.getSixDecimalFormatToString(klemProps
@@ -789,12 +784,12 @@ public class OutputTab extends AbstractInputKlemPlugin {
                     .getHyetoPeakPosition())); // avanzamento ietogramma
         }
 
-        return simuParams.toArray(new String[simuParams.size()]);
+        return simuParams.toArray(new String[0]);
     }
 
     private String[] getMorphoBasinParamsLabel() {
 
-        final List<String> morphoBasinList = new ArrayList<String>();
+        final List<String> morphoBasinList = new ArrayList<>();
         morphoBasinList.add(PluginUtils.getResources().getString(
                 "HydrographKlemPlugin.OutputOutletNord.label"));
         morphoBasinList.add(PluginUtils.getResources().getString(
@@ -810,14 +805,14 @@ public class OutputTab extends AbstractInputKlemPlugin {
         morphoBasinList.add(PluginUtils.getResources().getString(
                 "HydrographKlemPlugin.OutputBasinArea.label"));
 
-        return morphoBasinList.toArray(new String[morphoBasinList.size()]);
+        return morphoBasinList.toArray(new String[0]);
 
     }
 
     private String[] getMorphoBasinParamsValues()
-            throws TiffTags.TiffReadingException, Exception {
+            throws Exception {
 
-        final List<String> morphoBasinList = new ArrayList<String>();
+        final List<String> morphoBasinList = new ArrayList<>();
         morphoBasinList.add(PluginUtils.getThreeDecimalFormatToString(klemProps
                 .getOutletCoords().y));
         morphoBasinList.add(PluginUtils.getThreeDecimalFormatToString(klemProps
@@ -843,12 +838,12 @@ public class OutputTab extends AbstractInputKlemPlugin {
         morphoBasinList.add(PluginUtils.getThreeDecimalFormatToString(klemProps
                 .getCatchmentArea()));
 
-        return morphoBasinList.toArray(new String[morphoBasinList.size()]);
+        return morphoBasinList.toArray(new String[0]);
     }
 
     private String[] getSimulatedFlowLabels() {
 
-        final List<String> morphoBasinList = new ArrayList<String>();
+        final List<String> morphoBasinList = new ArrayList<>();
         morphoBasinList.add(PluginUtils.getResources().getString(
                 "HydrographKlemPlugin.OutputRainfall.message"));
         morphoBasinList.add(PluginUtils.getResources().getString(
@@ -860,7 +855,7 @@ public class OutputTab extends AbstractInputKlemPlugin {
         morphoBasinList.add(PluginUtils.getResources().getString(
                 "HydrographKlemPlugin.OutputPeakTime.message"));
 
-        return morphoBasinList.toArray(new String[morphoBasinList.size()]);
+        return morphoBasinList.toArray(new String[0]);
     }
 
     private double[][] getSimulatedFlowValues() {
@@ -931,8 +926,7 @@ public class OutputTab extends AbstractInputKlemPlugin {
     }
 
     private Metadata getRasterMetadata(File rasterFile)
-            throws NoninvertibleTransformException,
-            TiffTags.TiffReadingException, Exception {
+            throws Exception {
         final RasterImageIO rasterImageIO = new RasterImageIO();
         final ImageAndMetadata metadata = rasterImageIO.loadImage(
                 context.getWorkbenchContext(), rasterFile.getAbsolutePath(),

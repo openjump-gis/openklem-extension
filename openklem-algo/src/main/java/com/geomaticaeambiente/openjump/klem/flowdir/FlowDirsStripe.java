@@ -4,7 +4,6 @@ import com.geomaticaeambiente.openjump.klem.grid.DoubleBasicGrid;
 import com.geomaticaeambiente.openjump.klem.grid.FlowDirBasicGrid;
 import com.geomaticaeambiente.openjump.klem.grid.IntBasicGrid;
 import com.geomaticaeambiente.openjump.klem.parallel.Shifter;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.concurrent.Callable;
 
@@ -44,7 +43,7 @@ public class FlowDirsStripe implements Callable<FlowDirBasicGrid> {
         
     }
     
-    private FlowDirBasicGrid calcFlowDir() throws IOException {
+    private FlowDirBasicGrid calcFlowDir() {
         
         int nRows = demStripe.getRowCount();
         int nCols = demStripe.getColumnCount();

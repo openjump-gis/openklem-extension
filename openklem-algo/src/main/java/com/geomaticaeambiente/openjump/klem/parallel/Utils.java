@@ -1,7 +1,6 @@
 package com.geomaticaeambiente.openjump.klem.parallel;
 
 import com.geomaticaeambiente.openjump.klem.grid.BasicGrid;
-import com.geomaticaeambiente.openjump.klem.grid.FlowDirBasicGrid;
 import org.locationtech.jts.geom.Coordinate;
 
 /**

@@ -2,7 +2,6 @@ package com.geomaticaeambiente.klemgui.plugin.hydrology.hydrographs.klem;
 
 import java.awt.Point;
 import java.io.File;
-import java.io.IOException;
 
 import javax.swing.JTextField;
 
@@ -43,13 +42,13 @@ public class WatershedInformation {
         calcElevation = true;
     }
 
-    public void setCoordinateText() throws IOException, Exception {
+    public void setCoordinateText() {
 
         textFieldX.setText(PluginUtils.getThreeDecimalFormatToString(coord.x));
         textFieldY.setText(PluginUtils.getThreeDecimalFormatToString(coord.y));
     }
 
-    public void setAreaText() throws IOException, Exception {
+    public void setAreaText() throws Exception {
 
         final double value = RasterImageIO.readCellValue(
                 rasterForArea.getAbsolutePath(), coord, 0);
@@ -65,7 +64,7 @@ public class WatershedInformation {
         // textFieldArea.setText(Double.toString(area));
     }
 
-    public void setElevationText() throws IOException, Exception {
+    public void setElevationText() throws Exception {
 
         final double value = RasterImageIO.readCellValue(
                 rasterForElevation.getAbsolutePath(), coord, 0);
@@ -111,7 +110,7 @@ public class WatershedInformation {
     }
 
     public void setRasterForElevation(File rasterForElevation)
-            throws IOException, Exception {
+            throws Exception {
 
         // Memorize raster envelope
         final Point point = RasterImageIO.getImageDimensions(rasterForElevation

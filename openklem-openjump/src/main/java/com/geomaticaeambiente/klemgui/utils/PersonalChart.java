@@ -16,7 +16,7 @@ public abstract class PersonalChart extends PersonalComponentAbstract {
     
     public abstract ChartPanel buildGraph();
 
-    public enum Type {HYETOGRAPH, HYDROGRAPH, KLEM};
+    public enum Type {HYETOGRAPH, HYDROGRAPH, KLEM}
     
     public abstract TimeInterval.TimeIntervalUnit getGraphUnit();
 

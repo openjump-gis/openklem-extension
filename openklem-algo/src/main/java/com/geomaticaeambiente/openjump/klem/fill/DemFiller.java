@@ -6,12 +6,10 @@ import com.geomaticaeambiente.openjump.klem.grid.DoubleBasicGrid;
 import com.geomaticaeambiente.openjump.klem.grid.GridDestriper;
 import com.geomaticaeambiente.openjump.klem.grid.GridStriper;
 import com.geomaticaeambiente.openjump.klem.parallel.ExecutorBuilder;
-import com.geomaticaeambiente.openjump.klem.parallel.Shifter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 /**
@@ -24,7 +22,7 @@ public class DemFiller {
         this.demGrid = demGrid;
     }
     
-    public DoubleBasicGrid calculate() throws InterruptedException, ExecutionException, Exception {
+    public DoubleBasicGrid calculate() throws Exception {
         
         int rowCount = demGrid.getRowCount();
         ExecutorBuilder execBuilder = new ExecutorBuilder(rowCount);
@@ -106,8 +104,7 @@ public class DemFiller {
                 for(Future<DoubleBasicGrid> demFillFuture : flowDirFutures_l) {
                     demFillGrids_l.add(demFillFuture.get());
                 }
-                DoubleBasicGrid filledDem =  GridDestriper.assembleDoubleStrips(demFillGrids_l);
-                return filledDem;
+                return GridDestriper.assembleDoubleStrips(demFillGrids_l);
                 
 //                // Remove flat areas
 //                // TODO: parallelise flat area remover

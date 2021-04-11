@@ -39,10 +39,10 @@ public class FlowModeller {
      * the watershed (can be null)
      * @param calcBaseFlow Indicates whether the base flow should be calculated
      * or not.
-     * @throws Exception 
+     * @throws Exception if an Exception occurs
      */
     public void modelFlow(Hyetograph hyetograph, DrainageArea drainageArea,
-            boolean calcBaseFlow) throws Exception{
+            boolean calcBaseFlow) throws Exception {
         
         int ncicpr = hyetograph.getStepsCount();
         TimeInterval cicloInInterval = hyetograph.getStep();
@@ -625,7 +625,7 @@ public class FlowModeller {
 
     /**
      * Returns the simulation output for the uptake drainage areas (optional).
-     * @return 
+     * @return the SimulationOutput
      */
     public SimulationOutput getUptakeSimulationOutput(){
         return drainageAreaSimOutput;
@@ -689,9 +689,9 @@ public class FlowModeller {
 //    }
     
     private final Watershed watershed;
-    private double cicloCal_s = 0;
-    private double cicloCal_h = 0;
-    private int cicloOut_s = 0;
+    private final double cicloCal_s;
+    private final double cicloCal_h;
+    private final int cicloOut_s;
 
 //    private double[] Dflo_out = null;
 //    private double[] Bflo_out = null;

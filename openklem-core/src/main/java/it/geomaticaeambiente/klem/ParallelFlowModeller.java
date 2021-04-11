@@ -45,7 +45,7 @@ public class ParallelFlowModeller {
      * the watershed (can be null)
      * @param calcBaseFlow Indicates whether the base flow should be calculated
      * or not.
-     * @throws Exception 
+     * @throws Exception if an Exception occurs
      */
     public void modelFlow(Hyetograph hyetograph, DrainageArea drainageArea,
             boolean calcBaseFlow) throws Exception{
@@ -156,10 +156,10 @@ public class ParallelFlowModeller {
         
         int threadCount = Runtime.getRuntime().availableProcessors();
         ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
-        int rowPerStripeCount = (int) watershed.getRasCurveNumber().length / threadCount;
+        int rowPerStripeCount = watershed.getRasCurveNumber().length / threadCount;
         int stripeCount = (int) Math.ceil((double) watershed.getRasCurveNumber().length / rowPerStripeCount);
         
-        List<Callable<Integer>> klemToDos_l = new ArrayList<Callable<Integer>>();
+        List<Callable<Integer>> klemToDos_l = new ArrayList<>();
         
         for(int s=0; s<stripeCount; s++) {
             int startRow = s * rowPerStripeCount;
@@ -434,7 +434,7 @@ public class ParallelFlowModeller {
 
     /**
      * Returns the simulation output for the uptake drainage areas (optional).
-     * @return 
+     * @return a SimulationOutput
      */
     public SimulationOutput getUptakeSimulationOutput(){
         return drainageAreaSimOutput;
@@ -524,9 +524,9 @@ public class ParallelFlowModeller {
     }
     
     private final Watershed watershed;
-    private double cicloCal_s = 0;
-    private double cicloCal_h = 0;
-    private int cicloOut_s = 0;
+    private final double cicloCal_s;
+    private final double cicloCal_h;
+    private final int cicloOut_s;
 
     
     private SimulationOutput simulationOutput = null;

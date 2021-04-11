@@ -88,7 +88,7 @@ public class StartPlugIn extends AbstractPlugIn {
 
         if (layerablesList == null) {
             layerablesList = new LayerablesList(
-                    layerables_l.toArray(new Layerable[layerables_l.size()]));
+                    layerables_l.toArray(new Layerable[0]));
 
         }
 
@@ -125,7 +125,7 @@ public class StartPlugIn extends AbstractPlugIn {
             context.getWorkbenchFrame().warnUser(sErrorSeeOutputWindow);
             context.getWorkbenchFrame().getOutputFrame().createNewDocument();
             context.getWorkbenchFrame().getOutputFrame()
-                    .addText("Errore: " + e.toString());
+                    .addText("Errore: " + e);
 
             e.printStackTrace(System.out);
         }

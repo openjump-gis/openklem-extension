@@ -9,15 +9,12 @@ import com.vividsolutions.jump.util.FileUtil;
 import java.awt.Point;
 import java.awt.image.Raster;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.nio.ByteOrder;
 
 import org.openjump.core.rasterimage.GridAscii;
 import org.openjump.core.rasterimage.GridFloat;
 import org.openjump.core.rasterimage.RasterImageIO;
 import org.openjump.core.rasterimage.RasterImageIO.CellSizeXY;
-import org.openjump.core.rasterimage.TiffTags;
 
 /**
  *
@@ -26,8 +23,7 @@ import org.openjump.core.rasterimage.TiffTags;
 public class RasterConverter {
     
     public static void convert(File input, File output, Format outputFormat)
-            throws IOException, FileNotFoundException,
-            TiffTags.TiffReadingException, Exception {
+            throws Exception {
 
         // Just copy
         final Format inputFormat = findFormat(input);
@@ -103,7 +99,7 @@ public class RasterConverter {
     
     public enum Format {
         
-        ESRI_ASCII, ESRI_FLT, TIFF;
+        ESRI_ASCII, ESRI_FLT, TIFF
         
     }
     

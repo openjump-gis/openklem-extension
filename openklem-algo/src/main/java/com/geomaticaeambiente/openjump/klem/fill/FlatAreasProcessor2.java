@@ -360,7 +360,7 @@ public class FlatAreasProcessor2 {
 
     }
 
-    private void alterDem() throws Exception {
+    private void alterDem() {
 
         for (int r = 0; r < rowCount; r++) {
             for (int c = 0; c < colCount; c++) {

@@ -6,8 +6,6 @@ import it.geomaticaeambiente.klem.SimulationOutput;
 import it.geomaticaeambiente.klem.SimulationOutput.SimulationDischarge;
 import it.geomaticaeambiente.klem.TimeInterval;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import org.odftoolkit.simple.SpreadsheetDocument;
 import org.odftoolkit.simple.table.Table;
 
@@ -16,7 +14,7 @@ import org.odftoolkit.simple.table.Table;
 public class OdsOutput {
 
     public static void createOds(Klem klem, KlemProperties klemProps,
-            File odsModel, File odsOut) throws FileNotFoundException, IOException, Exception  {
+            File odsModel, File odsOut) throws Exception  {
 
         
         SpreadsheetDocument spreadSheet = SpreadsheetDocument.loadDocument(odsModel);

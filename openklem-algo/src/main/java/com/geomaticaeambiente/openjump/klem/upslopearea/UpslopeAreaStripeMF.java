@@ -2,9 +2,7 @@ package com.geomaticaeambiente.openjump.klem.upslopearea;
 
 import com.geomaticaeambiente.openjump.klem.grid.DoubleBasicGrid;
 import com.geomaticaeambiente.openjump.klem.grid.FlowDirBasicGrid;
-import com.geomaticaeambiente.openjump.klem.grid.IntBasicGrid;
 import com.geomaticaeambiente.openjump.klem.parallel.Shifter;
-import com.geomaticaeambiente.openjump.klem.parallel.Utils;
 import java.util.concurrent.Callable;
 
 /**
@@ -22,7 +20,6 @@ public class UpslopeAreaStripeMF extends UpslopeAreaStripe implements Callable<B
      * @param stripeId The stripe ID. Should be unique.
      * @param flowDirGrid The 
      * @param demGrid 
-     * @param dispersionGrid 
      * @param dependencyStripe
      * @param upslopeAreaGrid
      * @param yOffset 
@@ -120,8 +117,6 @@ public class UpslopeAreaStripeMF extends UpslopeAreaStripe implements Callable<B
      * is added. If the downslope cell falls outside the stripe (i.e.: on the buffers)
      * the value 1 is added.
      * @param sourceCell The source cell.
-     * @param valueToAdd The value to add when the downslope cell falls inside
-     * the stripe.
      * @param skipBuffers
      */
     @Override

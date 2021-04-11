@@ -6,7 +6,6 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -69,7 +68,7 @@ public class PersonalTable extends PersonalComponentAbstract{
         this.printableDefaultTableModel = printableDefaultTableModel;
     }
     
-    public void saveTable(File file) throws IOException, Exception{
+    public void saveTable(File file) throws Exception{
         
         //choose defaultTableModel
         DefaultTableModel tableModel;
@@ -155,7 +154,7 @@ public class PersonalTable extends PersonalComponentAbstract{
             List vals1 = new ArrayList<String>();
             vals1.addAll(Arrays.asList(vals));
 
-            String[] values = (String[]) vals1.toArray(new String[vals1.size()]);
+            String[] values = (String[]) vals1.toArray(new String[0]);
 
 
             //rows.add(values);

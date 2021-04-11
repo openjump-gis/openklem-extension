@@ -330,7 +330,7 @@ public class InitialDialog extends JDialog {
     private final int tabs = 0;
     private final LayerablesList layerablesList;
 
-    class PlugInTreeCellRenderer extends DefaultTreeCellRenderer {
+    static class PlugInTreeCellRenderer extends DefaultTreeCellRenderer {
         // private JLabel label;
 
         /**

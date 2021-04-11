@@ -1,9 +1,7 @@
 package com.geomaticaeambiente.openjump.klem.hillshade;
 
 import com.geomaticaeambiente.openjump.klem.grid.DoubleBasicGrid;
-import com.geomaticaeambiente.openjump.klem.parallel.Shifter;
 
-import java.io.IOException;
 import java.util.concurrent.Callable;
 
 /**
@@ -30,7 +28,7 @@ public class HillshadeStripe implements Callable<DoubleBasicGrid> {
         return calcAspect(); 
     }
     
-    private DoubleBasicGrid calcAspect() throws IOException {
+    private DoubleBasicGrid calcAspect() {
         
         int nRows = stripeEffectiveRows;
         int nCols = slopeDegsGrid.getColumnCount();

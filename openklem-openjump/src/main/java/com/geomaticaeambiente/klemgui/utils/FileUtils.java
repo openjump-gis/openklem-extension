@@ -22,9 +22,6 @@ public class FileUtils {
         try {
             inChannel.transferTo(0, inChannel.size(),
                     outChannel);
-        } 
-        catch (IOException e) {
-            throw e;
         }
         finally {
             if (inChannel != null) inChannel.close();

@@ -1,7 +1,6 @@
 package com.geomaticaeambiente.klemgui.plugin.rastertools;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.UUID;
 
@@ -109,7 +108,7 @@ public class RasterCombPlugIn extends AbstractInputKlemPlugin {
         //check
         checkValues(mainPanel, expression, rasterSelected, outRasterName);
 
-        final LinkedHashMap<String, DoubleStripeGrid2> rastersAndNames_m = new LinkedHashMap<String, DoubleStripeGrid2>();
+        final LinkedHashMap<String, DoubleStripeGrid2> rastersAndNames_m = new LinkedHashMap<>();
         for (final RasterImageLayer rasterImageLayer : PluginUtils
                 .getRasterImageLayers(layerablesList.getLayerables())) {
             for (final UUID uuid : uuids) {
@@ -167,8 +166,7 @@ public class RasterCombPlugIn extends AbstractInputKlemPlugin {
                                 }
 
                                 @Override
-                                public boolean execute(PlugInContext context)
-                                        throws Exception {
+                                public boolean execute(PlugInContext context) {
                                     return true;
                                 }
 
@@ -246,7 +244,7 @@ public class RasterCombPlugIn extends AbstractInputKlemPlugin {
                     //check
                     checkValues(this, expression, rasterSelected, outRasterName);
 
-                    final LinkedHashMap<String, DoubleStripeGrid2> rastersAndNames_m = new LinkedHashMap<String, DoubleStripeGrid2>();
+                    final LinkedHashMap<String, DoubleStripeGrid2> rastersAndNames_m = new LinkedHashMap<>();
                     for (final RasterImageLayer rasterImageLayer : PluginUtils
                             .getRasterImageLayers(layerablesList
                                     .getLayerables())) {
@@ -322,8 +320,7 @@ public class RasterCombPlugIn extends AbstractInputKlemPlugin {
     }
 
     private void checkValues(JComponent component, String expression,
-            boolean[] rasterList, String outRaster) throws IOException,
-            Exception {
+            boolean[] rasterList, String outRaster) throws Exception {
 
         GUIUtils.checkStringValue(expression, "Expression");
 

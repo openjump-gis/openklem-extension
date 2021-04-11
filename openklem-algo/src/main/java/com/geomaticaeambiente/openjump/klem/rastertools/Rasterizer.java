@@ -76,7 +76,7 @@ public class Rasterizer {
 
     public static DoubleBasicGrid rasterize(Geometry geom,
             Coordinate lowerLeftCorner, int columnCount, int rowCount, double cellSize, double noData)
-            throws Exception, OutOfMemoryError {
+            throws OutOfMemoryError {
 
         // Array to store outputs
         DoubleBasicGrid outputGrid = new DoubleBasicGrid(new double[rowCount][columnCount],

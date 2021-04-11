@@ -5,14 +5,10 @@ import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.geom.NoninvertibleTransformException;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyVetoException;
 import java.beans.VetoableChangeListener;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.concurrent.ExecutionException;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -123,14 +119,13 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
                         }
 
                         @Override
-                        public boolean execute(PlugInContext context)
-                                throws Exception {
+                        public boolean execute(PlugInContext context) {
                             return true;
                         }
 
                         @Override
                         public void run(TaskMonitor monitor,
-                                PlugInContext context) throws Exception {
+                                PlugInContext context) {
                             monitor.report(PluginUtils.getResources()
                                     .getString("OpenKlem.executing-process"));
                             // monitor.allowCancellationRequests();
@@ -270,14 +265,12 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
                         }
 
                         @Override
-                        public boolean execute(PlugInContext context)
-                                throws Exception {
+                        public boolean execute(PlugInContext context) {
                             return true;
                         }
 
                         @Override
-                        public void run(TaskMonitor monitor,
-                                PlugInContext context) throws Exception {
+                        public void run(TaskMonitor monitor, PlugInContext context) {
                             monitor.report(PluginUtils.getResources()
                                     .getString("OpenKlem.executing-process"));
                             // monitor.allowCancellationRequests();
@@ -317,14 +310,12 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
                     }
 
                     @Override
-                    public boolean execute(PlugInContext context)
-                            throws Exception {
+                    public boolean execute(PlugInContext context) {
                         return true;
                     }
 
                     @Override
-                    public void run(TaskMonitor monitor, PlugInContext context)
-                            throws Exception {
+                    public void run(TaskMonitor monitor, PlugInContext context) {
                         monitor.report(PluginUtils.getResources().getString(
                                 "OpenKlem.executing-process"));
                         // monitor.allowCancellationRequests();
@@ -372,7 +363,7 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
     }
 
     private void setNextButton(ComponentsTreeMap componentsWithActions)
-            throws IOException, Exception {
+            throws Exception {
 
         // create project
         klemProps = new KlemProperties();
@@ -496,8 +487,7 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
     }
 
     private void setLoadProjectButton(ComponentsTreeMap componentsWithActions,
-            JComponent component) throws IOException,
-            NoninvertibleTransformException, Exception {
+            JComponent component) throws Exception {
 
         final FileNameExtensionFilter filter = new FileNameExtensionFilter(
                 "Klem", new String[] { "xml" });
@@ -892,9 +882,7 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
 
     private void createGridFiles(RasterImageLayer demRil,
             LineString[] bluelines, Double bluelinesWeight, File flowDirFile,
-            File upslopeFile) throws NoninvertibleTransformException,
-            InterruptedException, ExecutionException, IOException,
-            FileNotFoundException, TiffTags.TiffReadingException, Exception {
+            File upslopeFile) throws Exception {
 
         // get input raster as rasterImageLayer from string
         final DoubleBasicGrid demGrid = RasterUtils.getDoubleBasicGrid(demRil);

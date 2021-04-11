@@ -35,7 +35,7 @@ public class BaseflowParams {
     }
 
     public enum BaseflowType {
-        LUMPED, DISTRIBUTED;
+        LUMPED, DISTRIBUTED
     }
     
     private BaseflowType type;

@@ -78,9 +78,8 @@ public abstract class AbstractInputKlemPlugin implements PluginGUIComponentsInte
         ComponentsTreeMap componentsMapPlusActions = setComponentsActions(componentsMap);
         
         JPanel panel = buildPluginPanel(componentsMapPlusActions);
-        
-        JScrollPane sp = new JScrollPane(panel);
-        return sp;
+
+        return new JScrollPane(panel);
     }    
    
     

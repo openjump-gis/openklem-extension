@@ -429,7 +429,7 @@ public class Klem {
     private final DrainageArea drainageArea;    
     private final ModellingType modellingType;
     private Hyetograph inputHyetograph = null;
-    private Watershed watershed = null;
+    private final Watershed watershed;
     private SimulationOutput simulationOutput = null;
     private SimulationOutput drainageAreaSimOutput = null; 
     private TimeInterval criticalDuration;
@@ -443,7 +443,7 @@ public class Klem {
 
     private enum ModellingType {
         
-        DESIGN, HYSTORICALRAIN;
+        DESIGN, HYSTORICALRAIN
         
     }
     

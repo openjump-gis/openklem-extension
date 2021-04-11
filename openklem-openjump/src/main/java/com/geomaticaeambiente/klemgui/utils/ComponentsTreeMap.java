@@ -2,7 +2,6 @@ package com.geomaticaeambiente.klemgui.utils;
 
 import com.geomaticaeambiente.klemgui.ui.GUIUtils;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeMap;
@@ -15,7 +14,7 @@ import javax.swing.JComponent;
 public class ComponentsTreeMap {
 
     public ComponentsTreeMap() {
-        this.componentEntry_tm = new TreeMap<String, ComponentEntry[]>();
+        this.componentEntry_tm = new TreeMap<>();
     }
 
     /**
@@ -24,7 +23,7 @@ public class ComponentsTreeMap {
      * @param componentEntry Array of ComponentEmtry. Typically derived from ComposeComponents.
      * @throws Exception 
      */
-    public void addComponentsEntry(String id, ComponentEntry[] componentEntry) throws Exception {
+    public void addComponentsEntry(String id, ComponentEntry[] componentEntry) {
         componentEntry_tm.put(getId(id), componentEntry);
         
     }
@@ -64,9 +63,8 @@ public class ComponentsTreeMap {
     public JComponent getComponent(String row, String type, int positionColumn){
         
         ComponentEntry[] rowComponent = componentEntry_tm.get(row + type);
-        JComponent component = rowComponent[positionColumn].getComponent();
 
-        return component;
+        return rowComponent[positionColumn].getComponent();
         
     }
     
@@ -111,17 +109,15 @@ public class ComponentsTreeMap {
     private List<ComponentEntry[]> cicle(String value_){
         
         Set<String> keys = componentEntry_tm.keySet();
-        List component = new ArrayList<ComponentEntry[]>();
-        
-        Iterator iter = keys.iterator();
-        while(iter.hasNext()){
-            String value = (String) iter.next();
-            if(value.toLowerCase().contains(value_.toLowerCase())){
+        List<ComponentEntry[]> component = new ArrayList<>();
+
+        for (String value : keys) {
+            if (value.toLowerCase().contains(value_.toLowerCase())) {
                 component.add(componentEntry_tm.get(value));
             }
         }
         
-        return  component;
+        return component;
     }
     
     

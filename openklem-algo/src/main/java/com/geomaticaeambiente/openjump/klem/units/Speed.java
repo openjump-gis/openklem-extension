@@ -27,9 +27,7 @@ public class Speed {
     private final double speed;
     
     public enum SpeedUnit {
-        
-        m_s;
-        
+        m_s
     }
     
 }

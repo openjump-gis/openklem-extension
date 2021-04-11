@@ -222,7 +222,7 @@ public class FlatAreasProcessorStripe {
             
             int increment) {
         
-        List<java.awt.Point> flatCellsDown_l = new ArrayList<java.awt.Point>();;
+        List<java.awt.Point> flatCellsDown_l = new ArrayList<>();
         List<java.awt.Point> flatCellsUp_l = new ArrayList<java.awt.Point>();
         
         int[][] gradientUpwards = new int[rowCount][columnCount];
@@ -363,7 +363,7 @@ public class FlatAreasProcessorStripe {
         
     }
     
-    private class Gradient {
+    private static class Gradient {
 
         public Gradient(List<Point> flatCells_l, int[][] gradient) {
             this.flatCells_l = flatCells_l;

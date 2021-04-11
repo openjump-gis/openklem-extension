@@ -75,10 +75,11 @@ public abstract class BasicGrid {
     }
     
     public Envelope getEnvelope() {
-        Envelope envelope = new Envelope(lowerLeftCoord, new Coordinate(
-                lowerLeftCoord.x + columnCount * cellSize, lowerLeftCoord.y + rowCount * cellSize));
-        
-        return envelope;        
+
+        return new Envelope(lowerLeftCoord, new Coordinate(
+                lowerLeftCoord.x + columnCount * cellSize,
+                lowerLeftCoord.y + rowCount * cellSize
+        ));
     }
     
     public java.awt.Point fromCoordinateToCell(Coordinate coord) {

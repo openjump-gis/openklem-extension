@@ -34,7 +34,7 @@ public class DesignRain {
 
         double geomorphoFactor = watershed.getGeomorphology().getGeomorphoFactor();        
         
-        double fattAttenSoglia = watershed.getGeomorphology().getGeomorphoFactorThrehsold();
+        double fattAttenSoglia = watershed.getGeomorphology().getGeomorphoFactorThreshold();
         geomorphoFactor /= 1000d;
         
         double maxAreaThreshold = 200;
@@ -112,9 +112,8 @@ public class DesignRain {
 
     /**
      * Sets the duration of the rainfall.
-     * @param duration
-     * @return The rainfall duration.
-     */      
+     * @param duration The rainfall duration.
+     */
     public void setDuration(TimeInterval duration) {
         this.duration = duration;
     }
@@ -128,8 +127,8 @@ public class DesignRain {
     }
     
     private TimeInterval duration;
-    private LsppANParameters lsppANParameters = null;
-    private Watershed watershed = null;
+    private final LsppANParameters lsppANParameters;
+    private final Watershed watershed;
     private double totalRain = 0;
     private double areaReductionFactor = 0;
     

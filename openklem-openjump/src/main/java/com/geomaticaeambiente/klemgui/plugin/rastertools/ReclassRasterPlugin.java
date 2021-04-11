@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.Raster;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -266,8 +265,7 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
                                 }
 
                                 @Override
-                                public boolean execute(PlugInContext context)
-                                        throws Exception {
+                                public boolean execute(PlugInContext context) {
                                     return true;
                                 }
 
@@ -343,7 +341,7 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
 
     private void findValues(RasterComboBox raster, JComboBox metodo,
             JComboBox classi, JComboBox dev, JTextField interval,
-            PersonalTableComponents ptc) throws Exception {
+            PersonalTableComponents ptc) {
         try {
 
             final String rasterIn = raster.getSelectedItem().toString();
@@ -362,7 +360,7 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
             rasterChanged = true;
 
             // Read values
-            final ArrayList<Double> valsUnique = new ArrayList<Double>();
+            final ArrayList<Double> valsUnique = new ArrayList<>();
             double valSum;
             double valCount;
             double valSumSquare;
@@ -379,7 +377,7 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
                 final int height = raster_.getHeight();
 
                 // Transfer vals to arraylist
-                final ArrayList<Double> vals = new ArrayList<Double>();
+                final ArrayList<Double> vals = new ArrayList<>();
                 double val;
 
                 valSum = 0;
@@ -679,7 +677,7 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
 
     private void checkValues(String raster, String method, String classes,
             String stDev, String interval, String rasterOut)
-            throws IOException, Exception {
+            throws Exception {
 
         GUIUtils.checkStringValue(raster, RASTER_IN_LABEL);
         GUIUtils.checkStringValue(method, METHOD_LABEL);

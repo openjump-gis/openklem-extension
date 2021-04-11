@@ -51,7 +51,7 @@ public class SAXParserKlem extends DefaultHandler {
 
     //Event Handlers
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+    public void startElement(String uri, String localName, String qName, Attributes attributes) {
         //reset
         tempVal = "";
         if (qName.equalsIgnoreCase(KlemProperties.PROJECT_PARAMETERS)) {
@@ -62,12 +62,12 @@ public class SAXParserKlem extends DefaultHandler {
     }
 
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
+    public void characters(char[] ch, int start, int length) {
         tempVal = new String(ch, start, length);
     }
 
     @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
+    public void endElement(String uri, String localName, String qName) {
 
         if (qName.equalsIgnoreCase(KlemProperties.PROJECT_FOLDER)) {
             projProp.setProjectFolder(new File(tempVal));

@@ -16,7 +16,7 @@ public class ReclassTuple {
 
     @Override
     public String toString() {
-        return Double.toString(oldRangeMin) + "  " + Double.toString(oldRangeMax) + "  " + Double.toString(newValue);
+        return oldRangeMin + "  " + oldRangeMax + "  " + newValue;
     }
 
     public double getOldRangeMin() {

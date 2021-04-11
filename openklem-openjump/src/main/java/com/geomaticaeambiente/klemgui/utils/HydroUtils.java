@@ -167,15 +167,15 @@ public class HydroUtils {
     
     public static Speed calculateSpeed(double velocity){
         
-        double lenght = velocity;
+        double _length = velocity;
         double _time = 1;
         
-        Length length = new Length(lenght, Length.LengthUnit.m);
+        Length length = new Length(_length, Length.LengthUnit.m);
         Time time = new Time(_time, Time.TimeIntervalUnit.s);
         
         return new Speed(length, time);
     }
    
-    public enum HydroType {SCS, TRIANGULAR, NASH, GEOMORPHOLOGICAL, KINEMATIC, HORTON_TRIANGULAR};
+    public enum HydroType {SCS, TRIANGULAR, NASH, GEOMORPHOLOGICAL, KINEMATIC, HORTON_TRIANGULAR}
     
 }

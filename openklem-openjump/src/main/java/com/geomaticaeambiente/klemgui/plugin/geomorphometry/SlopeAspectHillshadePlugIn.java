@@ -2,7 +2,6 @@ package com.geomaticaeambiente.klemgui.plugin.geomorphometry;
 
 import java.awt.Dialog;
 import java.io.File;
-import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -356,8 +355,7 @@ public class SlopeAspectHillshadePlugIn extends AbstractInputKlemPlugin {
                                 }
 
                                 @Override
-                                public boolean execute(PlugInContext context)
-                                        throws Exception {
+                                public boolean execute(PlugInContext context) {
                                     return true;
                                 }
 
@@ -424,7 +422,7 @@ public class SlopeAspectHillshadePlugIn extends AbstractInputKlemPlugin {
 
     private void checkValues(String dem, String zenith, String azimuth,
             String outSlope, String outAspect, String outHillshade)
-            throws IOException, Exception {
+            throws Exception {
 
         GUIUtils.checkStringValue(dem, DEM_LABEL);
 

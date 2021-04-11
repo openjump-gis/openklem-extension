@@ -19,7 +19,6 @@ import com.vividsolutions.jump.workbench.plugin.PlugInContext;
 import com.vividsolutions.jump.workbench.ui.ErrorDialog;
 import it.geomaticaeambiente.klem.Hyetograph;
 import it.geomaticaeambiente.klem.TimeInterval;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
@@ -152,7 +151,7 @@ public class HydrographNashPlugin extends AbstractInputKlemPlugin {
 
     }
 
-    private PlugInContext context;
+    private final PlugInContext context;
     private MainPanel mainPanel;
     private Hyetograph hyetograph;
     private Hydrology.EffectiveRainfall effectiveRainfall;

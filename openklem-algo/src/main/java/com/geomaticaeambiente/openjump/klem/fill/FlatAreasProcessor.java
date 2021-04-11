@@ -7,7 +7,6 @@ import com.geomaticaeambiente.openjump.klem.grid.IntBasicGrid;
 import com.geomaticaeambiente.openjump.klem.parallel.Shifter;
 import java.awt.Point;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 

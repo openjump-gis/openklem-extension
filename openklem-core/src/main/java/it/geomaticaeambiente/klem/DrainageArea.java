@@ -93,11 +93,11 @@ public class DrainageArea {
         this.lag = lag;
     }
     
-    private double[][] rasDrainageAreas;
-    private double drainageAreaCellValue;
-    private double uptakeFraction;
-    private SimulationOutput intakeHydrograph;
+    private final double[][] rasDrainageAreas;
+    private final double drainageAreaCellValue;
+    private final double uptakeFraction;
+    private final SimulationOutput intakeHydrograph;
     private TimeInterval lag;
-    private Point intakePoint;
+    private final Point intakePoint;
     
 }

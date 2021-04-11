@@ -13,7 +13,7 @@ public class ExecutorBuilder {
         
         int threadCount = 1; //Runtime.getRuntime().availableProcessors();
         executorService = Executors.newFixedThreadPool(threadCount);
-        rowPerStripeCount = (int) rowCount / threadCount;
+        rowPerStripeCount = rowCount / threadCount;
         if(rowPerStripeCount == 0) {
             rowPerStripeCount = 1;
         }

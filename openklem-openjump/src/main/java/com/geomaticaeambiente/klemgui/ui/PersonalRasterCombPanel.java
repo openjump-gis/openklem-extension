@@ -3,7 +3,6 @@ package com.geomaticaeambiente.klemgui.ui;
 
 import com.geomaticaeambiente.klemgui.utils.PluginUtils;
 import com.vividsolutions.jump.workbench.WorkbenchContext;
-import com.vividsolutions.jump.workbench.model.Layerable;
 import java.awt.Point;
 import java.util.List;
 import java.util.UUID;
@@ -24,7 +23,6 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form PersonalRasterCombPanel
-     * @param rasterImageLayers
      */
     public PersonalRasterCombPanel(WorkbenchContext workbenchContext,
             JDialog mainComponent) throws BadLocationException {

@@ -2,7 +2,6 @@ package com.geomaticaeambiente.openjump.klem.aspect;
 
 import com.geomaticaeambiente.openjump.klem.grid.DoubleBasicGrid;
 import com.geomaticaeambiente.openjump.klem.parallel.Shifter;
-import java.io.IOException;
 import java.util.concurrent.Callable;
 
 /**
@@ -27,7 +26,7 @@ public class AspectStripe implements Callable<DoubleBasicGrid> {
         return calcAspect(); 
     }
     
-    private DoubleBasicGrid calcAspect() throws IOException {
+    private DoubleBasicGrid calcAspect() {
         
         int nRows = demStripe.getRowCount();
         int nCols = demStripe.getColumnCount();

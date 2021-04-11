@@ -127,15 +127,13 @@ public class RasterClipper {
                         / inputGrid.getCellSize()));
         int rowCount = ((int) Math.ceil(
                 (clipperGeom.getEnvelopeInternal().getMaxY() - lowerLeftCorner.y)
-                        / inputGrid.getCellSize()));  
-        
-        DoubleBasicGrid rasterizedGrid = Rasterizer.rasterize(
+                        / inputGrid.getCellSize()));
+
+        return Rasterizer.rasterize(
                 clipperGeom,
                 lowerLeftCorner,
                 columnCount, rowCount,
                 inputGrid.getCellSize(), Double.NaN);
-        
-        return rasterizedGrid;
     }
     
 }

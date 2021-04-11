@@ -133,6 +133,6 @@ public abstract class DependencyAbstractStripe implements Callable<Boolean> {
     protected byte[] dependencyBuff_Below;
     protected final double[][] outputData;
     
-    protected List<java.awt.Point> Qs_l = new ArrayList<java.awt.Point>();
+    protected List<java.awt.Point> Qs_l = new ArrayList<>();
     
 }

@@ -17,7 +17,6 @@ import com.vividsolutions.jump.workbench.ui.ErrorDialog;
 
 import java.awt.Cursor;
 import java.io.File;
-import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -171,7 +170,7 @@ public class RasterConversionsPlugIn extends AbstractInputKlemPlugin {
         return PluginUtils.getResources().getString("ConvertRasterPlugin.PlugInName.text");
     }
 
-    private void checkValues(String raster, String rasterOut) throws IOException, Exception {
+    private void checkValues(String raster, String rasterOut) throws Exception {
 
         GUIUtils.checkStringValue(raster, RASTER_IN_LABEL);
 

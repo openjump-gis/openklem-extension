@@ -11,7 +11,7 @@ public class Hyetograph {
      * @param timeInterval The time step between rainfall pulses.
      * @param rainfall The array containing the rainfall values [mm/time interval] for every
      * time interval.
-     * @throws Exception 
+     * @throws Exception if an Exception occurs
      */
     public Hyetograph(TimeInterval timeInterval, double[] rainfall) throws Exception {
         
@@ -66,7 +66,7 @@ public class Hyetograph {
         
     }
 
-    private TimeInterval timeInterval;
-    private double[] rainfall;
+    private final TimeInterval timeInterval;
+    private final double[] rainfall;
     
 }

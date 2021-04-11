@@ -14,7 +14,7 @@ public class LsppCalculator {
      * @param parNLess1Hour 
      */
     public LsppCalculator(double parA, double parN, double parNLess1Hour){
-        lsppANParameters = new LsppANParameters(parA, parN, parNLess1Hour);      
+        lsppANParameters = new LsppANParameters(parA, parN, parNLess1Hour);
     }    
    
     /**
@@ -65,13 +65,13 @@ public class LsppCalculator {
         return lsppANParameters;
     }
     
-    private LsppANParameters lsppANParameters = null;
+    private final LsppANParameters lsppANParameters;
     
     public enum LsppModel{
         GEV, GUMBEL, TCEV
     }
     
-    public class LsppANParameters {
+    public static class LsppANParameters {
     
         public LsppANParameters(double paramA, double paramN, double paramNLess1Hour){
         
@@ -85,8 +85,8 @@ public class LsppCalculator {
         public double getParamN() { return paramN; }
         public double getParamNLess1Hour() { return paramNLess1Hour; }
         
-        private double paramA = 0;
-        private double paramN = 0;
+        private final double paramA;
+        private final double paramN;
         private double paramNLess1Hour = -1;
         
     

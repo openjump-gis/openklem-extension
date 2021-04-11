@@ -44,7 +44,7 @@ public class Vectorizer {
 
         arrAll = new ArrayList[uniqueValsCount];
         for (int i = 0; i < uniqueValsCount; i++) {
-            arrAll[i] = new ArrayList<Polygon>();
+            arrAll[i] = new ArrayList<>();
         }
 
         final int nCols = grid.getColumnCount();
@@ -97,7 +97,7 @@ public class Vectorizer {
 
             Geometry geom = CascadedPolygonUnion.union(arrAll[i]);
             geom = DouglasPeuckerSimplifier.simplify(geom, 0);
-            geom = TopologyPreservingSimplifier.simplify(geom, 00);
+            geom = TopologyPreservingSimplifier.simplify(geom, 0);
 
             if (multipolygons) {
 

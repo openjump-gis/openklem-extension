@@ -40,7 +40,7 @@ public class HyetographGenerator {
      * @param hyetographShape The hyetograph shape.
      * @param corr
      * @return An design hyetograph.
-     * @throws Exception 
+     * @throws Exception if an Exception occurs
      */
     public Hyetograph generateHytegraph(HyetographShape hyetographShape,
             boolean corr) throws Exception{
@@ -79,15 +79,14 @@ public class HyetographGenerator {
                 break;
         }
 
-        Hyetograph hyetograph = new Hyetograph(timeStep, prec[1]);
-        return hyetograph;
+        return new Hyetograph(timeStep, prec[1]);
     }
     
     /**
      * Creates a constant hyetograph.
-     * @param precipSteps
-     * @param totale
-     * @return 
+     * @param precipSteps number of intervals
+     * @param totale total of precipitation
+     * @return an array containing rainfalls for each step
      */
     private double[] getConst(int precipSteps, double totale){
 
@@ -103,10 +102,10 @@ public class HyetographGenerator {
 
     /**
      * Creates a Wallingford hyetograph.
-     * @param precipSteps
-     * @param totale
+     * @param precipSteps number of intervals
+     * @param totale total of precipitation
      * @param corr
-     * @return 
+     * @return an array containing rainfalls for each step
      */
     private double[] getWallingford(int precipSteps, double totale, boolean corr){
 
@@ -162,10 +161,10 @@ public class HyetographGenerator {
 
     /**
      * Creates a triangular hyetograph.
-     * @param precipSteps
-     * @param totale
+     * @param precipSteps number of intervals
+     * @param totale total of precipitation
      * @param corr
-     * @return 
+     * @return an array containing rainfalls for each step
      */
     private double[] getTriangular(int precipSteps, double totale, boolean corr){
 
@@ -209,10 +208,10 @@ public class HyetographGenerator {
 
     /**
      * Creates an alternating blocks hyetograph.
-     * @param precipSteps
-     * @param totale
+     * @param precipSteps number of intervals
+     * @param totale total of precipitation
      * @param corr
-     * @return 
+     * @return an array containing rainfalls for each step
      */
     private double[] getAlternBlocks(int precipSteps, double totale, boolean corr){
 
@@ -286,10 +285,10 @@ public class HyetographGenerator {
 
     /**
      * Creates an instant intensity hyetograph.
-     * @param precipSteps
-     * @param totale
+     * @param precipSteps number of intervals
+     * @param totale total of precipitation
      * @param corr
-     * @return 
+     * @return an array containing rainfalls for each step
      */
     private double[] getInstant(int precipSteps, double totale, boolean corr){
 
@@ -351,10 +350,10 @@ public class HyetographGenerator {
 
     /**
      * Creates a constantly increasing hyetograph.
-     * @param precipSteps
-     * @param totale
+     * @param precipSteps number of intervals
+     * @param totale total of precipitation
      * @param corr
-     * @return 
+     * @return an array containing rainfalls for each step
      */
     private double[] getIncreasing(int precipSteps, double totale, boolean corr){
 
@@ -422,9 +421,9 @@ public class HyetographGenerator {
         
     }
     
-    private double peakPosition = 0;
+    private double peakPosition;
     private double totalDuration_min;
-    private DesignRain designRain = null;
+    private DesignRain designRain;
     private final TimeInterval timeStep;
     private final double ciclo_in_min;    
     

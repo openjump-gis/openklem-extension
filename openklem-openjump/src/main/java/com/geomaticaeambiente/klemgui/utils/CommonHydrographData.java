@@ -6,9 +6,7 @@ import it.geomaticaeambiente.klem.Hyetograph;
 import it.geomaticaeambiente.klem.TimeInterval;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,13 +102,13 @@ public class CommonHydrographData {
         
     }
         
-    private Hyetograph readHyetograph(File hyetoPath) throws FileNotFoundException, IOException, Exception {
+    private Hyetograph readHyetograph(File hyetoPath) throws Exception {
         
         BufferedReader buffReader = new BufferedReader(new FileReader(hyetoPath));
 
         String line;
-        List<Double> time_l = new ArrayList<Double>();
-        List<Double> rainfall_l = new ArrayList<Double>();
+        List<Double> time_l = new ArrayList<>();
+        List<Double> rainfall_l = new ArrayList<>();
         buffReader.readLine();
         buffReader.readLine();
         while((line = buffReader.readLine()) != null){

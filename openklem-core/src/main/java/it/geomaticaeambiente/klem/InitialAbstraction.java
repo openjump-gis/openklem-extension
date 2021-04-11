@@ -21,7 +21,7 @@ public class InitialAbstraction {
     private double abstractionValue;
         
     public enum AbstractionUnits {
-        FRACTION, MILLIMETERS;
+        FRACTION, MILLIMETERS
     }
     
 }

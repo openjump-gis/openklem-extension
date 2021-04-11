@@ -14,7 +14,8 @@ import org.openjump.core.rasterimage.RasterImageLayer;
  * @author Paola
  */
 public class CustomComboBox {
-    public class RasterComboBox extends JComboBox{
+
+    public static class RasterComboBox extends JComboBox{
         public RasterComboBox(RasterImageLayer[] rils){
             removeAllItems();
             addItem("");
@@ -24,7 +25,7 @@ public class CustomComboBox {
         }
     }
     
-    public class LayerComboBox extends JComboBox{
+    public static class LayerComboBox extends JComboBox{
         public LayerComboBox(Layer[] layers){
             removeAllItems();
             addItem("");

@@ -14,7 +14,7 @@ public class Geomorphology {
      */
     public Geomorphology(double geomorphoFactor, double geomorphoFactorThrehsold) {
         this.geomorphoFactor = geomorphoFactor;
-        this.geomorphoFactorThrehsold = geomorphoFactorThrehsold;
+        this.geomorphoFactorThreshold = geomorphoFactorThrehsold;
     }
 
     /**
@@ -28,13 +28,13 @@ public class Geomorphology {
     /**
      * Returns the area threshold [km2] above which the geomorphological factor is
      * applied.
-     * @return 
+     * @return the geomorpho factor threshold
      */
-    public double getGeomorphoFactorThrehsold() {
-        return geomorphoFactorThrehsold;
+    public double getGeomorphoFactorThreshold() {
+        return geomorphoFactorThreshold;
     }
     
-    private double geomorphoFactor;
-    private double geomorphoFactorThrehsold;
+    private final double geomorphoFactor;
+    private final double geomorphoFactorThreshold;
     
 }

@@ -252,7 +252,7 @@ public class FlowModellerWorker implements Callable<Integer> {
         
     }
     
-    private int workerID;
+    private final int workerID;
     private final ParallelFlowModeller caller;
     
 //    private double basin_area;
@@ -286,8 +286,8 @@ public class FlowModellerWorker implements Callable<Integer> {
 //    private double subsurfaceDrainageLoss;
 //    
     private final double[] Bflo_cal = new double[MAXDATA];
-    private int startRow;
-    private int rowCount;
+    private final int startRow;
+    private final int rowCount;
     
     
 }

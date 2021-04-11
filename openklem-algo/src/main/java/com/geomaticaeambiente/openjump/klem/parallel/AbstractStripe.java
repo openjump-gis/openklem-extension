@@ -1,7 +1,6 @@
 package com.geomaticaeambiente.openjump.klem.parallel;
 
 import com.geomaticaeambiente.openjump.klem.grid.DoubleBasicGrid;
-import org.locationtech.jts.geom.Coordinate;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
@@ -70,6 +69,6 @@ public abstract class AbstractStripe implements Callable<DoubleBasicGrid> {
     protected double[] belowBuffer;
     protected DoubleBasicGrid outputGrid;
     
-    protected List<java.awt.Point> Qs_l = new ArrayList<java.awt.Point>();
+    protected List<java.awt.Point> Qs_l = new ArrayList<>();
     
 }

@@ -23,7 +23,6 @@ import com.vividsolutions.jump.workbench.ui.ErrorDialog;
 import it.geomaticaeambiente.klem.Hyetograph;
 import it.geomaticaeambiente.klem.TimeInterval;
 import javax.swing.JComponent;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
@@ -153,7 +152,7 @@ public class HydrographGeomorphologicalPlugin extends AbstractInputKlemPlugin{
         return PluginUtils.getResources().getString("HydrographGeomorphological.PlugInName.label");
     }
     
-    private PlugInContext context;
+    private final PlugInContext context;
 //    private RasterImageLayer[] rasterImageLayers;
     private MainPanel mainPanel;
     private Hyetograph hyetograph;

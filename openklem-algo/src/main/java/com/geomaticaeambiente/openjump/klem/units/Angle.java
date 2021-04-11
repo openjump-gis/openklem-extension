@@ -19,7 +19,6 @@ public class Angle {
                 break;
         }
         
-        
     }    
     
     public Double getAngle(AngleUnit unit) {
@@ -36,7 +35,7 @@ public class Angle {
     
     
     public enum AngleUnit {
-        DEGREE, RADIAN;
+        DEGREE, RADIAN
     }
     
     private double value;

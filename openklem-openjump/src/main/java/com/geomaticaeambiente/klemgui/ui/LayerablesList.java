@@ -16,11 +16,11 @@ public class LayerablesList {
 
     public LayerablesList(Layerable[] layerable) {
         layerables = layerable;
-        listeners = new ArrayList<LayersChangedListener>();
+        listeners = new ArrayList<>();
     }
 
     public LayerablesList() {
-        listeners = new ArrayList<LayersChangedListener>();
+        listeners = new ArrayList<>();
     }
 
     public void addListener(LayersChangedListener toAdd) {

@@ -34,7 +34,7 @@ public class Length {
     }
 
     public enum LengthUnit {
-        m, km;
+        m, km
     }
     
     private double length;

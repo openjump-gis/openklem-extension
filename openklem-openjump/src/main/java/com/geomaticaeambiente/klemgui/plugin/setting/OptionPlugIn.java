@@ -129,13 +129,13 @@ public class OptionPlugIn extends AbstractInputKlemPlugin {
                 "OptionPlugin.PlugInName.label");
     }
 
-    public static final boolean loadOutputRaster() {
+    public static boolean loadOutputRaster() {
         return PersistentBlackboardPlugIn.get(
                 JUMPWorkbench.getInstance().getFrame().getContext()).get(
                 LOAD_OUTPUT_RASTER, false);
     }
 
-    public static final boolean appySymbologyRaster() {
+    public static boolean appySymbologyRaster() {
         return PersistentBlackboardPlugIn.get(
                 JUMPWorkbench.getInstance().getFrame().getContext()).get(
                 APPLY_OUTPUT_SYMBOLOGY, false);

@@ -77,9 +77,8 @@ public class GUIUtils {
         if (object instanceof RasterImageLayer) {
 
             final RasterImageLayer ril = (RasterImageLayer) object;
-            final JTextField field = new JTextField(ril.getName());
 
-            return field;
+            return new JTextField(ril.getName());
 
         } else if (object instanceof Double || object instanceof Float
                 || object instanceof Integer || object instanceof String) {
@@ -95,27 +94,24 @@ public class GUIUtils {
                 value = object;
             }
 
-            final JTextField field = new JTextField(value.toString());
-            return field;
+            return new JTextField(value.toString());
 
         } else if (object instanceof File) {
             final File file = (File) object;
 
-            final JTextField field = new JTextField(file.getAbsolutePath());
-            return field;
+            return new JTextField(file.getAbsolutePath());
 
         } else if (object instanceof Layer) {
 
             final Layer layer = (Layer) object;
-            final JTextField field = new JTextField(layer.getName());
-            return field;
+            return new JTextField(layer.getName());
 
         } else if (object instanceof RasterImageLayer[]) {
             final RasterImageLayer[] objects = (RasterImageLayer[]) object;
             final CustomComboBox customCBox = new CustomComboBox();
 
-            final CustomComboBox.RasterComboBox comboBox2 = customCBox.new RasterComboBox(
-                    objects);
+            final CustomComboBox.RasterComboBox comboBox2 = new CustomComboBox.RasterComboBox(
+                objects);
             comboBox2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
             return comboBox2;
@@ -124,8 +120,8 @@ public class GUIUtils {
             final Layer[] objects = (Layer[]) object;
             final CustomComboBox customCBox = new CustomComboBox();
 
-            final CustomComboBox.LayerComboBox comboBox2 = customCBox.new LayerComboBox(
-                    objects);
+            final CustomComboBox.LayerComboBox comboBox2 = new CustomComboBox.LayerComboBox(
+                objects);
             comboBox2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
             return comboBox2;
@@ -242,8 +238,7 @@ public class GUIUtils {
         return null;
     }
 
-    public static boolean componentIsSelected(JComponent component)
-            throws Exception {
+    public static boolean componentIsSelected(JComponent component) {
 
         final JToggleButton toggleButton = (JToggleButton) component;
         return toggleButton.isSelected();
@@ -495,7 +490,7 @@ public class GUIUtils {
 
             String index = Integer.toString(n);
             if (index.length() == 1) {
-                index = "0" + Integer.toString(n);
+                index = "0" + n;
             } else {
                 index = Integer.toString(n);
             }
@@ -513,7 +508,7 @@ public class GUIUtils {
         }
 
         final JComponent[] components_ar = (JComponent[]) allComponents_al
-                .toArray(new JComponent[allComponents_al.size()]);
+                .toArray(new JComponent[0]);
 
         return components_ar;
     }

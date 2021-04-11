@@ -158,13 +158,13 @@ public class Watershed {
     
     
     
-    private double area = 0;
-    private double[][] rasCurveNumber = null;
-    private double[][] rasRoutingTime = null;
-    private double cellSize = 0;
-    private double noData = 0;
+    private double area;
+    private double[][] rasCurveNumber;
+    private double[][] rasRoutingTime;
+    private double cellSize;
+    private double noData;
     private InitialAbstraction initialAbstraction;
-    private double AMC = 0;
+    private double AMC;
     private BaseflowParams baseflowParams;
     private double subsurfaceDrainLoss;
     private RainfallRecession rainfallRecession;

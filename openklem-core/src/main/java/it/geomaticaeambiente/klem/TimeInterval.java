@@ -16,11 +16,11 @@ public class TimeInterval {
         
         // Convert to seconds (internally storage is seconds)
         if (unit == TimeIntervalUnit.DAY) {
-            this.interval = interval *= SECS_IN_DAY;
-        }else if (unit == TimeIntervalUnit.HOUR) {
-            this.interval = interval *= SECS_IN_HOUR;
+            this.interval = interval * SECS_IN_DAY;
+        } else if (unit == TimeIntervalUnit.HOUR) {
+            this.interval = interval * SECS_IN_HOUR;
         } else if (unit == TimeIntervalUnit.MINUTE) {
-            this.interval = interval *= SECS_IN_MIN;
+            this.interval = interval * SECS_IN_MIN;
         } else if (unit == TimeIntervalUnit.SECOND) {
             this.interval = interval;
         }
@@ -49,7 +49,7 @@ public class TimeInterval {
     }
 
     public enum TimeIntervalUnit {
-        SECOND, MINUTE, HOUR, DAY;
+        SECOND, MINUTE, HOUR, DAY
     }
     
     private double interval;

@@ -166,9 +166,7 @@ public class HydrologyGroupsPlugin extends AbstractInputKlemPlugin {
             }
         }
 
-        DefaultTableModel dtm = new DefaultTableModel(data, col);
-
-        return dtm;
+        return new DefaultTableModel(data, col);
     }
 
     public ReclassTuple[] getReclassPairFromString(String values, double minRasValue, double maxRasValue, double defaultValue) throws NullPointerException {

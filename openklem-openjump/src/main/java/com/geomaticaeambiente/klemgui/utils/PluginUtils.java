@@ -53,8 +53,7 @@ public class PluginUtils {
             }
         }
 
-        return (RasterImageLayer[]) layerList
-                .toArray(new RasterImageLayer[layerList.size()]);
+        return (RasterImageLayer[]) layerList.toArray(new RasterImageLayer[0]);
     }
 
     public static Layerable[] getLayerables(PlugInContext context) {
@@ -62,11 +61,11 @@ public class PluginUtils {
         final Collection collection = context.getWorkbenchContext()
                 .getLayerManager().getLayerables(Layerable.class);
         final Iterator iter = collection.iterator();
-        final List<Layerable> layerablesList = new ArrayList<Layerable>();
+        final List<Layerable> layerablesList = new ArrayList<>();
         while (iter.hasNext()) {
             layerablesList.add((Layerable) iter.next());
         }
-        return layerablesList.toArray(new Layerable[layerablesList.size()]);
+        return layerablesList.toArray(new Layerable[0]);
 
     }
 
@@ -85,7 +84,7 @@ public class PluginUtils {
             }
         }
 
-        return (Layer[]) layerList.toArray(new Layer[layerList.size()]);
+        return (Layer[]) layerList.toArray(new Layer[0]);
     }
 
     public static Layer getLayerSelected(CustomComboBox.LayerComboBox comboBox) {
@@ -149,9 +148,9 @@ public class PluginUtils {
         final int lengthValue = Integer.toString(value).length();
 
         if (lengthValue == 1) {
-            id = "0" + Integer.toString(value) + word;
+            id = "0" + value + word;
         } else {
-            id = Integer.toString(value) + word;
+            id = value + word;
         }
 
         return id;

@@ -154,7 +154,7 @@ public class SubPanel extends JPanel {
 
         // Map to memorize the width of component for each element of the line.
         // The key map is the element position on the line.
-        final HashMap<Integer, Integer> positionWidthMap = new HashMap<Integer, Integer>();// mappa
+        final HashMap<Integer, Integer> positionWidthMap = new HashMap<>();// mappa
                                                                                            // che
                                                                                            // ha
                                                                                            // come

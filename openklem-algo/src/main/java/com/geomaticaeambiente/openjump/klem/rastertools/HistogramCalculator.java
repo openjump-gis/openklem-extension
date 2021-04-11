@@ -103,9 +103,9 @@ public class HistogramCalculator {
         double stdDevVal = Math.sqrt(squaresSum / cellsCount);
         
         double areaVal = cellsCount * inputGrid.getCellSize() * inputGrid.getCellSize();
-        return new Histogram(false, 
-                cellCountVals_hm, areaVals_hm, relativeAreaVals_hm,
-                minVal, maxVal, meanVal, stdDevVal, sumVal, areaVal, null);
+        return new Histogram(false,
+            cellCountVals_hm, areaVals_hm, relativeAreaVals_hm,
+            minVal, maxVal, meanVal, stdDevVal, sumVal, areaVal, null);
         
     }
     
@@ -183,13 +183,13 @@ public class HistogramCalculator {
         double stdDevVal = Math.sqrt(squaresSum / cellsCount);
         
         double areaVal = cellsCount * inputGrid.getCellSize() * inputGrid.getCellSize();        
-        return new Histogram(true, 
-                cellCountVals_hm, areaVals_hm, relativeAreaVals_hm,
-                minVal, maxVal, meanVal, stdDevVal, sumVal, areaVal, maxCountVal);
+        return new Histogram(true,
+            cellCountVals_hm, areaVals_hm, relativeAreaVals_hm,
+            minVal, maxVal, meanVal, stdDevVal, sumVal, areaVal, maxCountVal);
         
     }
     
-    public class Histogram {
+    public static class Histogram {
 
         public Histogram(boolean uniqueVals, LinkedHashMap<ValuesRange, Long> cellCountValues, LinkedHashMap<ValuesRange, Double> areaValues, LinkedHashMap<ValuesRange, Double> relativeAreaValues, Double min, Double max, Double mean, Double stdDev, Double sum, Double area, Double mode) {
             this.uniqueVals = uniqueVals;

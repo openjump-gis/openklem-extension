@@ -7,5 +7,5 @@ import com.vividsolutions.jump.workbench.model.Layerable;
  * @author AdL
  */
 public interface LayersChangedListener {
-    public void layerablesChanged(Layerable[] newLayers);
+    void layerablesChanged(Layerable[] newLayers);
 }

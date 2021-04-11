@@ -6,6 +6,6 @@ package com.geomaticaeambiente.openjump.klem.drainageTime;
  */
 public interface VelocityCalculator {
     
-    public abstract double calcVelocity(double slopeRads);
+    double calcVelocity(double slopeRads);
     
 }

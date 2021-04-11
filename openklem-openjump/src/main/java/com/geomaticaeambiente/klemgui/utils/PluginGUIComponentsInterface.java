@@ -8,8 +8,8 @@ import javax.swing.JScrollPane;
  */
 public interface PluginGUIComponentsInterface {
     
-    public ComponentsTreeMap setComponetsTreeMap(InitialData initialtData) throws Exception;
+    ComponentsTreeMap setComponetsTreeMap(InitialData initialtData) throws Exception;
     
-    public JScrollPane getTabPluginComponents() throws Exception; //ex input tab
+    JScrollPane getTabPluginComponents() throws Exception; //ex input tab
     
 }

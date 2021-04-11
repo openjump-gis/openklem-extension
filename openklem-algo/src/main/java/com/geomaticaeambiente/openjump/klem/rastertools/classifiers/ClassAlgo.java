@@ -6,6 +6,6 @@ package com.geomaticaeambiente.openjump.klem.rastertools.classifiers;
  */
 public interface ClassAlgo {
     
-    public double[] getBreakValues();
+    double[] getBreakValues();
     
 }

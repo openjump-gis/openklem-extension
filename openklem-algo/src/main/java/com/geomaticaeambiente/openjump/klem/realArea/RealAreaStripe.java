@@ -1,6 +1,5 @@
 package com.geomaticaeambiente.openjump.klem.realArea;
 
-import java.io.IOException;
 import java.util.concurrent.Callable;
 
 import com.geomaticaeambiente.openjump.klem.grid.DoubleBasicGrid;
@@ -27,7 +26,7 @@ public class RealAreaStripe implements Callable<DoubleBasicGrid> {
         return calcAspect();
     }
 
-    private DoubleBasicGrid calcAspect() throws IOException {
+    private DoubleBasicGrid calcAspect() {
 
         final int nRows = stripeEffectiveRows;
         final int nCols = Grid.getColumnCount();

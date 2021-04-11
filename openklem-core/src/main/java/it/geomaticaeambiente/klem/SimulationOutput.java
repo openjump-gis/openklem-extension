@@ -54,9 +54,9 @@ public class SimulationOutput {
             return totalStepsCount;
         }
 
-        private int directStepsCount = 0;
-        private int baseStepsCount = 0;
-        private int totalStepsCount = 0;
+        private final int directStepsCount;
+        private final int baseStepsCount;
+        private final int totalStepsCount;
         
     }
     

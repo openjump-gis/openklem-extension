@@ -147,7 +147,7 @@ public class RasterAggregator {
                                 }
                                 break;
                             case MAJORITY:
-                                outVal = getMostFrequent(vals_l.toArray(new Double[vals_l.size()]));
+                                outVal = getMostFrequent(vals_l.toArray(new Double[0]));
                                 break;
                         }
                         
@@ -215,7 +215,7 @@ public class RasterAggregator {
     
     public enum AggregationMethod {
         
-        MIN, MAX, MEAN, SUM, MAJORITY;
+        MIN, MAX, MEAN, SUM, MAJORITY
         
     }
     
