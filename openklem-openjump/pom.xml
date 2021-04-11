@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.openjump</groupId>
+        <artifactId>openklem</artifactId>
+        <version>2.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>openklem-openjump</artifactId>
+
+    <properties>
+        <jts.version>1.18.1</jts.version>
+        <jfreechart.version>1.5.3</jfreechart.version>
+        <odfdom.version>0.8.11-incubating</odfdom.version>
+        <simpleodf.version>0.8.2-incubating</simpleodf.version>
+        <commons-io.version>2.8.0</commons-io.version>
+        <commons-imaging.version>1.0-alpha2</commons-imaging.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.openjump</groupId>
+            <artifactId>OpenJUMP</artifactId>
+            <version>2.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/OpenJUMP-0.0.0-r6c6037006e98f46a22f3d937b67694a133e6167f.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.openjump</groupId>
+            <artifactId>openklem-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjump</groupId>
+            <artifactId>openklem-algo</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>${jfreechart.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.odftoolkit</groupId>
+            <artifactId>odfdom-java</artifactId>
+            <version>${odfdom.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.odftoolkit</groupId>
+            <artifactId>simple-odf</artifactId>
+            <version>${simpleodf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-imaging</artifactId>
+            <version>${commons-imaging.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
