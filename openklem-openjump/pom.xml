@@ -26,7 +26,7 @@
             <artifactId>OpenJUMP</artifactId>
             <version>2.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/OpenJUMP-20210412-r2d24759d198b63e2be0daabbfffebf6420cc706c-nolang.jar</systemPath>
+            <systemPath>${project.basedir}/lib/OpenJUMP-20210412-b68329e.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.openjump</groupId>
