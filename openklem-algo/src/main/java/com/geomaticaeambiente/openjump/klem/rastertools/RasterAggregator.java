@@ -71,7 +71,7 @@ public class RasterAggregator {
         for (DoubleBasicGrid sourceGrid : sourceGrids) {
             
             if(sourceGrid.getCellSize() > destCellSize) {
-                throw new SourceCellSizeException("The resolution of one of theinput grids is smaller than the the ouput cell size.");
+                throw new SourceCellSizeException("The resolution of one of the input grids is smaller than the the ouput cell size.");
             }
             
             int sourceNRows = sourceGrid.getRowCount();
