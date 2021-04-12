@@ -929,7 +929,7 @@ public class OutputTab extends AbstractInputKlemPlugin {
             throws Exception {
         final RasterImageIO rasterImageIO = new RasterImageIO();
         final ImageAndMetadata metadata = rasterImageIO.loadImage(
-                context.getWorkbenchContext(), rasterFile.getAbsolutePath(),
+                /*context.getWorkbenchContext(),*/ rasterFile.getAbsolutePath(),
                 null, null, null);
 
         return metadata.getMetadata();

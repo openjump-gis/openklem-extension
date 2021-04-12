@@ -130,7 +130,7 @@ public class RasterUtils {
         final Resolution requestedRes = RasterImageIO
                 .calcRequestedResolution(viewport);
         final ImageAndMetadata imageAndMetadata = rasterImageIO.loadImage(
-                context.getWorkbenchContext(), file.getAbsolutePath(), null,
+                /*context.getWorkbenchContext(),*/ file.getAbsolutePath(), null,
                 viewport.getEnvelopeInModelCoordinates(), requestedRes);
         final Point point = RasterImageIO.getImageDimensions(file
                 .getAbsolutePath());
@@ -170,7 +170,7 @@ public class RasterUtils {
         final Resolution requestedRes = RasterImageIO
                 .calcRequestedResolution(viewport);
         final ImageAndMetadata imageAndMetadata = rasterImageIO.loadImage(
-                context.getWorkbenchContext(), file.getAbsolutePath(), null,
+                /*context.getWorkbenchContext(),*/ file.getAbsolutePath(), null,
                 viewport.getEnvelopeInModelCoordinates(), requestedRes);
         final Point point = RasterImageIO.getImageDimensions(file
                 .getAbsolutePath());
@@ -210,7 +210,7 @@ public class RasterUtils {
         final Resolution requestedRes = RasterImageIO
                 .calcRequestedResolution(viewport);
         final ImageAndMetadata imageAndMetadata = rasterImageIO.loadImage(
-                context.getWorkbenchContext(), file.getAbsolutePath(), null,
+                /*context.getWorkbenchContext(),*/ file.getAbsolutePath(), null,
                 viewport.getEnvelopeInModelCoordinates(), requestedRes);
         final Point point = RasterImageIO.getImageDimensions(file
                 .getAbsolutePath());
@@ -636,7 +636,7 @@ public class RasterUtils {
         final Resolution requestedRes = RasterImageIO
                 .calcRequestedResolution(viewport);
         final ImageAndMetadata imageAndMetadata = rasterImageIO.loadImage(
-                wContext, rasterFile.getAbsolutePath(), null,
+                /*wContext,*/ rasterFile.getAbsolutePath(), null,
                 viewport.getEnvelopeInModelCoordinates(), requestedRes);
         return new RasterImageLayer(rasterFile.getName(),
                 wContext.getLayerManager(), rasterFile.getAbsolutePath(),
