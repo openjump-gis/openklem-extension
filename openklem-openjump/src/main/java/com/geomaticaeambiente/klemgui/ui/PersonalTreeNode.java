@@ -181,10 +181,10 @@ public class PersonalTreeNode {
     }
 
     public static final String SCS_HYDROGRAPH = java.util.ResourceBundle
-            .getBundle("com/geomaticaeambiente/klemgui/resources/Bundle")
+            .getBundle("com/geomaticaeambiente/klemgui/language/Bundle")
             .getString("HyetographPlugIn.Scs");
     public static final String KINEMATIC_HYDROGRAPH = java.util.ResourceBundle
-            .getBundle("com/geomaticaeambiente/klemgui/resources/Bundle")
+            .getBundle("com/geomaticaeambiente/klemgui/language/Bundle")
             .getString("HyetographPlugIn.KinematicLocalExcessModel");
 
     private PlugInContext context;

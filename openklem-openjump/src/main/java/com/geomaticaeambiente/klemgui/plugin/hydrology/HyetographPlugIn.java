@@ -281,7 +281,7 @@ public class HyetographPlugIn extends AbstractInputKlemPlugin {
                     false, false, false, null, null, false);
 
             final FileNameExtensionFilter filter = new FileNameExtensionFilter(
-                    "Hyetograph", new String[] { "txt" });
+                    "Hyetograph", "txt");
             initialData.setParam_PersonalTable(personalTable, filter,
                     GUIUtils.OUTPUT); //table
 
@@ -306,9 +306,6 @@ public class HyetographPlugIn extends AbstractInputKlemPlugin {
                                     "MainPanel.ExecuteButton.text"),
                     layerablesList) {
 
-                /**
-                         * 
-                         */
                 private static final long serialVersionUID = 1L;
 
                 @Override
@@ -353,12 +350,10 @@ public class HyetographPlugIn extends AbstractInputKlemPlugin {
 
         }
 
-        final DefaultTableModel dtm = new DefaultTableModel(data, new String[] {
-                time,
+        return new DefaultTableModel(data, new String[] {time,
                 PluginUtils.getResources().getString(
                         "HyetographPlugin.Graph_Rainfall.label") });
 
-        return dtm;
     }
 
     private double[][] fromHyetographToData() {

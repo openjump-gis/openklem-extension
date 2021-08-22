@@ -78,7 +78,7 @@ public class PersonalTableComponents extends javax.swing.JPanel {
         add(jScrollPane1, gridBagConstraints);
 
         jButton_RemoveRows.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/geomaticaeambiente/klemgui/images/cross.png"))); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("com/geomaticaeambiente/klemgui/resources/Bundle"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("com/geomaticaeambiente/klemgui/language/Bundle"); // NOI18N
         jButton_RemoveRows.setToolTipText(bundle.getString("PersonalTableComponents.jButton_RemoveRows.text")); // NOI18N
         jButton_RemoveRows.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton_RemoveRows.setContentAreaFilled(false);

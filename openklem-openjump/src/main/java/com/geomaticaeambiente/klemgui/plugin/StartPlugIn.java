@@ -1,8 +1,6 @@
 package com.geomaticaeambiente.klemgui.plugin;
 
 import static com.geomaticaeambiente.klemgui.plugin.setting.SetWorkspacePlugin.FILE_CHOOSER_DIRECTORY_KEY;
-import static com.vividsolutions.jump.I18N.get;
-import static com.vividsolutions.jump.I18N.getMessage;
 
 import java.io.File;
 import java.util.List;
@@ -10,6 +8,7 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 
+import com.vividsolutions.jump.I18N;
 import org.openjump.core.model.TaskEvent;
 import org.openjump.core.model.TaskListener;
 
@@ -30,7 +29,6 @@ import com.vividsolutions.jump.workbench.plugin.EnableCheckFactory;
 import com.vividsolutions.jump.workbench.plugin.MultiEnableCheck;
 import com.vividsolutions.jump.workbench.plugin.PlugInContext;
 import com.vividsolutions.jump.workbench.ui.MenuNames;
-import com.vividsolutions.jump.workbench.ui.plugin.FeatureInstaller;
 import com.vividsolutions.jump.workbench.ui.plugin.PersistentBlackboardPlugIn;
 
 /**
@@ -46,8 +44,7 @@ public class StartPlugIn extends AbstractPlugIn {
 
         super.initialize(context);
 
-        FeatureInstaller
-                .getInstance()
+        context.getFeatureInstaller()
                 .addMainMenuPlugin(
                         this,
                         new String[] { MenuNames.PLUGINS },
@@ -135,8 +132,8 @@ public class StartPlugIn extends AbstractPlugIn {
 
     public MultiEnableCheck createEnableCheck(
             final WorkbenchContext workbenchContext) {
-        final EnableCheckFactory checkFactory = new EnableCheckFactory(
-                workbenchContext);
+        final EnableCheckFactory checkFactory =
+            workbenchContext.createPlugInContext().getCheckFactory();
         return new MultiEnableCheck()
 
         .add(checkFactory.createTaskWindowMustBeActiveCheck());
@@ -151,9 +148,9 @@ public class StartPlugIn extends AbstractPlugIn {
                         .getLayerManager();
                 String msg;
                 if (n == 1) {
-                    msg = get("com.vividsolutions.jump.workbench.plugin.At-least-one-layer-must-exist");
+                    msg = I18N.JUMP.get("com.vividsolutions.jump.workbench.plugin.At-least-one-layer-must-exist");
                 } else {
-                    msg = getMessage(
+                    msg = I18N.JUMP.get(
                             "com.vividsolutions.jump.workbench.plugin.At-least-n-layers-must-exist",
                             n);
                 }

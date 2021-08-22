@@ -73,9 +73,9 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
     @Override
     public InitialData setInitialData() {
 
-        //        layers = PluginUtils.getLayers(context);
-        //        ar_rasterImageLayers = PluginUtils.getRasterImageLayers(context);
-        final String[] attributes = new String[0];
+        // layers = PluginUtils.getLayers(context);
+        // ar_rasterImageLayers = PluginUtils.getRasterImageLayers(context);
+        // final String[] attributes = new String[0];
 
         final InitialData initialData = new InitialData();
         //input data        
@@ -155,7 +155,8 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
         final JLabel jLabel_layer = (JLabel) personalTreeMap.getComponent("04",
                 GUIUtils.OTHER, 0); // label layer
         jLabel_layer.setEnabled(false);
-        final CustomComboBox.LayerComboBox jComboBox_layer = (CustomComboBox.LayerComboBox) (JComboBox) personalTreeMap
+        final CustomComboBox.LayerComboBox jComboBox_layer =
+            (CustomComboBox.LayerComboBox) personalTreeMap
                 .getComponent("04", GUIUtils.OTHER, 1); //jtext field layer
         jComboBox_layer.setEnabled(false);
 
@@ -164,6 +165,7 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
         //        jLabel_attribute.setEnabled(false);
         //        final JComboBox jComboBox_attribute= (JComboBox) personalTreeMap.getComponent("Other5", 1); //jtext field attribute 
         //        jComboBox_attribute.setEnabled(false);
+
         jRadioButton_mouse.addActionListener(new ActionListener() {
             //enable/disable components
             @Override
@@ -255,7 +257,7 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
         checkValues(mainPanel, flowDirRaster, selectionMouse, xCoord, yCoord,
                 layerSelected, outRasterName);
 
-        final List coords = new ArrayList<Coordinate>();
+        final List<Coordinate> coords = new ArrayList<>();
 
         //convert string values in correct objects
         //get input flow dir                    
@@ -283,7 +285,7 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
                             .getComponent("04", GUIUtils.OTHER, 1));
 
             // Get selected features, or all features if none selected, or return error if none present
-            Collection features = context.getLayerViewPanel()
+            Collection<Feature> features = context.getLayerViewPanel()
                     .getSelectionManager().getFeatureSelection()
                     .getFeaturesWithSelectedItems(layer);
 
@@ -291,14 +293,11 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
                 features = layer.getFeatureCollectionWrapper().getFeatures();
             }
 
-            Feature feature;
-            final Iterator iter = features.iterator();
-            final int count = 0;
-            while (iter.hasNext()) {
-                feature = (Feature) iter.next();
+            //final int count = 0;
+            for (Feature feature : features) {
                 // Check feature to be point
-                if (feature.getGeometry().getGeometryType().toUpperCase()
-                        .equals("POINT")) {
+                if (feature.getGeometry().getGeometryType()
+                        .equalsIgnoreCase("POINT")) {
                     final Point point = (Point) feature.getGeometry();
                     //check if coordinate is inside raster. Only inside coordinate are added to the list
                     if (env.contains(point.getCoordinate())) {

@@ -7,9 +7,7 @@ package com.geomaticaeambiente.klemgui.exceptions;
 public class MessageTypes {
 
     public enum MessageType {
-    
         INFO, WARNING, ERROR
-    
     }
     
 }

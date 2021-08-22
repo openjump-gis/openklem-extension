@@ -58,7 +58,7 @@ public class HydrologyGroupsPlugin extends AbstractInputKlemPlugin {
                 true, true, true, false, true, null, null, false);
         FileNameExtensionFilter tableExtFilter = new FileNameExtensionFilter(
                 FILE_FILTER_DESCRIPTION,
-                new String[]{"table"});
+            "table");
 
         //input data
         initialData.setParam_Label_TextBox(GUIUtils.setGUILabel(GEO_LITHO_LABEL), PluginUtils.getRasterImageLayers(layerablesList.getLayerables()), GUIUtils.INPUT);
@@ -196,7 +196,7 @@ public class HydrologyGroupsPlugin extends AbstractInputKlemPlugin {
         }
 
         //add default value to array list
-        List pairs = new ArrayList<ReclassTuple>();
+        List<ReclassTuple> pairs = new ArrayList<>();
         if (minRasValue != Double.parseDouble(d_ar_values[0][0])) {
             pairs.add(new ReclassTuple(minRasValue, (Double.parseDouble(d_ar_values[0][0])), defaultValue));
         }
@@ -224,9 +224,9 @@ public class HydrologyGroupsPlugin extends AbstractInputKlemPlugin {
         ReclassTuple[] reclassPair = new ReclassTuple[pairs.size()];
         for (int n = 0; n < pairs.size(); n++) {
 
-            double minVal = ((ReclassTuple) pairs.get(n)).getOldRangeMin();
-            double maxVal = ((ReclassTuple) pairs.get(n)).getOldRangeMax();
-            double newVal = ((ReclassTuple) pairs.get(n)).getNewValue();
+            double minVal = pairs.get(n).getOldRangeMin();
+            double maxVal = pairs.get(n).getOldRangeMax();
+            double newVal = pairs.get(n).getNewValue();
 
             reclassPair[n] = new ReclassTuple(minVal, maxVal, newVal);
         }

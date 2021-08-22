@@ -49,7 +49,7 @@ class AboutDialog extends JDialog {
         titleLabel2.setAlignmentX(0.5f);
 
         final JTextArea textArea = new JTextArea(java.util.ResourceBundle
-                .getBundle("com/geomaticaeambiente/klemgui/resources/Bundle")
+                .getBundle("com/geomaticaeambiente/klemgui/language/Bundle")
                 .getString("AboutDialog.TextArea.text"));
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
@@ -68,7 +68,7 @@ class AboutDialog extends JDialog {
         add(Box.createRigidArea(new Dimension(0, 10)));
 
         final JButton close = new JButton(java.util.ResourceBundle.getBundle(
-                "com/geomaticaeambiente/klemgui/resources/Bundle").getString(
+            "com/geomaticaeambiente/klemgui/language/Bundle").getString(
                 "InitialDialog.jButton_Close.text"));
         close.addActionListener(new ActionListener() {
             @Override
@@ -87,6 +87,6 @@ class AboutDialog extends JDialog {
     }
 
     ResourceBundle bundle = java.util.ResourceBundle
-            .getBundle("com/geomaticaeambiente/klemgui/resources/Bundle"); // NOI18N
+            .getBundle("com/geomaticaeambiente/klemgui/language/Bundle"); // NOI18N
 
 }

@@ -62,7 +62,7 @@ public class CommonHydroPanel extends javax.swing.JPanel {
         setLayout(new java.awt.GridBagLayout());
 
         final java.util.ResourceBundle bundle = java.util.ResourceBundle
-                .getBundle("com/geomaticaeambiente/klemgui/resources/Bundle"); // NOI18N
+                .getBundle("com/geomaticaeambiente/klemgui/language/Bundle"); // NOI18N
         jLabel_Hyetograph.setText(bundle
                 .getString("CommonHydroPanel.jLabel_Hyetograph.text")); // NOI18N
         gridBagConstraints = new GridBagConstraints();

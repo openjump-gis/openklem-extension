@@ -8,6 +8,7 @@ import java.util.List;
 import javax.swing.Icon;
 import javax.swing.JOptionPane;
 
+import com.vividsolutions.jump.workbench.JUMPWorkbench;
 import org.locationtech.jts.geom.Coordinate;
 
 import com.geomaticaeambiente.klemgui.exceptions.WarningException;
@@ -20,7 +21,7 @@ public class WatershedTool extends NClickTool {
    
        
     public WatershedTool(PlugInContext context, WatershedInformation wi) {
-        super(1);
+        super(JUMPWorkbench.getInstance().getContext(), 1);
         
         this.context = context;
         this.watershedInfo = wi;
@@ -58,10 +59,10 @@ public class WatershedTool extends NClickTool {
         }
     }
     
-    private void display(List coordinates) throws Exception {
+    private void display(List<Coordinate> coordinates) throws Exception {
 
         if (coordinates.size() > 0) {            
-            Coordinate coord = (Coordinate)coordinates.get(0);
+            Coordinate coord = coordinates.get(0);
             
             DecimalFormat df = (DecimalFormat)DecimalFormat.getInstance();
             df.applyPattern("0.000");
@@ -69,9 +70,9 @@ public class WatershedTool extends NClickTool {
             watershedInfo.setCoordinate(coord);
             watershedInfo.setCoordinateText();
             
-            if(watershedInfo.isCalcArea()==true) watershedInfo.setAreaText();
+            if(watershedInfo.isCalcArea()) watershedInfo.setAreaText();
             
-            if(watershedInfo.isCalcElevation()==true) watershedInfo.setElevationText();
+            if(watershedInfo.isCalcElevation()) watershedInfo.setElevationText();
             
         }
     }

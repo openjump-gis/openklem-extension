@@ -92,7 +92,7 @@ public class CurveNumberPlugIn extends AbstractInputKlemPlugin {
         final FileNameExtensionFilter table6ExtFilter = new FileNameExtensionFilter(
                 PluginUtils.getResources().getString(
                         "CurveNumberPlugIn.CurveNumberTableDescription.label"),
-                new String[] { "table6" });
+            "table6");
         initialData.setParam_PersonalTable(personalTable, table6ExtFilter,
                 GUIUtils.OTHER);
 

@@ -8,7 +8,6 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -43,18 +42,15 @@ import com.vividsolutions.jump.workbench.ui.ErrorDialog;
  */
 public class InitialDialog extends JDialog {
 
-    /**
-     * 
-     */
     private static final long serialVersionUID = 1L;
 
     /**
      * Creates new form PannelloIniziale
      * 
-     * @param parent
-     * @param modal
-     * @param context
-     * @param layerablesList
+     * @param parent the parent Frame
+     * @param modal whether the dialog box must be modal or not
+     * @param context OpenJUMP plugin context
+     * @param layerablesList list of layerables
      */
     public InitialDialog(Frame parent, boolean modal, PlugInContext context,
             LayerablesList layerablesList) {
@@ -62,7 +58,7 @@ public class InitialDialog extends JDialog {
 
         this.context = context;
         this.layerablesList = layerablesList;
-        setUndecorated(true);
+        //setUndecorated(true);
         initComponents();
         fixComponents();
     }
@@ -72,7 +68,7 @@ public class InitialDialog extends JDialog {
         super(parent, modal);
 
         this.layerablesList = layerablesList;
-        setUndecorated(true);
+        //setUndecorated(true);
      
         
         initComponents();
@@ -133,7 +129,7 @@ public class InitialDialog extends JDialog {
 
         jPanel3.setLayout(new GridBagLayout());
         final java.util.ResourceBundle bundle = java.util.ResourceBundle
-                .getBundle("com/geomaticaeambiente/klemgui/resources/Bundle"); // NOI18N
+                .getBundle("com/geomaticaeambiente/klemgui/language/Bundle"); // NOI18N
         jTabbedPane2.addTab(bundle
                 .getString("InitialDialog.jPanel3.TabConstraints.tabTitle_1"),
                 jPanel3); // NOI18N
@@ -168,12 +164,7 @@ public class InitialDialog extends JDialog {
 
         jButton_Close.setText(bundle
                 .getString("InitialDialog.jButton_Close.text")); // NOI18N
-        jButton_Close.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                jButton_CloseActionPerformed(evt);
-            }
-        });
+        jButton_Close.addActionListener(this::jButton_CloseActionPerformed);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -183,12 +174,7 @@ public class InitialDialog extends JDialog {
 
         jButton_About.setText(bundle
                 .getString("InitialDialog.jButton_About.text")); // NOI18N
-        jButton_About.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                jButton_AboutActionPerformed(evt);
-            }
-        });
+        jButton_About.addActionListener(this::jButton_AboutActionPerformed);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -267,16 +253,12 @@ public class InitialDialog extends JDialog {
                     } else {
                         jTabbedPane2.removeAll();
                         jTabbedPane2.add(panel1, "Input"); // NOI18N
-                        jTabbedPane2.add(
-                                new JScrollPane(),
-                                PluginUtils.getResources().getString(
-                                        "HydrographKlemPlugin.Params.label"));
-                        jTabbedPane2
-                                .add(new JScrollPane(),
-                                        PluginUtils
-                                                .getResources()
-                                                .getString(
-                                                        "HydrographKlemPlugin.AdvancedParams.label"));
+                        jTabbedPane2.add(new JScrollPane(),
+                            PluginUtils.getResources().getString(
+                                "HydrographKlemPlugin.Params.label"));
+                        jTabbedPane2.add(new JScrollPane(),
+                            PluginUtils.getResources().getString(
+                                "HydrographKlemPlugin.AdvancedParams.label"));
                         jTabbedPane2.add(new JScrollPane(), "Output"); // NOI18N
                         jTabbedPane2.add(new JScrollPane(), "Output2");
                         jTabbedPane2.setEnabledAt(1, false);
@@ -331,11 +313,7 @@ public class InitialDialog extends JDialog {
     private final LayerablesList layerablesList;
 
     static class PlugInTreeCellRenderer extends DefaultTreeCellRenderer {
-        // private JLabel label;
 
-        /**
-         * 
-         */
         private static final long serialVersionUID = 1L;
 
         PlugInTreeCellRenderer() {
@@ -392,10 +370,8 @@ public class InitialDialog extends JDialog {
                     label.setIcon(PluginUtils.getFolderIcon());
                 }
                 label.setText("" + value);
-                // //System.out.println(value);
             }
             return c;
-
         }
 
     }

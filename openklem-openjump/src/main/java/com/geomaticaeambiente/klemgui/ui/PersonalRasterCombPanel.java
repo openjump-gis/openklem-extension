@@ -123,7 +123,7 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
         add(jScrollPane_RasterList, gridBagConstraints);
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("com/geomaticaeambiente/klemgui/resources/Bundle"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("com/geomaticaeambiente/klemgui/language/Bundle"); // NOI18N
         jPanel_Operators.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("PersonalRasterCombPanel.jPanel_Operators.border.title"))); // NOI18N
         jPanel_Operators.setMaximumSize(new java.awt.Dimension(225, 150));
         jPanel_Operators.setMinimumSize(new java.awt.Dimension(225, 150));

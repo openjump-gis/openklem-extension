@@ -364,7 +364,7 @@ public class PolygonsVectorizerPlugIn extends AbstractInputKlemPlugin {
 
     }
 
-    private static final String ATTRIBUTE_NAME = I18N
+    private static final String ATTRIBUTE_NAME = I18N.JUMP
             .get("org.openjump.core.ui.plugin.raster.RasterQueryPlugIn.value");
 
     public void zoom(PlugInContext context, RasterImageLayer rLayer)

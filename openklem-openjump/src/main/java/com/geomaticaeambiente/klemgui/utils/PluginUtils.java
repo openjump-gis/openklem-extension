@@ -428,7 +428,7 @@ public class PluginUtils {
 
     public static ResourceBundle getResources() {
         return java.util.ResourceBundle
-                .getBundle("com/geomaticaeambiente/klemgui/resources/Bundle");
+                .getBundle("com/geomaticaeambiente/klemgui/language/jump");
     }
 
     private static File workspace;
