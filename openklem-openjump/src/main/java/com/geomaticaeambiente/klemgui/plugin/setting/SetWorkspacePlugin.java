@@ -102,7 +102,7 @@ public class SetWorkspacePlugin extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(null, componentsWithActions, false, false,
-                true, PluginUtils.getResources().getString(
+                true, PluginUtils.i18n(
                         "MainPanel.SetButton.text"), layerablesList) {
 
             /**
@@ -125,7 +125,7 @@ public class SetWorkspacePlugin extends AbstractInputKlemPlugin {
                         PluginUtils.setWorkspacePath(new File(path));
                         JOptionPane.showMessageDialog(
                                 this,
-                                PluginUtils.getResources().getString(
+                                PluginUtils.i18n(
                                         "SetWorkspacePlugin.Done.message"),
                                 PluginUtils.plugInName,
                                 JOptionPane.INFORMATION_MESSAGE);
@@ -133,9 +133,7 @@ public class SetWorkspacePlugin extends AbstractInputKlemPlugin {
                         final int n = JOptionPane
                                 .showConfirmDialog(
                                         this,
-                                        PluginUtils
-                                                .getResources()
-                                                .getString(
+                                        PluginUtils.i18n(
                                                         "SetWorkspacePlugin.CreateNewDirectory.message"),
                                         PluginUtils.plugInName,
                                         JOptionPane.YES_NO_OPTION);
@@ -150,9 +148,7 @@ public class SetWorkspacePlugin extends AbstractInputKlemPlugin {
                                 JOptionPane
                                         .showMessageDialog(
                                                 this,
-                                                PluginUtils
-                                                        .getResources()
-                                                        .getString(
+                                                PluginUtils.i18n(
                                                                 "SetWorkspacePlugin.SetWorspace.message"),
                                                 PluginUtils.plugInName,
                                                 JOptionPane.WARNING_MESSAGE);
@@ -178,13 +174,13 @@ public class SetWorkspacePlugin extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "SetWorkspacePlugin.PlugInName.label");
     }
 
     private MainPanel mainPanel;
     private final PlugInContext context;
-    private final String WORKSPACE = PluginUtils.getResources().getString(
+    private final String WORKSPACE = PluginUtils.i18n(
             "SetWorkspacePlugin.workspaceLabel.label");
     private final LayerablesList layerablesList;
 

@@ -101,7 +101,7 @@ public class PersonalChartKlem extends PersonalChart {
         }
        
         // Discharge dataset        
-        XYSeries dischargeSeries = new XYSeries(PluginUtils.getResources().getString("PersonalChartHydrograph.Discharge.label"));
+        XYSeries dischargeSeries = new XYSeries(PluginUtils.i18n("PersonalChartHydrograph.Discharge.label"));
         if(dischargeDataDirect != null) {
             for(int d=0; d<dischargeDataDirect[0].length; d++) {
                 dischargeSeries.add(dischargeDataDirect[0][d], dischargeDataDirect[1][d]);
@@ -141,12 +141,12 @@ public class PersonalChartKlem extends PersonalChart {
         xyItemRenFlow.setSeriesPaint(2, new Color(0, 0, 255));
         xyItemRenFlow.setSeriesStroke(2, new BasicStroke(2));
         
-        NumberAxis domainAxis = new NumberAxis(PluginUtils.getResources().getString("PersonalChartHydrograph.Date.label"));
+        NumberAxis domainAxis = new NumberAxis(PluginUtils.i18n("PersonalChartHydrograph.Date.label"));
         if(getGraphUnit() == TimeInterval.TimeIntervalUnit.MINUTE) {
-            domainAxis = new NumberAxis(PluginUtils.getResources().getString("PersonalChartHydrograph.TimeMin.label"));
+            domainAxis = new NumberAxis(PluginUtils.i18n("PersonalChartHydrograph.TimeMin.label"));
         }
          
-        ValueAxis axis1 = new NumberAxis(PluginUtils.getResources().getString("PersonalChartHydrograph.Discharge.label"));
+        ValueAxis axis1 = new NumberAxis(PluginUtils.i18n("PersonalChartHydrograph.Discharge.label"));
         axis1.setRange(0, dischargeUpper * 1.3);
         
         XYPlot plot = new XYPlot(dischargeXyDatasetTotal, domainAxis, axis1, xyItemRenFlow);
@@ -166,7 +166,7 @@ public class PersonalChartKlem extends PersonalChart {
         plot.setDataset(1, xyBarDatasetRain);
         plot.setRenderer(1, xyItemRendRain);
 
-        ValueAxis axis2 = new NumberAxis(PluginUtils.getResources().getString("PersonalChartHydrograph.Rainfall.label"));
+        ValueAxis axis2 = new NumberAxis(PluginUtils.i18n("PersonalChartHydrograph.Rainfall.label"));
         axis2.setInverted(true);
         axis2.setRange(0, rainUpper * 3);
         

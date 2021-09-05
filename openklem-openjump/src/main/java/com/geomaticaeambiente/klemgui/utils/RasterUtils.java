@@ -652,18 +652,12 @@ public class RasterUtils {
 
         if (raster1.equals(raster2)) {
             throw new Exception(
-                    PluginUtils
-                            .getResources()
-                            .getString("HydrographKlemPlugin.Raster1.message")
+                    PluginUtils.i18n("HydrographKlemPlugin.Raster1.message")
                             .concat(raster1.getName())
-                            .concat(PluginUtils
-                                    .getResources()
-                                    .getString(
+                            .concat(PluginUtils.i18n(
                                             "HydrographKlemPlugin.Raster1And.message")
                                     .concat(raster2.getName())
-                                    .concat(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    .concat(PluginUtils.i18n(
                                                     "HydrographKlemPlugin.SameRaster.message"))));
         }
 
@@ -674,18 +668,12 @@ public class RasterUtils {
 
         if (cellSizeX_1.getCellSizeX() != cellSizeX_2.getCellSizeX()) {
             throw new Exception(
-                    PluginUtils
-                            .getResources()
-                            .getString("HydrographKlemPlugin.Raster1.message")
+                    PluginUtils.i18n("HydrographKlemPlugin.Raster1.message")
                             .concat(raster1.getName())
-                            .concat(PluginUtils
-                                    .getResources()
-                                    .getString(
+                            .concat(PluginUtils.i18n(
                                             "HydrographKlemPlugin.Raster1And.message")
                                     .concat(raster2.getName())
-                                    .concat(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    .concat(PluginUtils.i18n(
                                                     "HydrographKlemPlugin.DifferentCellSize.message"))));
         }
 
@@ -697,18 +685,12 @@ public class RasterUtils {
         if (point_1.getX() != point_2.getX()
                 || point_1.getY() != point_2.getY()) {
             throw new Exception(
-                    PluginUtils
-                            .getResources()
-                            .getString("HydrographKlemPlugin.Raster1.message")
+                    PluginUtils.i18n("HydrographKlemPlugin.Raster1.message")
                             .concat(raster1.getName())
-                            .concat(PluginUtils
-                                    .getResources()
-                                    .getString(
+                            .concat(PluginUtils.i18n(
                                             "HydrographKlemPlugin.Raster1And.message")
                                     .concat(raster2.getName())
-                                    .concat(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    .concat(PluginUtils.i18n(
                                                     "HydrographKlemPlugin.DifferentRowCol.message"))));
         }
 
@@ -724,18 +706,12 @@ public class RasterUtils {
 
         if (!llC_1.equals(llC_2)) {
             throw new Exception(
-                    PluginUtils
-                            .getResources()
-                            .getString("HydrographKlemPlugin.Raster1.message")
+                    PluginUtils.i18n("HydrographKlemPlugin.Raster1.message")
                             .concat(raster1.getName())
-                            .concat(PluginUtils
-                                    .getResources()
-                                    .getString(
+                            .concat(PluginUtils.i18n(
                                             "HydrographKlemPlugin.Raster1And.message")
                                     .concat(raster2.getName())
-                                    .concat(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    .concat(PluginUtils.i18n(
                                                     "HydrographKlemPlugin.DifferentOrigin.message"))));
         }
     }
@@ -746,18 +722,12 @@ public class RasterUtils {
         // check if raster1 and raster2 are the same file
         if (raster1.getImageFileName().equals(raster2.getImageFileName())) {
             throw new Exception(
-                    PluginUtils
-                            .getResources()
-                            .getString("HydrographKlemPlugin.Raster1.message")
+                    PluginUtils.i18n("HydrographKlemPlugin.Raster1.message")
                             .concat(raster1.getName())
-                            .concat(PluginUtils
-                                    .getResources()
-                                    .getString(
+                            .concat(PluginUtils.i18n(
                                             "HydrographKlemPlugin.Raster1And.message")
                                     .concat(raster2.getName())
-                                    .concat(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    .concat(PluginUtils.i18n(
                                                     "HydrographKlemPlugin.SameRaster.message"))));
         }
 
@@ -765,18 +735,12 @@ public class RasterUtils {
         if (raster1.getMetadata().getOriginalCellSize() != raster2
                 .getMetadata().getOriginalCellSize()) {
             throw new Exception(
-                    PluginUtils
-                            .getResources()
-                            .getString("HydrographKlemPlugin.Raster1.message")
+                    PluginUtils.i18n("HydrographKlemPlugin.Raster1.message")
                             .concat(raster1.getName())
-                            .concat(PluginUtils
-                                    .getResources()
-                                    .getString(
+                            .concat(PluginUtils.i18n(
                                             "HydrographKlemPlugin.Raster1And.message")
                                     .concat(raster2.getName())
-                                    .concat(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    .concat(PluginUtils.i18n(
                                                     "HydrographKlemPlugin.DifferentCellSize.message"))));
         }
 
@@ -785,36 +749,24 @@ public class RasterUtils {
                 || raster1.getMetadata().getOriginalSize().y != raster1
                         .getMetadata().getOriginalSize().y) {
             throw new Exception(
-                    PluginUtils
-                            .getResources()
-                            .getString("HydrographKlemPlugin.Raster1.message")
+                    PluginUtils.i18n("HydrographKlemPlugin.Raster1.message")
                             .concat(raster1.getName())
-                            .concat(PluginUtils
-                                    .getResources()
-                                    .getString(
+                            .concat(PluginUtils.i18n(
                                             "HydrographKlemPlugin.Raster1And.message")
                                     .concat(raster2.getName())
-                                    .concat(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    .concat(PluginUtils.i18n(
                                                     "HydrographKlemPlugin.DifferentRowCol.message"))));
         }
 
         if (!raster1.getMetadata().getOriginalImageLowerLeftCoord()
                 .equals(raster2.getMetadata().getOriginalImageLowerLeftCoord())) {
             throw new Exception(
-                    PluginUtils
-                            .getResources()
-                            .getString("HydrographKlemPlugin.Raster1.message")
+                    PluginUtils.i18n("HydrographKlemPlugin.Raster1.message")
                             .concat(raster1.getName())
-                            .concat(PluginUtils
-                                    .getResources()
-                                    .getString(
+                            .concat(PluginUtils.i18n(
                                             "HydrographKlemPlugin.Raster1And.message")
                                     .concat(raster2.getName())
-                                    .concat(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    .concat(PluginUtils.i18n(
                                                     "HydrographKlemPlugin.DifferentOrigin.message"))));
         }
 

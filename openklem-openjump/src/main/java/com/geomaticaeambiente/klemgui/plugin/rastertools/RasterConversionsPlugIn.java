@@ -78,8 +78,7 @@ public class RasterConversionsPlugIn extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -130,7 +129,7 @@ public class RasterConversionsPlugIn extends AbstractInputKlemPlugin {
 
                     JOptionPane.showMessageDialog(
                             super.getInitialDialog(),
-                            PluginUtils.getResources().getString(
+                            PluginUtils.i18n(
                                     "SetWorkspacePlugin.Done.message"),
                             PluginUtils.plugInName,
                             JOptionPane.INFORMATION_MESSAGE);
@@ -167,7 +166,7 @@ public class RasterConversionsPlugIn extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString("ConvertRasterPlugin.PlugInName.text");
+        return PluginUtils.i18n("ConvertRasterPlugin.PlugInName.text");
     }
 
     private void checkValues(String raster, String rasterOut) throws Exception {
@@ -183,9 +182,9 @@ public class RasterConversionsPlugIn extends AbstractInputKlemPlugin {
 //    private RasterImageLayer[] rasterImageLayers;
     private final PlugInContext context;
     private MainPanel mainPanel;
-    private final String RASTER_IN_LABEL = PluginUtils.getResources().getString("KlemGUI.InputRaster.label");
-    private final String FROM_LABEL = PluginUtils.getResources().getString("KlemGUI.From.label");
-    private final String TO_LABEL = PluginUtils.getResources().getString("KlemGUI.To.label");
+    private final String RASTER_IN_LABEL = PluginUtils.i18n("KlemGUI.InputRaster.label");
+    private final String FROM_LABEL = PluginUtils.i18n("KlemGUI.From.label");
+    private final String TO_LABEL = PluginUtils.i18n("KlemGUI.To.label");
 
     private final LayerablesList layerablesList;
 

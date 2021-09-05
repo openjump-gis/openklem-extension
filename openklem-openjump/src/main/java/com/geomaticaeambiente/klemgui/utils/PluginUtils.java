@@ -1,5 +1,6 @@
 package com.geomaticaeambiente.klemgui.utils;
 
+import com.geomaticaeambiente.klemgui.plugin.KlemExtension;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.io.File;
@@ -10,7 +11,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import java.util.ResourceBundle;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -287,7 +287,7 @@ public class PluginUtils {
         final Box box = new Box(BoxLayout.Y_AXIS);
         final JPanel jPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         loadRastersCheckBox = new javax.swing.JCheckBox();
-        loadRastersCheckBox.setText(PluginUtils.getResources().getString(
+        loadRastersCheckBox.setText(PluginUtils.i18n(
                 "HydrographKlemPlugin.LoadFiles.text"));
         jPanel.add(loadRastersCheckBox);
         box.add(jPanel);
@@ -426,16 +426,16 @@ public class PluginUtils {
         return sixDecimaFormat.format(value);
     }
 
-    public static ResourceBundle getResources() {
-        return java.util.ResourceBundle
-                .getBundle("com/geomaticaeambiente/klemgui/language/jump");
+    /**
+     * one method to translate them all :)
+     */
+    public static String i18n( String key, Object... o) {
+      return KlemExtension.i18n(key, o);
     }
 
     private static File workspace;
     private static File lastVisitedFile;
-    public static String plugInName = getResources().getString("OpenKLEM.name");
-    public static String version = getResources().getString("OpenKlem.version");
-    public static String versionNumber = getResources().getString(
-            "OpenKlem.version-number");
-
+    public static final String plugInName = PluginUtils.i18n("OpenKLEM.name");
+    public static final String version = PluginUtils.i18n("OpenKlem.version");
+    public static final String versionNumber = PluginUtils.i18n("OpenKlem.version-number");
 }

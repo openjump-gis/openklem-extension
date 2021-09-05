@@ -77,7 +77,7 @@ public class RasterizeVectorLayerPlugIn extends AbstractInputKlemPlugin {
 
         // Snapping
         initialData.setParam_Action(
-                new ActionObject(false, PluginUtils.getResources().getString(
+                new ActionObject(false, PluginUtils.i18n(
                         "RasterizeVectorLayerPlugIn.SnapRasterCheckbox.text")),
                 GUIUtils.INPUT);
 
@@ -267,8 +267,7 @@ public class RasterizeVectorLayerPlugIn extends AbstractInputKlemPlugin {
         RasterUtils.displayRasterFileOnOJ(context.getWorkbenchContext(),
                 new File(outRasterName), null);
 
-        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils
-                .getResources().getString("SetWorkspacePlugin.Done.message"),
+        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils.i18n("SetWorkspacePlugin.Done.message"),
                 PluginUtils.plugInName, JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -279,8 +278,7 @@ public class RasterizeVectorLayerPlugIn extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -306,8 +304,7 @@ public class RasterizeVectorLayerPlugIn extends AbstractInputKlemPlugin {
 
                         @Override
                         public void run(TaskMonitor monitor, PlugInContext context) {
-                            monitor.report(PluginUtils.getResources()
-                                    .getString("OpenKlem.executing-process"));
+                            monitor.report(PluginUtils.i18n("OpenKlem.executing-process"));
                             // monitor.allowCancellationRequests();
                             reportNothingToUndoYet(context);
                             try {
@@ -346,7 +343,7 @@ public class RasterizeVectorLayerPlugIn extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "RasterizeVectorLayerPlugin.PlugInName.label");
     }
 
@@ -367,14 +364,11 @@ public class RasterizeVectorLayerPlugIn extends AbstractInputKlemPlugin {
     private Layer[] layers;
     private final Map<Integer, Integer> attribHt = new HashMap<>();
 
-    private final String VECTOR_LAYER_LABEL = PluginUtils.getResources()
-            .getString("RasterizeCevtorLayerPlugin.ComboBox1Label.text");
-    private final String ATTRIBUTE_LABEL = PluginUtils.getResources()
-            .getString("RasterizeCevtorLayerPlugin.ComboBox2Label.text");
-    private final String CELL_LABEL = PluginUtils.getResources().getString(
+    private final String VECTOR_LAYER_LABEL = PluginUtils.i18n("RasterizeCevtorLayerPlugin.ComboBox1Label.text");
+    private final String ATTRIBUTE_LABEL = PluginUtils.i18n("RasterizeCevtorLayerPlugin.ComboBox2Label.text");
+    private final String CELL_LABEL = PluginUtils.i18n(
             "RasterizeVectorLayerPlugIn.CellDimensionLabel.text");
-    private final String SNAP_RASTER_LABEL = GUIUtils.setGUILabel(PluginUtils
-            .getResources().getString("KlemGUI.Raster.label"));
+    private final String SNAP_RASTER_LABEL = GUIUtils.setGUILabel(PluginUtils.i18n("KlemGUI.Raster.label"));
 
     private final LayerablesList layerablesList;
 

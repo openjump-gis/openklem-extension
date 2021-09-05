@@ -46,11 +46,10 @@ public class OptionPlugIn extends AbstractInputKlemPlugin {
 
     }
 
-    private final String LOAD_RASTER = PluginUtils.getResources().getString(
+    private final String LOAD_RASTER = PluginUtils.i18n(
             "OptionPlugin.Load-raster");
 
-    private final String APPLY_SYMBOLOGY = PluginUtils.getResources()
-            .getString("OptionPlugin.Load-symbology");
+    private final String APPLY_SYMBOLOGY = PluginUtils.i18n("OptionPlugin.Load-symbology");
 
     /** Key for drawing center as point */
     public static final String KEY = OptionPlugIn.class.getName();
@@ -99,7 +98,7 @@ public class OptionPlugIn extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(null, componentsWithActions, false, false,
-                false, PluginUtils.getResources().getString(
+                false, PluginUtils.i18n(
                         "MainPanel.SetButton.text"), layerablesList) {
 
             /**
@@ -125,7 +124,7 @@ public class OptionPlugIn extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "OptionPlugin.PlugInName.label");
     }
 

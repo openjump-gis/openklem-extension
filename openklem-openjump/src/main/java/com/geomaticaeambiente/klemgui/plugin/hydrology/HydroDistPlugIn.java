@@ -62,7 +62,7 @@ public class HydroDistPlugIn extends AbstractInputKlemPlugin {
                 .getRasterImageLayers(layerablesList.getLayerables()),
                 GUIUtils.INPUT);//combobox with rasterImageLayer        
         initialData.setParam_Label_TextBox(
-                GUIUtils.setGUILabel(PluginUtils.getResources().getString(
+                GUIUtils.setGUILabel(PluginUtils.i18n(
                         "HydrographKlemPlugin.Bluelines.label")),
                 PluginUtils.getLayers(layerablesList.getLayerables()),
                 GUIUtils.INPUT);
@@ -142,8 +142,7 @@ public class HydroDistPlugIn extends AbstractInputKlemPlugin {
         RasterUtils.displayRasterFileOnOJ(context.getWorkbenchContext(),
                 new File(outRasterName), null);
 
-        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils
-                .getResources().getString("SetWorkspacePlugin.Done.message"),
+        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils.i18n("SetWorkspacePlugin.Done.message"),
                 PluginUtils.plugInName, JOptionPane.INFORMATION_MESSAGE);
 
     }
@@ -155,8 +154,7 @@ public class HydroDistPlugIn extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -183,9 +181,7 @@ public class HydroDistPlugIn extends AbstractInputKlemPlugin {
                                 @Override
                                 public void run(TaskMonitor monitor,
                                         PlugInContext context) throws Exception {
-                                    monitor.report(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    monitor.report(PluginUtils.i18n(
                                                     "OpenKlem.executing-process"));
                                     reportNothingToUndoYet(context);
                                     monitor.allowCancellationRequests();
@@ -217,16 +213,14 @@ public class HydroDistPlugIn extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "HydroDistancePlugIn.PlugInName.label");
     }
 
     private MainPanel mainPanel;
     private final PlugInContext context;
-    private final String RASTER_DEM_LABEL = PluginUtils.getResources()
-            .getString("KlemGUI.InputFilledDem.label");
-    private final String HYDRODIST_LABEL = PluginUtils.getResources()
-            .getString("HydroDistancePlugIn.PlugInName.label");
+    private final String RASTER_DEM_LABEL = PluginUtils.i18n("KlemGUI.InputFilledDem.label");
+    private final String HYDRODIST_LABEL = PluginUtils.i18n("HydroDistancePlugIn.PlugInName.label");
     private final LayerablesList layerablesList;
 
 }

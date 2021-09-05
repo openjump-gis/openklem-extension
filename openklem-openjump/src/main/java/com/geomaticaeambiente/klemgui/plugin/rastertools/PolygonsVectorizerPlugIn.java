@@ -102,8 +102,7 @@ public class PolygonsVectorizerPlugIn extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -129,9 +128,7 @@ public class PolygonsVectorizerPlugIn extends AbstractInputKlemPlugin {
                                 @Override
                                 public void run(TaskMonitor monitor,
                                         PlugInContext context) throws Exception {
-                                    monitor.report(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    monitor.report(PluginUtils.i18n(
                                                     "OpenKlem.executing-process"));
                                     reportNothingToUndoYet(context);
                                     monitor.allowCancellationRequests();
@@ -170,8 +167,7 @@ public class PolygonsVectorizerPlugIn extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -225,7 +221,7 @@ public class PolygonsVectorizerPlugIn extends AbstractInputKlemPlugin {
 
                     JOptionPane.showMessageDialog(
                             super.getInitialDialog(),
-                            PluginUtils.getResources().getString(
+                            PluginUtils.i18n(
                                     "SetWorkspacePlugin.Done.message"),
                             PluginUtils.plugInName,
                             JOptionPane.INFORMATION_MESSAGE);
@@ -263,7 +259,7 @@ public class PolygonsVectorizerPlugIn extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "Vectorize_Polygons.PlugInName.text");
     }
 
@@ -277,11 +273,10 @@ public class PolygonsVectorizerPlugIn extends AbstractInputKlemPlugin {
     // private RasterImageLayer[] rasterImageLayers;
     private final PlugInContext context;
     private MainPanel mainPanel;
-    private final String RASTER_IN_LABEL = PluginUtils.getResources()
-            .getString("KlemGUI.InputRaster.label");
-    private final String MULTIPOLYGONS = PluginUtils.getResources().getString(
+    private final String RASTER_IN_LABEL = PluginUtils.i18n("KlemGUI.InputRaster.label");
+    private final String MULTIPOLYGONS = PluginUtils.i18n(
             "KlemGUI.Multipolygons.label");
-    private final String APPLYSTYLE = PluginUtils.getResources().getString(
+    private final String APPLYSTYLE = PluginUtils.i18n(
             "OpenKlem.thematic-style");
 
     private final LayerablesList layerablesList;

@@ -90,7 +90,7 @@ public class CurveNumberPlugIn extends AbstractInputKlemPlugin {
         final PersonalTable personalTable = new PersonalTable(cnTableModel(),
                 null, true, true, true, false, true, null, null, true);
         final FileNameExtensionFilter table6ExtFilter = new FileNameExtensionFilter(
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "CurveNumberPlugIn.CurveNumberTableDescription.label"),
             "table6");
         initialData.setParam_PersonalTable(personalTable, table6ExtFilter,
@@ -181,8 +181,7 @@ public class CurveNumberPlugIn extends AbstractInputKlemPlugin {
         RasterUtils.displayRasterFileOnOJ(context.getWorkbenchContext(),
                 new File(cnRasterOut), null);
 
-        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils
-                .getResources().getString("SetWorkspacePlugin.Done.message"),
+        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils.i18n("SetWorkspacePlugin.Done.message"),
                 PluginUtils.plugInName, JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -192,8 +191,7 @@ public class CurveNumberPlugIn extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -220,9 +218,7 @@ public class CurveNumberPlugIn extends AbstractInputKlemPlugin {
                                 @Override
                                 public void run(TaskMonitor monitor,
                                         PlugInContext context) throws Exception {
-                                    monitor.report(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    monitor.report(PluginUtils.i18n(
                                                     "OpenKlem.executing-process"));
                                     reportNothingToUndoYet(context);
                                     monitor.allowCancellationRequests();
@@ -358,35 +354,32 @@ public class CurveNumberPlugIn extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "CurveNumberPlugIn.PlugInName.label");
     }
 
     private final PlugInContext context;
     private MainPanel mainPanel;
-    private final String LAND_USE_LABEL = PluginUtils.getResources().getString(
+    private final String LAND_USE_LABEL = PluginUtils.i18n(
             "CurveNumberPlugIn.LandUseRaster.label");
-    private final String RASTER_HYDRO_GROUPS_LABEL = PluginUtils.getResources()
-            .getString("CurveNumberPlugIn.HydroGroupsRaster.label");
+    private final String RASTER_HYDRO_GROUPS_LABEL = PluginUtils.i18n("CurveNumberPlugIn.HydroGroupsRaster.label");
     // private final String RECLASS_TABLE_LABEL =
-    // PluginUtils.getResources().getString("CurveNumberPlugIn.reclassTable.label");
-    private final String HYDRO_GROUPS_LABEL = PluginUtils.getResources()
-            .getString("CurveNumberPlugIn.HydroGroupsLabel.label");
-    private final String FROM_LABEL = PluginUtils.getResources().getString(
+    // PluginUtils.i18n("CurveNumberPlugIn.reclassTable.label");
+    private final String HYDRO_GROUPS_LABEL = PluginUtils.i18n("CurveNumberPlugIn.HydroGroupsLabel.label");
+    private final String FROM_LABEL = PluginUtils.i18n(
             "KlemGUI.From.label");
-    private final String TO_LABEL = PluginUtils.getResources().getString(
+    private final String TO_LABEL = PluginUtils.i18n(
             "KlemGUI.To.label");
-    private final String A_LABEL = PluginUtils.getResources().getString(
+    private final String A_LABEL = PluginUtils.i18n(
             "CurveNumberPlugIn.HydroGroupsA.label");
-    private final String B_LABEL = PluginUtils.getResources().getString(
+    private final String B_LABEL = PluginUtils.i18n(
             "CurveNumberPlugIn.HydroGroupsB.label");
-    private final String C_LABEL = PluginUtils.getResources().getString(
+    private final String C_LABEL = PluginUtils.i18n(
             "CurveNumberPlugIn.HydroGroupsC.label");
-    private final String D_LABEL = PluginUtils.getResources().getString(
+    private final String D_LABEL = PluginUtils.i18n(
             "CurveNumberPlugIn.HydroGroupsD.label");
-    private final String CURVE_NUMBER_DESCRIPTION = PluginUtils.getResources()
-            .getString("CurveNumberPlugIn.CurveNumberTableDescription.label");
-    private final String CN_LABEL = PluginUtils.getResources().getString(
+    private final String CURVE_NUMBER_DESCRIPTION = PluginUtils.i18n("CurveNumberPlugIn.CurveNumberTableDescription.label");
+    private final String CN_LABEL = PluginUtils.i18n(
             "HydrographKlemPlugin.CNRaster.label");
 
     private final LayerablesList layerablesList;

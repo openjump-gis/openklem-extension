@@ -84,7 +84,7 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
         initialData.setParam_Label_TextBox_Button(
                 GUIUtils.setGUILabel(METHOD_LABEL),
                 methods,
-                new ActionObject(PluginUtils.getResources().getString(
+                new ActionObject(PluginUtils.i18n(
                         "ReclassRasterPlugin.FindValues.button")),
                 GUIUtils.INPUT); //method
         initialData.setParam_Label_TextBox(GUIUtils.setGUILabel(CLASSES_LABEL),
@@ -233,8 +233,7 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
         RasterUtils.displayRasterFileOnOJ(context.getWorkbenchContext(),
                 new File(outRasterName), null);
 
-        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils
-                .getResources().getString("SetWorkspacePlugin.Done.message"),
+        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils.i18n("SetWorkspacePlugin.Done.message"),
                 PluginUtils.plugInName, JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -245,8 +244,7 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -272,9 +270,7 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
                                 @Override
                                 public void run(TaskMonitor monitor,
                                         PlugInContext context) throws Exception {
-                                    monitor.report(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    monitor.report(PluginUtils.i18n(
                                                     "OpenKlem.executing-process"));
                                     reportNothingToUndoYet(context);
                                     monitor.allowCancellationRequests();
@@ -308,7 +304,7 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "ReclassRasterPlugin.PlugInName.text");
     }
 
@@ -455,7 +451,7 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
                 if (intvCount > 100) {
                     final int res = JOptionPane.showConfirmDialog(
                             super.getInitialDialog(),
-                            PluginUtils.getResources().getString(
+                            PluginUtils.i18n(
                                     "ReclassRasterPlugin.MoreThen100.message"),
                             PluginUtils.plugInName, JOptionPane.YES_NO_OPTION);
                     if (res != 0) {
@@ -493,9 +489,7 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
                     JOptionPane
                             .showMessageDialog(
                                     super.getInitialDialog(),
-                                    PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    PluginUtils.i18n(
                                                     "ReclassRasterPlugin.VerifyIntervalsNo.message"),
                                     PluginUtils.plugInName,
                                     JOptionPane.WARNING_MESSAGE);
@@ -509,9 +503,7 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
                     final int res = JOptionPane
                             .showConfirmDialog(
                                     super.getInitialDialog(),
-                                    PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    PluginUtils.i18n(
                                                     "ReclassRasterPlugin.FoundMoreThen100Classes.message"),
                                     PluginUtils.plugInName,
                                     JOptionPane.YES_NO_OPTION);
@@ -544,9 +536,7 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
                     final int res = JOptionPane
                             .showConfirmDialog(
                                     super.getInitialDialog(),
-                                    PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    PluginUtils.i18n(
                                                     "ReclassRasterPlugin.FoundMoreThen100Classes.message"),
                                     PluginUtils.plugInName,
                                     JOptionPane.YES_NO_OPTION);
@@ -581,9 +571,7 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
                     final int res = JOptionPane
                             .showConfirmDialog(
                                     super.getInitialDialog(),
-                                    PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    PluginUtils.i18n(
                                                     "ReclassRasterPlugin.FoundMoreThen100Classes.message"),
                                     PluginUtils.plugInName,
                                     JOptionPane.YES_NO_OPTION);
@@ -705,29 +693,26 @@ public class ReclassRasterPlugin extends AbstractInputKlemPlugin {
     //    private RasterImageLayer[] rasterImageLayers;
     private final PlugInContext context;
     private MainPanel mainPanel;
-    private final String ST_DEV_METHOD = PluginUtils.getResources().getString(
+    private final String ST_DEV_METHOD = PluginUtils.i18n(
             "ReclassRasterPlugin.StDev.text");
-    private final String FIXED_INTERV_METHOD = PluginUtils.getResources()
-            .getString("ReclassRasterPlugin.FixedInterval.text");
-    private final String INTERVAL_METHOD = PluginUtils.getResources()
-            .getString("ReclassRasterPlugin.IntervalsNumber.text");
-    private final String UNIQUE_METHOD = PluginUtils.getResources().getString(
+    private final String FIXED_INTERV_METHOD = PluginUtils.i18n("ReclassRasterPlugin.FixedInterval.text");
+    private final String INTERVAL_METHOD = PluginUtils.i18n("ReclassRasterPlugin.IntervalsNumber.text");
+    private final String UNIQUE_METHOD = PluginUtils.i18n(
             "ReclassRasterPlugin.UniqueValues.text");
-    private final String RASTER_IN_LABEL = PluginUtils.getResources()
-            .getString("KlemGUI.InputRaster.label");
-    private final String METHOD_LABEL = PluginUtils.getResources().getString(
+    private final String RASTER_IN_LABEL = PluginUtils.i18n("KlemGUI.InputRaster.label");
+    private final String METHOD_LABEL = PluginUtils.i18n(
             "ReclassRasterPlugin.MethodLabel.text");
-    private final String CLASSES_LABEL = PluginUtils.getResources().getString(
+    private final String CLASSES_LABEL = PluginUtils.i18n(
             "ReclassRasterPlugin.ClassesLabel.text");
-    private final String STDEV_LABEL = PluginUtils.getResources().getString(
+    private final String STDEV_LABEL = PluginUtils.i18n(
             "ReclassRasterPlugin.StDevClassesLabel.text");
-    private final String INTERVAL_LABEL = PluginUtils.getResources().getString(
+    private final String INTERVAL_LABEL = PluginUtils.i18n(
             "ReclassRasterPlugin.IntervalLabel.text");
-    private final String FROM_LABEL = PluginUtils.getResources().getString(
+    private final String FROM_LABEL = PluginUtils.i18n(
             "KlemGUI.From.label");
-    private final String TO_LABEL = PluginUtils.getResources().getString(
+    private final String TO_LABEL = PluginUtils.i18n(
             "KlemGUI.To.label");
-    private final String NEW_LABEL = PluginUtils.getResources().getString(
+    private final String NEW_LABEL = PluginUtils.i18n(
             "KlemGUI.NewValue.label");
 
     private boolean rasterChanged = false;

@@ -90,8 +90,7 @@ public class OutputTab2 extends AbstractInputKlemPlugin {
                         AREA_LABEL }), null, false, false, false, false, false,
                 null, null, false);
         initialData.setParam_PersonalTable(areaCNTable, null, GUIUtils.OUTPUT); // 05
-        initialData.setParam_Action(new ActionObject(PluginUtils.getResources()
-                .getString("HydrographKlemPlugin.Output.ExportTables.button")),
+        initialData.setParam_Action(new ActionObject(PluginUtils.i18n("HydrographKlemPlugin.Output.ExportTables.button")),
                 GUIUtils.OUTPUT);// 06
 
         return initialData;
@@ -151,9 +150,7 @@ public class OutputTab2 extends AbstractInputKlemPlugin {
 
                     JOptionPane.showMessageDialog(
                             context.getActiveInternalFrame(),
-                            PluginUtils
-                                    .getResources()
-                                    .getString(
+                            PluginUtils.i18n(
                                             "HydrographKlemPlugin.Output.ExportChart.done"),
                             PluginUtils.plugInName,
                             JOptionPane.INFORMATION_MESSAGE);
@@ -175,7 +172,7 @@ public class OutputTab2 extends AbstractInputKlemPlugin {
             IOTools.saveCSV(table, output);
             JOptionPane.showMessageDialog(
                     context.getActiveInternalFrame(),
-                    PluginUtils.getResources().getString(
+                    PluginUtils.i18n(
                             "HydrographKlemPlugin.Output.ExportChart.done"),
                     PluginUtils.plugInName, JOptionPane.INFORMATION_MESSAGE);
         } catch (final Exception e) {
@@ -192,8 +189,7 @@ public class OutputTab2 extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -235,7 +231,7 @@ public class OutputTab2 extends AbstractInputKlemPlugin {
             }
         };
 
-        mainPanel.setRightButtonText(PluginUtils.getResources().getString(
+        mainPanel.setRightButtonText(PluginUtils.i18n(
                 "MainPanel.ExecuteButton.text"));
 
         return mainPanel;
@@ -275,20 +271,19 @@ public class OutputTab2 extends AbstractInputKlemPlugin {
     private KlemProperties klemProp;
     private final PlugInContext context;
     private final SimulationOutput simOut;
-    private final String AREA_ELEV = PluginUtils.getResources().getString(
+    private final String AREA_ELEV = PluginUtils.i18n(
             "HydrographKlemPlugin.OutputAreaElev.label");
-    private final String AREA_TIME = PluginUtils.getResources().getString(
+    private final String AREA_TIME = PluginUtils.i18n(
             "HydrographKlemPlugin.OutputAreaTime.label");
-    private final String AREA_CN = PluginUtils.getResources().getString(
+    private final String AREA_CN = PluginUtils.i18n(
             "HydrographKlemPlugin.OutputAreaCn.label");
 
-    private final String ELEVATION_LABEL = PluginUtils.getResources()
-            .getString("HydrographKlemPlugin.OutputElevationLabel.label");
-    private final String AREA_LABEL = PluginUtils.getResources().getString(
+    private final String ELEVATION_LABEL = PluginUtils.i18n("HydrographKlemPlugin.OutputElevationLabel.label");
+    private final String AREA_LABEL = PluginUtils.i18n(
             "HydrographKlemPlugin.OutputAreaLabel.label");
-    private final String TIME_LABEL = PluginUtils.getResources().getString(
+    private final String TIME_LABEL = PluginUtils.i18n(
             "HydrographKlemPlugin.OutputTime.label");
-    private final String CN_LABEL = PluginUtils.getResources().getString(
+    private final String CN_LABEL = PluginUtils.i18n(
             "HydrographKlemPlugin.OutputCN.label");
     private final LayerablesList layerablesList;
 }

@@ -102,7 +102,7 @@ public class PersonalChartHydrograph extends PersonalChart{
         }
 
         // Discharge dataset        
-        XYSeries dischargeSeries = new XYSeries(PluginUtils.getResources().getString("PersonalChartHydrograph.Discharge.label"));
+        XYSeries dischargeSeries = new XYSeries(PluginUtils.i18n("PersonalChartHydrograph.Discharge.label"));
         if(dischargeData != null) {
             for(int d=0; d<dischargeData[0].length; d++) {
                 dischargeSeries.add(dischargeData[0][d], dischargeData[1][d]);
@@ -120,22 +120,22 @@ public class PersonalChartHydrograph extends PersonalChart{
         // Rainfall dataset
         DefaultXYDataset rainfallXyDataset = new DefaultXYDataset();
         if(effectiveRainfallData != null) {
-            rainfallXyDataset.addSeries(PluginUtils.getResources().getString("PersonalChartHydrograph.EffectiveRain.label"),
+            rainfallXyDataset.addSeries(PluginUtils.i18n("PersonalChartHydrograph.EffectiveRain.label"),
                     effectiveRainfallData);
         }
-        rainfallXyDataset.addSeries(PluginUtils.getResources().getString("PersonalChartHydrograph.TotalRain.label"),
+        rainfallXyDataset.addSeries(PluginUtils.i18n("PersonalChartHydrograph.TotalRain.label"),
                 totalRainfallData);
      
         XYItemRenderer xyItemRenFlow = new StandardXYItemRenderer();
         xyItemRenFlow.setSeriesPaint(0, new Color(0, 0, 255));
         xyItemRenFlow.setSeriesStroke(0, new BasicStroke(3));
         
-        NumberAxis domainAxis = new NumberAxis(PluginUtils.getResources().getString("PersonalChartHydrograph.Date.label"));
+        NumberAxis domainAxis = new NumberAxis(PluginUtils.i18n("PersonalChartHydrograph.Date.label"));
         if(units == TimeInterval.TimeIntervalUnit.MINUTE) {
-            domainAxis = new NumberAxis(PluginUtils.getResources().getString("PersonalChartHydrograph.TimeMin.label"));
+            domainAxis = new NumberAxis(PluginUtils.i18n("PersonalChartHydrograph.TimeMin.label"));
         }
          
-        ValueAxis axis1 = new NumberAxis(PluginUtils.getResources().getString("PersonalChartHydrograph.Discharge.label"));
+        ValueAxis axis1 = new NumberAxis(PluginUtils.i18n("PersonalChartHydrograph.Discharge.label"));
         axis1.setRange(0, dischargeUpper * 1.3);
         
         XYPlot plot = new XYPlot(dischargeDataset, domainAxis, axis1, xyItemRenFlow);
@@ -157,7 +157,7 @@ public class PersonalChartHydrograph extends PersonalChart{
         plot.setDataset(1, xyBarDatasetRain);
         plot.setRenderer(1, xyItemRendRain);
 
-        ValueAxis axis2 = new NumberAxis(PluginUtils.getResources().getString("PersonalChartHydrograph.Rainfall.label"));
+        ValueAxis axis2 = new NumberAxis(PluginUtils.i18n("PersonalChartHydrograph.Rainfall.label"));
         axis2.setInverted(true);
         axis2.setRange(0, rainUpper * 3);
         

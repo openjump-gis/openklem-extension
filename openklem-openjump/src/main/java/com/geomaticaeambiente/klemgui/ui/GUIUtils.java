@@ -175,14 +175,10 @@ public class GUIUtils {
                 for (int c = 0; c < table.getColumnCount(); c++) {
                     if (table.getValueAt(r, c) == null) {
                         throw new NullPointerException(
-                                PluginUtils
-                                        .getResources()
-                                        .getString(
+                                PluginUtils.i18n(
                                                 "GUIUtils.CheckTableValues.message")
                                         .concat(Integer.toString(r + 2))
-                                        .concat(PluginUtils
-                                                .getResources()
-                                                .getString(
+                                        .concat(PluginUtils.i18n(
                                                         "GUIUtils.CheckTableValuesColumn.message"))
                                         .concat(Integer.toString(c + 1)));
                     }
@@ -362,8 +358,7 @@ public class GUIUtils {
     public static void checkStringValue(String stringValue, String field)
             throws Exception {
         if (stringValue == null || stringValue.isEmpty()) {
-            throw new WarningException(PluginUtils.getResources()
-                    .getString("Check.CheckStringValue.message").concat(field));
+            throw new WarningException(PluginUtils.i18n("Check.CheckStringValue.message").concat(field));
         }
     }
 
@@ -373,8 +368,7 @@ public class GUIUtils {
 
         final File file = new File(stringValue);
         if (file.getParent() == null) {
-            throw new WarningException(PluginUtils.getResources()
-                    .getString("Check.CheckStringValue.message").concat(field));
+            throw new WarningException(PluginUtils.i18n("Check.CheckStringValue.message").concat(field));
         }
 
     }
@@ -519,7 +513,7 @@ public class GUIUtils {
             label.setIcon(new ImageIcon(
                     GUIUtils.class
                             .getResource("/com/geomaticaeambiente/klemgui/images/ExclamationMark.png")));
-            label.setToolTipText(PluginUtils.getResources().getString(
+            label.setToolTipText(PluginUtils.i18n(
                     "HydrographKlemPlugin.QuestionMark.Tooltip"));
             label.setVisible(false);
         }
@@ -699,9 +693,7 @@ public class GUIUtils {
         };
     }
 
-    private static final String RASTER_OUT_LABEL = PluginUtils.getResources()
-            .getString("KlemGUI.OutputRaster.label");
-    private static final String VECTOR_OUT_LABEL = PluginUtils.getResources()
-            .getString("KlemGUI.OutputVector.label");
+    private static final String RASTER_OUT_LABEL = PluginUtils.i18n("KlemGUI.OutputRaster.label");
+    private static final String VECTOR_OUT_LABEL = PluginUtils.i18n("KlemGUI.OutputVector.label");
 
 }

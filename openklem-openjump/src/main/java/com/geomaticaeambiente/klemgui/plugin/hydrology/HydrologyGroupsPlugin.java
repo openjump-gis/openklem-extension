@@ -91,7 +91,7 @@ public class HydrologyGroupsPlugin extends AbstractInputKlemPlugin {
             return this.mainPanel;
         }
         this.mainPanel = new MainPanel(super.getInitialDialog(), componentsWithActions, false, false, true,
-                PluginUtils.getResources().getString("MainPanel.ExecuteButton.text"), layerablesList) {
+                PluginUtils.i18n("MainPanel.ExecuteButton.text"), layerablesList) {
 
             @Override
             public void rightButton() {
@@ -132,7 +132,7 @@ public class HydrologyGroupsPlugin extends AbstractInputKlemPlugin {
                             null);
 
                     JOptionPane.showMessageDialog(super.getInitialDialog(),
-                            PluginUtils.getResources().getString("SetWorkspacePlugin.Done.message"), PluginUtils.plugInName, JOptionPane.INFORMATION_MESSAGE);
+                            PluginUtils.i18n("SetWorkspacePlugin.Done.message"), PluginUtils.plugInName, JOptionPane.INFORMATION_MESSAGE);
                     
                 } catch (IOException ex) {
                     Logger.getLogger(HydrologyGroupsPlugin.class.getName()).log(Level.SEVERE, null, ex);
@@ -237,22 +237,22 @@ public class HydrologyGroupsPlugin extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString("HydrologicalGroups.Hydrology.label");
+        return PluginUtils.i18n("HydrologicalGroups.Hydrology.label");
     }
 
     private final PlugInContext context;
     private MainPanel mainPanel;
-    private final String GEO_LITHO_LABEL = PluginUtils.getResources().getString("HydrologicalGroups.GeoLithoLabel.label");
-    private final String LITHO_TABLE_LABEL = PluginUtils.getResources().getString("HydrologicalGroups.LithoTable.label");
-    //private final String Hydro_TABLE_LABEL = PluginUtils.getResources().getString("HydrologicalGroups.HydroTable.label");
-    private final String HYDRO_GROUPS_OUT_LABEL = PluginUtils.getResources().getString("HydrologicalGroups.HydroRaster.label");
-    private final String FROM_LABEL = PluginUtils.getResources().getString("KlemGUI.From.label");
-    private final String TO_LABEL = PluginUtils.getResources().getString("KlemGUI.To.label");
-    //private final String PERMEABILITY_LABEl = PluginUtils.getResources().getString("HydrologicalGroups.Permeability.label");
-    private final String HYDROLOGY_GROUPS_TABLE_LABEL = PluginUtils.getResources().getString("HydrologicalGroups.Hydrology.label");
-    private final String FILE_FILTER_DESCRIPTION = PluginUtils.getResources().getString("HydrologicalGroups.TableFileDescription.label");
-    //private final String LITHO_DEFAUL_VALUE = PluginUtils.getResources().getString("HydrologicalGroups.DefaultLithoVal.label");
-    private final String HYDRO_DEFAULT_VALUE = PluginUtils.getResources().getString("HydrologicalGroups.DefaultHydrogroupVal.label");
-    //private final String UPDATE_HYDRO_TABLE = PluginUtils.getResources().getString("HydrographKlemPlugin.UpdateHydroTable.label");
+    private final String GEO_LITHO_LABEL = PluginUtils.i18n("HydrologicalGroups.GeoLithoLabel.label");
+    private final String LITHO_TABLE_LABEL = PluginUtils.i18n("HydrologicalGroups.LithoTable.label");
+    //private final String Hydro_TABLE_LABEL = PluginUtils.i18n("HydrologicalGroups.HydroTable.label");
+    private final String HYDRO_GROUPS_OUT_LABEL = PluginUtils.i18n("HydrologicalGroups.HydroRaster.label");
+    private final String FROM_LABEL = PluginUtils.i18n("KlemGUI.From.label");
+    private final String TO_LABEL = PluginUtils.i18n("KlemGUI.To.label");
+    //private final String PERMEABILITY_LABEl = PluginUtils.i18n("HydrologicalGroups.Permeability.label");
+    private final String HYDROLOGY_GROUPS_TABLE_LABEL = PluginUtils.i18n("HydrologicalGroups.Hydrology.label");
+    private final String FILE_FILTER_DESCRIPTION = PluginUtils.i18n("HydrologicalGroups.TableFileDescription.label");
+    //private final String LITHO_DEFAUL_VALUE = PluginUtils.i18n("HydrologicalGroups.DefaultLithoVal.label");
+    private final String HYDRO_DEFAULT_VALUE = PluginUtils.i18n("HydrologicalGroups.DefaultHydrogroupVal.label");
+    //private final String UPDATE_HYDRO_TABLE = PluginUtils.i18n("HydrographKlemPlugin.UpdateHydroTable.label");
     private final LayerablesList layerablesList;
 }

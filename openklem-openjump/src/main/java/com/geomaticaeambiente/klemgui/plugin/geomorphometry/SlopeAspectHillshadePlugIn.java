@@ -70,58 +70,48 @@ public class SlopeAspectHillshadePlugIn extends AbstractInputKlemPlugin {
 
         // Bluelines
         initialData.setParam_Label_TextBox(
-                GUIUtils.setGUILabel(PluginUtils.getResources().getString(
+                GUIUtils.setGUILabel(PluginUtils.i18n(
                         "SlopeAspectHillshadePlugIn.Bluelines.label")),
                 PluginUtils.getLayers(layerablesList.getLayerables()),
                 GUIUtils.INPUT);
 
         // Slope algorithm
-        initialData.setParam_Labels(new String[] { PluginUtils.getResources()
-                .getString("SlopeAspectHillshadePlugIn.SlopeAlgo.label") },
+        initialData.setParam_Labels(new String[] { PluginUtils.i18n("SlopeAspectHillshadePlugIn.SlopeAlgo.label") },
                 GUIUtils.OTHER);
         initialData
                 .setParam_Action(
                         new ActionObject(
                                 new String[] {
-                                        PluginUtils
-                                                .getResources()
-                                                .getString(
+                                        PluginUtils.i18n(
                                                         "SlopeAspectHillshadePlugIn.SlopeHorn.label"),
-                                        PluginUtils
-                                                .getResources()
-                                                .getString(
+                                        PluginUtils.i18n(
                                                         "SlopeAspectHillshadePlugIn.SlopeLocal.label") }),
                         GUIUtils.OTHER);// radio button da mouse da layer
 
         // Slope units
-        initialData.setParam_Labels(new String[] { PluginUtils.getResources()
-                .getString("SlopeAspectHillshadePlugIn.SlopeUnits.label") },
+        initialData.setParam_Labels(new String[] { PluginUtils.i18n("SlopeAspectHillshadePlugIn.SlopeUnits.label") },
                 GUIUtils.OTHER);
         initialData
                 .setParam_Action(
                         new ActionObject(
                                 new String[] {
-                                        PluginUtils
-                                                .getResources()
-                                                .getString(
+                                        PluginUtils.i18n(
                                                         "SlopeAspectHillshadePlugIn.SlopeUnitsPercent.label"),
-                                        PluginUtils
-                                                .getResources()
-                                                .getString(
+                                        PluginUtils.i18n(
                                                         "SlopeAspectHillshadePlugIn.SlopeUnitsDegrees.label") }),
                         GUIUtils.OTHER);// radio button da mouse da layer
 
         // Hillshade parameters;
         initialData.setParam_Labels(
-                new String[] { PluginUtils.getResources().getString(
+                new String[] { PluginUtils.i18n(
                         "SlopeAspectHillshadePlugIn.HillshadeParms.label") },
                 GUIUtils.OTHER);
         initialData.setParam_Label_TextBox(
-                GUIUtils.setGUILabel(PluginUtils.getResources().getString(
+                GUIUtils.setGUILabel(PluginUtils.i18n(
                         "SlopeAspectHillshadePlugIn.HillshadeZenith.label")),
                 "", GUIUtils.OTHER);
         initialData.setParam_Label_TextBox(
-                GUIUtils.setGUILabel(PluginUtils.getResources().getString(
+                GUIUtils.setGUILabel(PluginUtils.i18n(
                         "SlopeAspectHillshadePlugIn.HillshadeAzimuth.label")),
                 "", GUIUtils.OTHER);
 
@@ -322,8 +312,7 @@ public class SlopeAspectHillshadePlugIn extends AbstractInputKlemPlugin {
                     new File(hillshadeRasterName), null);
         }
 
-        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils
-                .getResources().getString("SetWorkspacePlugin.Done.message"),
+        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils.i18n("SetWorkspacePlugin.Done.message"),
                 PluginUtils.plugInName, JOptionPane.INFORMATION_MESSAGE);
 
     }
@@ -334,8 +323,7 @@ public class SlopeAspectHillshadePlugIn extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -362,9 +350,7 @@ public class SlopeAspectHillshadePlugIn extends AbstractInputKlemPlugin {
                                 @Override
                                 public void run(TaskMonitor monitor,
                                         PlugInContext context) throws Exception {
-                                    monitor.report(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    monitor.report(PluginUtils.i18n(
                                                     "OpenKlem.executing-process"));
                                     reportNothingToUndoYet(context);
                                     monitor.allowCancellationRequests();
@@ -416,7 +402,7 @@ public class SlopeAspectHillshadePlugIn extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "SlopeAspectHillshadePlugIn.PlugInName.label");
     }
 
@@ -428,7 +414,7 @@ public class SlopeAspectHillshadePlugIn extends AbstractInputKlemPlugin {
 
         if (outSlope.equals("") && outAspect.equals("")
                 && outHillshade.equals("")) {
-            throw new WarningException(PluginUtils.getResources().getString(
+            throw new WarningException(PluginUtils.i18n(
                     "Check.AtLeastOneOutputRequired"));
         }
 
@@ -460,18 +446,17 @@ public class SlopeAspectHillshadePlugIn extends AbstractInputKlemPlugin {
     // private RasterImageLayer[] ar_rasterImageLayers;
     private final InitialDialog initialDialog;
     // private Layer[] layers;
-    private final String DEM_LABEL = PluginUtils.getResources().getString(
+    private final String DEM_LABEL = PluginUtils.i18n(
             "KlemGUI.InputDem.label");
     // private final String OUT_RASTER_LABEL =
-    // PluginUtils.getResources().getString("KlemGUI.OutputRaster.label");
+    // PluginUtils.i18n("KlemGUI.OutputRaster.label");
     private final String XCOORD_LABEL = "x";
     private final String YCOORD_LABEL = "y";
-    private final String SLOPE_LABEL = PluginUtils.getResources().getString(
+    private final String SLOPE_LABEL = PluginUtils.i18n(
             "SlopeAspectHillshadePlugIn.SlopeLabel");
-    private final String ASPECT_LABEL = PluginUtils.getResources().getString(
+    private final String ASPECT_LABEL = PluginUtils.i18n(
             "SlopeAspectHillshadePlugIn.AspectLabel");
-    private final String HILLSHADE_LABEL = PluginUtils.getResources()
-            .getString("SlopeAspectHillshadePlugIn.HillShadeLabel");
+    private final String HILLSHADE_LABEL = PluginUtils.i18n("SlopeAspectHillshadePlugIn.HillShadeLabel");
 
     private final LayerablesList layerablesList;
 }

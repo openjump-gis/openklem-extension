@@ -53,10 +53,10 @@ public class HydrographHortonTriangularPlugin extends AbstractInputKlemPlugin {
         initialData.setParam_Label_TextBox(GUIUtils.setGUILabel(HORTON_BIFURC), "", GUIUtils.OTHER);
 
         //graphic unit
-        initialData.setParam_Labels(new String[]{GUIUtils.setGUILabel(PluginUtils.getResources().getString("HyetographPlugIn.XUnits.label"))}, GUIUtils.OTHER); //label x unit
+        initialData.setParam_Labels(new String[]{GUIUtils.setGUILabel(PluginUtils.i18n("HyetographPlugIn.XUnits.label"))}, GUIUtils.OTHER); //label x unit
         initialData.setParam_Action(new ActionObject(
-                new String[]{PluginUtils.getResources().getString("KlemGUI.hours.label"),
-                    PluginUtils.getResources().getString("KlemGUI.minutes.label")}), GUIUtils.OTHER);//radio buttons: hours and minutes
+                new String[]{PluginUtils.i18n("KlemGUI.hours.label"),
+                    PluginUtils.i18n("KlemGUI.minutes.label")}), GUIUtils.OTHER);//radio buttons: hours and minutes
 //        
         return initialData;
 
@@ -78,7 +78,7 @@ public class HydrographHortonTriangularPlugin extends AbstractInputKlemPlugin {
             return this.mainPanel;
         }
         this.mainPanel = new MainPanel(super.getInitialDialog(), componentsWithActions, false, false, true,
-                PluginUtils.getResources().getString("MainPanel.ExecuteButton.text"), layerablesList) {
+                PluginUtils.i18n("MainPanel.ExecuteButton.text"), layerablesList) {
 
             @Override
             public void rightButton() {
@@ -148,7 +148,7 @@ public class HydrographHortonTriangularPlugin extends AbstractInputKlemPlugin {
     }
 
     public String toString() {
-        return PluginUtils.getResources().getString("HydrographHortonTriangular.PluginName.label");
+        return PluginUtils.i18n("HydrographHortonTriangular.PluginName.label");
     }
 
     private void checksParameters(double baseFlow, double flowLength, double flowVelocity,
@@ -170,12 +170,12 @@ public class HydrographHortonTriangularPlugin extends AbstractInputKlemPlugin {
     private TimeInterval.TimeIntervalUnit xUnit;
     private double timeStep;
     private UnitHydrograph unitHydrograph;
-    private final String BASE_FLOW = PluginUtils.getResources().getString("HydrographCommonLabels.BaseFlow.label");
-    private final String FLOW_LENGTH = PluginUtils.getResources().getString("HydrographHortonTriangular.FlowLenght.label");
-    private final String FLOW_VELOCITY = PluginUtils.getResources().getString("HydrographHortonTriangular.FlowVelocity.label");
-    private final String HORTON_AREA = PluginUtils.getResources().getString("HydrographHortonTriangular.HortonAreaRatio.label");
-    private final String HORTON_BIFURC = PluginUtils.getResources().getString("HydrographHortonTriangular.HortonBifurcRatio.label");
-    private final String HORTON_LENGTH = PluginUtils.getResources().getString("HydrographHortonTriangular.HortonLengthRatio.label");
+    private final String BASE_FLOW = PluginUtils.i18n("HydrographCommonLabels.BaseFlow.label");
+    private final String FLOW_LENGTH = PluginUtils.i18n("HydrographHortonTriangular.FlowLenght.label");
+    private final String FLOW_VELOCITY = PluginUtils.i18n("HydrographHortonTriangular.FlowVelocity.label");
+    private final String HORTON_AREA = PluginUtils.i18n("HydrographHortonTriangular.HortonAreaRatio.label");
+    private final String HORTON_BIFURC = PluginUtils.i18n("HydrographHortonTriangular.HortonBifurcRatio.label");
+    private final String HORTON_LENGTH = PluginUtils.i18n("HydrographHortonTriangular.HortonLengthRatio.label");
 
     private final LayerablesList layerablesList;
 }

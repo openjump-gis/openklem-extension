@@ -60,7 +60,7 @@ public class UpslopeAreaPlugIn extends AbstractInputKlemPlugin {
                         PluginUtils.getRasterImageLayers(layerablesList
                                 .getLayerables()), GUIUtils.INPUT);
         initialData.setParam_Label_TextBox(
-                GUIUtils.setGUILabel(PluginUtils.getResources().getString(
+                GUIUtils.setGUILabel(PluginUtils.i18n(
                         "HydrographKlemPlugin.Bluelines.label")),
                 PluginUtils.getLayers(layerablesList.getLayerables()),
                 GUIUtils.INPUT);
@@ -153,8 +153,7 @@ public class UpslopeAreaPlugIn extends AbstractInputKlemPlugin {
                 new File(outRasterName),
                 Symbologies.getUpslopeAreaSymb(upslopeGrid.getCellSize()));
 
-        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils
-                .getResources().getString("SetWorkspacePlugin.Done.message"),
+        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils.i18n("SetWorkspacePlugin.Done.message"),
                 PluginUtils.plugInName, JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -165,8 +164,7 @@ public class UpslopeAreaPlugIn extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -193,9 +191,7 @@ public class UpslopeAreaPlugIn extends AbstractInputKlemPlugin {
                                 @Override
                                 public void run(TaskMonitor monitor,
                                         PlugInContext context) throws Exception {
-                                    monitor.report(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    monitor.report(PluginUtils.i18n(
                                                     "OpenKlem.executing-process"));
                                     reportNothingToUndoYet(context);
                                     monitor.allowCancellationRequests();
@@ -229,21 +225,20 @@ public class UpslopeAreaPlugIn extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "UpslopeAreaPlugin.PlugInName.label");
     }
 
     private MainPanel mainPanel;
     private final PlugInContext context;
-    private final String DEM_LABEL = PluginUtils.getResources().getString(
+    private final String DEM_LABEL = PluginUtils.i18n(
             "KlemGUI.InputFilledDem.label");
-    private final String FLOWALGO_LABEL = PluginUtils.getResources().getString(
+    private final String FLOWALGO_LABEL = PluginUtils.i18n(
             "KlemGUI.InputFlowDirAlgo.label");
-    private final String D8_LABEL = PluginUtils.getResources().getString(
+    private final String D8_LABEL = PluginUtils.i18n(
             "FlowDirectionsPlugIn.FlowDirModel.D8.label");
-    private final String MF_LABEL = PluginUtils.getResources().getString(
+    private final String MF_LABEL = PluginUtils.i18n(
             "FlowDirectionsPlugIn.FlowDirModel.MF.label");
-    private final String UPSLOPEAREA_LABEL = PluginUtils.getResources()
-            .getString("UpslopeAreaPlugin.PlugInName.label");
+    private final String UPSLOPEAREA_LABEL = PluginUtils.i18n("UpslopeAreaPlugin.PlugInName.label");
     private final LayerablesList layerablesList;
 }

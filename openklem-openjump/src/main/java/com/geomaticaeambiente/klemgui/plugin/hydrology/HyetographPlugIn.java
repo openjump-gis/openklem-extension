@@ -64,15 +64,13 @@ public class HyetographPlugIn extends AbstractInputKlemPlugin {
                 new String[] { GUIUtils.setGUILabel(MODEL) }, GUIUtils.INPUT); //label Model
 
         final PersonalRadioButtons radioButtons = new PersonalRadioButtons(
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HyetographPlugIn.AlternatingBlocks.label"),
-                PluginUtils.getResources().getString(
-                        "HyetographPlugIn.Costant.label"), PluginUtils
-                        .getResources().getString(
+                PluginUtils.i18n(
+                        "HyetographPlugIn.Costant.label"), PluginUtils.i18n(
                                 "HyetographPlugIn.IstantaneusIntensity.label"),
-                PluginUtils.getResources().getString(
-                        "HyetographPlugIn.Triangular.label"), PluginUtils
-                        .getResources().getString(
+                PluginUtils.i18n(
+                        "HyetographPlugIn.Triangular.label"), PluginUtils.i18n(
                                 "HyetographPlugIn.Wallingford.labela"));
 
         initialData.setParam_RadioButtons(radioButtons, GUIUtils.INPUT);
@@ -81,9 +79,9 @@ public class HyetographPlugIn extends AbstractInputKlemPlugin {
                 new String[] { GUIUtils.setGUILabel(X_UNITS) }, GUIUtils.INPUT); //label x unit
         initialData.setParam_Action(
                 new ActionObject(new String[] {
-                        PluginUtils.getResources().getString(
+                        PluginUtils.i18n(
                                 "KlemGUI.hours.label"),
-                        PluginUtils.getResources().getString(
+                        PluginUtils.i18n(
                                 "KlemGUI.minutes.label") }), GUIUtils.INPUT);//radio buttons: hours and minutes
 
         return initialData;
@@ -108,8 +106,7 @@ public class HyetographPlugIn extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -243,7 +240,7 @@ public class HyetographPlugIn extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "HyetographPlugIn.PlugInName.label");
     }
 
@@ -264,17 +261,17 @@ public class HyetographPlugIn extends AbstractInputKlemPlugin {
             initialData.setParam_ChartPanel(personalChart, GUIUtils.OUTPUT); //chart
 
             final Header header = new Header(new String[] {
-                    PluginUtils.getResources().getString(
+                    PluginUtils.i18n(
                             "HyetographPlugin.TotalRainfull.label")
                             + hyetograph.getTotalRain()
                             + ","
-                            + PluginUtils.getResources().getString(
+                            + PluginUtils.i18n(
                                     "HyetographPlugin.HyetoShpe.label")
                             + getHyetoType(selHyetoType),
-                    PluginUtils.getResources().getString(
+                    PluginUtils.i18n(
                             "HyetographPlugin.Graph_TimeHour.label")
                             + ","
-                            + PluginUtils.getResources().getString(
+                            + PluginUtils.i18n(
                                     "HyetographPlugin.Graph_Rainfall.label") });
             final PersonalTable personalTable = new PersonalTable(
                     setTableModel(fromHyetographToData()), header, false, true,
@@ -301,8 +298,7 @@ public class HyetographPlugIn extends AbstractInputKlemPlugin {
             }
 
             outPanel = new MainPanel(super.getInitialDialog(),
-                    componentsWithActions, false, false, false, PluginUtils
-                            .getResources().getString(
+                    componentsWithActions, false, false, false, PluginUtils.i18n(
                                     "MainPanel.ExecuteButton.text"),
                     layerablesList) {
 
@@ -342,16 +338,16 @@ public class HyetographPlugIn extends AbstractInputKlemPlugin {
 
         String time = "";
         if (xUnit == TimeInterval.TimeIntervalUnit.HOUR) {
-            time = PluginUtils.getResources().getString(
+            time = PluginUtils.i18n(
                     "HyetographPlugin.Graph_TimeHour.label");
         } else if (xUnit == TimeInterval.TimeIntervalUnit.MINUTE) {
-            time = PluginUtils.getResources().getString(
+            time = PluginUtils.i18n(
                     "HyetographPlugin.Graph_TimeMin.label");
 
         }
 
         return new DefaultTableModel(data, new String[] {time,
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HyetographPlugin.Graph_Rainfall.label") });
 
     }
@@ -382,23 +378,23 @@ public class HyetographPlugIn extends AbstractInputKlemPlugin {
 
         switch (selection) {
         case 0: {
-            return PluginUtils.getResources().getString(
+            return PluginUtils.i18n(
                     "HyetographPlugIn.AlternatingBlocks.label");
         }
         case 1: {
-            return PluginUtils.getResources().getString(
+            return PluginUtils.i18n(
                     "HyetographPlugIn.Costant.label");
         }
         case 2: {
-            return PluginUtils.getResources().getString(
+            return PluginUtils.i18n(
                     "HyetographPlugIn.IstantaneusIntensity.label");
         }
         case 3: {
-            return PluginUtils.getResources().getString(
+            return PluginUtils.i18n(
                     "HyetographPlugIn.Triangular.label");
         }
         case 4: {
-            return PluginUtils.getResources().getString(
+            return PluginUtils.i18n(
                     "HyetographPlugIn.Wallingford.labela");
         }
         }
@@ -411,17 +407,17 @@ public class HyetographPlugIn extends AbstractInputKlemPlugin {
     private double step_param;
     int selHyetoType;
     private TimeInterval.TimeIntervalUnit xUnit;
-    private final String PARAM_A = PluginUtils.getResources().getString(
+    private final String PARAM_A = PluginUtils.i18n(
             "HyetographPlugIn.ParamA.label");
-    private final String PARAM_N = PluginUtils.getResources().getString(
+    private final String PARAM_N = PluginUtils.i18n(
             "HyetographPlugIn.ParamN.label");
-    private final String TIME = PluginUtils.getResources().getString(
+    private final String TIME = PluginUtils.i18n(
             "HyetographPlugIn.Time.label");
-    private final String STEP = PluginUtils.getResources().getString(
+    private final String STEP = PluginUtils.i18n(
             "HyetographPlugIn.Step.label");
-    private final String X_UNITS = PluginUtils.getResources().getString(
+    private final String X_UNITS = PluginUtils.i18n(
             "HyetographPlugIn.XUnits.label");
-    private final String MODEL = PluginUtils.getResources().getString(
+    private final String MODEL = PluginUtils.i18n(
             "HyetographPlugIn.models.label");
 
     private final LayerablesList layerablesList;

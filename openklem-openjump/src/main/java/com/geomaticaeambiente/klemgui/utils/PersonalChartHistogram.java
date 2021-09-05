@@ -139,7 +139,7 @@ public class PersonalChartHistogram {
         min_const_l.gridx = 0;
         min_const_l.gridy = 0;
         min_const_l.weightx = 0.1;
-        final JLabel min_l = new JLabel(PluginUtils.getResources().getString(
+        final JLabel min_l = new JLabel(PluginUtils.i18n(
                 "ChartHistogram.labels.min"));
         bottomPanel.add(min_l, min_const_l);
 
@@ -156,7 +156,7 @@ public class PersonalChartHistogram {
         max_const_l.gridx = 0;
         max_const_l.gridy = 1;
         max_const_l.weightx = 0.1;
-        final JLabel max_l = new JLabel(PluginUtils.getResources().getString(
+        final JLabel max_l = new JLabel(PluginUtils.i18n(
                 "ChartHistogram.labels.max"));
         bottomPanel.add(max_l, max_const_l);
 
@@ -173,7 +173,7 @@ public class PersonalChartHistogram {
         mean_const_l.gridx = 0;
         mean_const_l.gridy = 2;
         mean_const_l.weightx = 0.1;
-        final JLabel mean_l = new JLabel(PluginUtils.getResources().getString(
+        final JLabel mean_l = new JLabel(PluginUtils.i18n(
                 "ChartHistogram.labels.mean"));
         bottomPanel.add(mean_l, mean_const_l);
 
@@ -190,7 +190,7 @@ public class PersonalChartHistogram {
         stDev_const_l.gridx = 2;
         stDev_const_l.gridy = 0;
         stDev_const_l.weightx = 0.1;
-        final JLabel stDev_l = new JLabel(PluginUtils.getResources().getString(
+        final JLabel stDev_l = new JLabel(PluginUtils.i18n(
                 "ChartHistogram.labels.stdDev"));
         bottomPanel.add(stDev_l, stDev_const_l);
 
@@ -207,7 +207,7 @@ public class PersonalChartHistogram {
         sum_const_l.gridx = 2;
         sum_const_l.gridy = 1;
         sum_const_l.weightx = 0.1;
-        final JLabel sum_l = new JLabel(PluginUtils.getResources().getString(
+        final JLabel sum_l = new JLabel(PluginUtils.i18n(
                 "ChartHistogram.labels.sum"));
         bottomPanel.add(sum_l, sum_const_l);
 
@@ -224,7 +224,7 @@ public class PersonalChartHistogram {
         area_const_l.gridx = 2;
         area_const_l.gridy = 2;
         area_const_l.weightx = 0.1;
-        final JLabel area_l = new JLabel(PluginUtils.getResources().getString(
+        final JLabel area_l = new JLabel(PluginUtils.i18n(
                 "ChartHistogram.labels.area"));
         bottomPanel.add(area_l, area_const_l);
 
@@ -241,7 +241,7 @@ public class PersonalChartHistogram {
         mode_const_l.gridx = 4;
         mode_const_l.gridy = 0;
         mode_const_l.weightx = 0.1;
-        final JLabel mode_l = new JLabel(PluginUtils.getResources().getString(
+        final JLabel mode_l = new JLabel(PluginUtils.i18n(
                 "ChartHistogram.labels.mode"));
         bottomPanel.add(mode_l, mode_const_l);
 
@@ -271,15 +271,14 @@ public class PersonalChartHistogram {
         exportPanelConst.gridx = 0;
         exportPanelConst.gridy = 2;
 
-        final JButton csvButton = new JButton(PluginUtils.getResources()
-                .getString("ChartHistogram.csvButton.text"));
+        final JButton csvButton = new JButton(PluginUtils.i18n("ChartHistogram.csvButton.text"));
         csvButton.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 final FileNameExtensionFilter fileFilter = new FileNameExtensionFilter(
-                        PluginUtils.getResources().getString(
+                        PluginUtils.i18n(
                                 "ChartHistogram.csvSaveDialog.description"),
                         new String[] { "csv", "txt" });
                 final File[] textFile = PluginUtils.openJChooserDialog(parent,
@@ -298,7 +297,7 @@ public class PersonalChartHistogram {
 
                     JOptionPane.showMessageDialog(
                             parent,
-                            PluginUtils.getResources().getString(
+                            PluginUtils.i18n(
                                     "SetWorkspacePlugin.Done.message"),
                             PluginUtils.plugInName,
                             JOptionPane.INFORMATION_MESSAGE);

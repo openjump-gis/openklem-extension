@@ -27,7 +27,7 @@ public class HelpDialog extends JDialog {
     public void initComponents(StyledDocument styledDocument)
             throws BadLocationException {
 
-        setTitle(PluginUtils.getResources().getString(
+        setTitle(PluginUtils.i18n(
                 "PersonalRasterCombPanel.jToggleButton_Help.text"));
 
         GridBagConstraints gridBagConstraints = new GridBagConstraints();

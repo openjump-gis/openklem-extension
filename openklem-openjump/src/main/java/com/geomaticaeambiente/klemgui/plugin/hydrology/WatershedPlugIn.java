@@ -84,20 +84,19 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
                         PluginUtils.getRasterImageLayers(layerablesList
                                 .getLayerables()), GUIUtils.INPUT);//dem combobox with rasterImageLayer       
         initialData.setParam_Label_TextBox(
-                GUIUtils.setGUILabel(PluginUtils.getResources().getString(
+                GUIUtils.setGUILabel(PluginUtils.i18n(
                         "HydrographKlemPlugin.Bluelines.label")),
                 PluginUtils.getLayers(layerablesList.getLayerables()),
                 GUIUtils.INPUT);
 
         //other data
-        initialData.setParam_Labels(new String[] { PluginUtils.getResources()
-                .getString("WatershedPlugin.CloseCoordSection.label") },
+        initialData.setParam_Labels(new String[] { PluginUtils.i18n("WatershedPlugin.CloseCoordSection.label") },
                 GUIUtils.OTHER);
         initialData.setParam_Action(
                 new ActionObject(new String[] {
-                        PluginUtils.getResources().getString(
+                        PluginUtils.i18n(
                                 "WatershedPlugin.MouseRadioButton.label"),
-                        PluginUtils.getResources().getString(
+                        PluginUtils.i18n(
                                 "WatershedPlugin.RadioButtonLayer.label") }),
                 GUIUtils.OTHER);//radio button da mouse da layer
 
@@ -105,7 +104,7 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
         initialData.setParam_Label_TextBox_Button(
                 GUIUtils.setGUILabel(XCOORD_LABEL),
                 "",
-                new ActionObject(PluginUtils.getResources().getString(
+                new ActionObject(PluginUtils.i18n(
                         "WatershedPlugin.ChooseButton.label")), GUIUtils.OTHER);
         initialData.setParam_Label_TextBox(GUIUtils.setGUILabel(YCOORD_LABEL),
                 "", GUIUtils.OTHER);// coordinata y da mouse
@@ -310,8 +309,7 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
         }
 
         if (coords.isEmpty()) {
-            throw new NullPointerException(PluginUtils.getResources()
-                    .getString("WatershedPlugin.CoordinateOutside.label"));
+            throw new NullPointerException(PluginUtils.i18n("WatershedPlugin.CoordinateOutside.label"));
         }
 
         //convert arrayList to array
@@ -347,8 +345,7 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
         RasterUtils.displayRasterFileOnOJ(context.getWorkbenchContext(),
                 new File(outRasterName), null);
 
-        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils
-                .getResources().getString("SetWorkspacePlugin.Done.message"),
+        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils.i18n("SetWorkspacePlugin.Done.message"),
                 PluginUtils.plugInName, JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -358,8 +355,7 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -386,9 +382,7 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
                                 @Override
                                 public void run(TaskMonitor monitor,
                                         PlugInContext context) throws Exception {
-                                    monitor.report(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    monitor.report(PluginUtils.i18n(
                                                     "OpenKlem.executing-process"));
                                     reportNothingToUndoYet(context);
                                     monitor.allowCancellationRequests();
@@ -422,7 +416,7 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "WatershedPlugin.PlugInName.label");
     }
 
@@ -471,17 +465,16 @@ public class WatershedPlugIn extends AbstractInputKlemPlugin {
     //    private RasterImageLayer[] ar_rasterImageLayers;
     private final InitialDialog initialDialog;
     //    private Layer[] layers;
-    private final String DEM_LABEL = PluginUtils.getResources().getString(
+    private final String DEM_LABEL = PluginUtils.i18n(
             "KlemGUI.InputFilledDem.label");
-    //    private final String OUT_RASTER_LABEL = PluginUtils.getResources().getString("KlemGUI.OutputRaster.label");
+    //    private final String OUT_RASTER_LABEL = PluginUtils.i18n("KlemGUI.OutputRaster.label");
     private final String XCOORD_LABEL = "x";
     private final String YCOORD_LABEL = "y";
-    private final String LAYER_LABEL = PluginUtils.getResources().getString(
+    private final String LAYER_LABEL = PluginUtils.i18n(
             "KlemGUI.Layer.label");
-    private final String CLIP_OUTPUT = PluginUtils.getResources().getString(
+    private final String CLIP_OUTPUT = PluginUtils.i18n(
             "WatershedPlugin.ClipOutput");
-    private final String WATERSHED_LABEL = PluginUtils.getResources()
-            .getString("WatershedPlugin.PlugInName.label");
+    private final String WATERSHED_LABEL = PluginUtils.i18n("WatershedPlugin.PlugInName.label");
 
     private final LayerablesList layerablesList;
 }

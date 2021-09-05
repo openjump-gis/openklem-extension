@@ -111,7 +111,7 @@ public class OutputTab extends AbstractInputKlemPlugin {
             initialData.setParam_ChartPanel(personalChartKlem, GUIUtils.OUTPUT);// 03
 
             initialData.setParam_Action(
-                    new ActionObject(PluginUtils.getResources().getString(
+                    new ActionObject(PluginUtils.i18n(
                             "HydrographKlemPlugin.Output.ExportChart.button")),
                     GUIUtils.OUTPUT);// 04
 
@@ -139,9 +139,7 @@ public class OutputTab extends AbstractInputKlemPlugin {
             initialData
                     .setParam_Action(
                             new ActionObject(
-                                    PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    PluginUtils.i18n(
                                                     "HydrographKlemPlugin.Output.ExportTables.button")),
                             GUIUtils.OUTPUT);// 11
 
@@ -208,9 +206,7 @@ public class OutputTab extends AbstractInputKlemPlugin {
                     // 640, 480);
                     JOptionPane.showMessageDialog(
                             context.getActiveInternalFrame(),
-                            PluginUtils
-                                    .getResources()
-                                    .getString(
+                            PluginUtils.i18n(
                                             "HydrographKlemPlugin.Output.ExportChart.done"),
                             PluginUtils.plugInName,
                             JOptionPane.INFORMATION_MESSAGE);
@@ -261,9 +257,7 @@ public class OutputTab extends AbstractInputKlemPlugin {
 
                     JOptionPane.showMessageDialog(
                             context.getActiveInternalFrame(),
-                            PluginUtils
-                                    .getResources()
-                                    .getString(
+                            PluginUtils.i18n(
                                             "HydrographKlemPlugin.Output.ExportChart.done"),
                             PluginUtils.plugInName,
                             JOptionPane.INFORMATION_MESSAGE);
@@ -287,8 +281,7 @@ public class OutputTab extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, true, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, true, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -353,9 +346,7 @@ public class OutputTab extends AbstractInputKlemPlugin {
                                         @Override
                                         public void run(TaskMonitor monitor,
                                                 PlugInContext context) {
-                                            monitor.report(PluginUtils
-                                                    .getResources()
-                                                    .getString(
+                                            monitor.report(PluginUtils.i18n(
                                                             "HydrographKlemPlugin.button.OdsExport.exporting"));
                                             // monitor.allowCancellationRequests();
 
@@ -383,9 +374,7 @@ public class OutputTab extends AbstractInputKlemPlugin {
                                                 JOptionPane
                                                         .showMessageDialog(
                                                                 component(),
-                                                                PluginUtils
-                                                                        .getResources()
-                                                                        .getString(
+                                                                PluginUtils.i18n(
                                                                                 "HydrographKlemPlugin.OdsExportComplete"),
                                                                 PluginUtils.plugInName,
                                                                 JOptionPane.INFORMATION_MESSAGE);
@@ -448,20 +437,20 @@ public class OutputTab extends AbstractInputKlemPlugin {
             Logger.warn("Could not load ODS classes", e);
         }
 
-        mainPanel.setRightButtonText(PluginUtils.getResources().getString(
+        mainPanel.setRightButtonText(PluginUtils.i18n(
                 "MainPanel.ExecuteButton.text"));
-        mainPanel.setCenterButtonText(PluginUtils.getResources().getString(
+        mainPanel.setCenterButtonText(PluginUtils.i18n(
                 "HydrographKlemPlugin.button.OdsExport"));
 
         if (c == null || c2 == null) {
             mainPanel.getCenterButton().setEnabled(false);
             mainPanel.getCenterButton().setToolTipText(
-                    PluginUtils.getResources().getString(
+                    PluginUtils.i18n(
                             "HydrographKlemPlugin.button.OdsExport.tooltip2"));
         } else {
             mainPanel.getCenterButton().setEnabled(true);
             mainPanel.getCenterButton().setToolTipText(
-                    PluginUtils.getResources().getString(
+                    PluginUtils.i18n(
                             "HydrographKlemPlugin.button.OdsExport.tooltip"));
         }
 
@@ -603,103 +592,101 @@ public class OutputTab extends AbstractInputKlemPlugin {
     private String[] getSmulationParamLabels() {
 
         final List<String> simuParams = new ArrayList<>();
-        simuParams.add(PluginUtils.getResources().getString(
+        simuParams.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputBaseflow.label")); // baseflow
-        simuParams.add(PluginUtils.getResources().getString(
+        simuParams.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputBaseflowRecession.label")); // costante
                                                                         // esaurimento
                                                                         // defl
                                                                         // base
-        simuParams.add(PluginUtils.getResources().getString(
+        simuParams.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputAMC.label")); // AMC
-        simuParams.add(PluginUtils.getResources().getString(
+        simuParams.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputCNApparente.label")); // cn
                                                                   // apparente
         if (klemProps.getInitAbsUnit() == InitialAbstraction.AbstractionUnits.FRACTION) {
             simuParams
-                    .add(PluginUtils
-                            .getResources()
-                            .getString(
+                    .add(PluginUtils.i18n(
                                     "HydrographKlemPlugin.OutputInitialAbstraction.labelFraction")); // initial
                                                                                                      // abstraction
         } else if (klemProps.getInitAbsUnit() == InitialAbstraction.AbstractionUnits.MILLIMETERS) {
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputInitialAbstraction.labelMm")); // initial
                                                                                // abstraction
         }
-        simuParams.add(PluginUtils.getResources().getString(
+        simuParams.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputBasinArea.label")); // basin area
-        simuParams.add(PluginUtils.getResources().getString(
+        simuParams.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputAreaContribuente.label")); // area
                                                                        // contribuente
 
         if (klemProps.getKinematicsType() == KlemProperties.KinematicsType.ADVANCED) {
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputChannelVelocity.label")); // channel
                                                                           // velocity
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputMinSlopeVelocity.label")); // min
                                                                            // slope
                                                                            // velocity
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputMaxSlopeVelocity.label")); // max
                                                                            // slope
                                                                            // velocity
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputCostSlopeVelocity.label")); // cost
                                                                             // slope
                                                                             // velocity
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputCostThresholdMin.label")); // min
                                                                            // threshold
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputCostThresholdMax.label")); // soglia
                                                                            // massima
                                                                            // versante
                                                                            // canale
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputCostThreshold.label")); // const.
                                                                         // k
                                                                         // threshold
         } else if (klemProps.getKinematicsType() == KlemProperties.KinematicsType.SIMPLE) {
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputChannelVelocity.label")); // channel
                                                                           // velocity
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.SlopeVelocity.label")); // slope
                                                                   // velocity
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.Threshold.label")); // threshold
         }
 
         if (klemProps.getRainfallType() == RainfallType.POINT
                 || klemProps.getRainfallType() == RainfallType.DISTRIBUTED) {
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputCriticRainfallDuration.label")); // durata
                                                                                  // precipitazione
                                                                                  // critica
             simuParams.add("a"); // a
             simuParams.add("n"); // n
             simuParams.add("n < 1h"); //
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputARF.label")); // ARF
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputHyetoShape.label")); // hyeto
                                                                      // shape
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputRiduzionePioggia.label")); // riduzione
                                                                            // pioggia
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputInitialLsppModel.label")); // LSPP
                                                                            // Model
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputgeomorphFactorlabel")); // geomorph
                                                                         // factor
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputThresholdGeomorphFactorlabel")); // threshold
                                                                                  // geomorph
                                                                                  // factor
-            simuParams.add(PluginUtils.getResources().getString(
+            simuParams.add(PluginUtils.i18n(
                     "HydrographKlemPlugin.OutputAvanzamentoHyeto.label")); // avanzamento
                                                                            // ietogramma
         }
@@ -790,19 +777,19 @@ public class OutputTab extends AbstractInputKlemPlugin {
     private String[] getMorphoBasinParamsLabel() {
 
         final List<String> morphoBasinList = new ArrayList<>();
-        morphoBasinList.add(PluginUtils.getResources().getString(
+        morphoBasinList.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputOutletNord.label"));
-        morphoBasinList.add(PluginUtils.getResources().getString(
+        morphoBasinList.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputOutletEst.label"));
-        morphoBasinList.add(PluginUtils.getResources().getString(
+        morphoBasinList.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputMinElevation.label"));
-        morphoBasinList.add(PluginUtils.getResources().getString(
+        morphoBasinList.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputMaxElevation.label"));
-        morphoBasinList.add(PluginUtils.getResources().getString(
+        morphoBasinList.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputAverageElevation.label"));
-        morphoBasinList.add(PluginUtils.getResources().getString(
+        morphoBasinList.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputBasinAverageSlope.label"));
-        morphoBasinList.add(PluginUtils.getResources().getString(
+        morphoBasinList.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputBasinArea.label"));
 
         return morphoBasinList.toArray(new String[0]);
@@ -844,15 +831,15 @@ public class OutputTab extends AbstractInputKlemPlugin {
     private String[] getSimulatedFlowLabels() {
 
         final List<String> morphoBasinList = new ArrayList<>();
-        morphoBasinList.add(PluginUtils.getResources().getString(
+        morphoBasinList.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputRainfall.message"));
-        morphoBasinList.add(PluginUtils.getResources().getString(
+        morphoBasinList.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputStartDischarge.message"));
-        morphoBasinList.add(PluginUtils.getResources().getString(
+        morphoBasinList.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputMaxDischarge.message"));
-        morphoBasinList.add(PluginUtils.getResources().getString(
+        morphoBasinList.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputAverageDischarge.message"));
-        morphoBasinList.add(PluginUtils.getResources().getString(
+        morphoBasinList.add(PluginUtils.i18n(
                 "HydrographKlemPlugin.OutputPeakTime.message"));
 
         return morphoBasinList.toArray(new String[0]);
@@ -940,29 +927,26 @@ public class OutputTab extends AbstractInputKlemPlugin {
     private KlemProperties klemProps;
     private final PlugInContext context;
     private final SimulationOutput simOut;
-    private final String TIME = PluginUtils.getResources().getString(
+    private final String TIME = PluginUtils.i18n(
             "HydrographKlemPlugin.TableTime.label");
-    private final String TOT_FLOW = PluginUtils.getResources().getString(
+    private final String TOT_FLOW = PluginUtils.i18n(
             "HydrographKlemPlugin.TotDischarge.label");
-    private final String DIR_FLOW = PluginUtils.getResources().getString(
+    private final String DIR_FLOW = PluginUtils.i18n(
             "HydrographKlemPlugin.DirDischarge.label");
-    private final String BASE_FLOW = PluginUtils.getResources().getString(
+    private final String BASE_FLOW = PluginUtils.i18n(
             "HydrographKlemPlugin.BaseFlow.label");
-    private final String TOT_RAINFALL = PluginUtils.getResources().getString(
+    private final String TOT_RAINFALL = PluginUtils.i18n(
             "HydrographKlemPlugin.ToTRainfall.label");
-    private final String EFF_RAINFALL = PluginUtils.getResources().getString(
+    private final String EFF_RAINFALL = PluginUtils.i18n(
             "HydrographKlemPlugin.EffRainfall.label");
-    private final String FILE_FILTER_DESCRIPTION = PluginUtils.getResources()
-            .getString("HydrologicalGroups.TableFileDescription.label");
-    private final String LABEL_SIMOUT_PARAM = PluginUtils.getResources()
-            .getString("HydrographKlemPlugin.OutputSimLabelTable.label");
-    private final String VALUE_SIMOUT_PARAM = PluginUtils.getResources()
-            .getString("HydrographKlemPlugin.OutputSimValueTable.label");
-    private final String DIRECT_LABEL = PluginUtils.getResources().getString(
+    private final String FILE_FILTER_DESCRIPTION = PluginUtils.i18n("HydrologicalGroups.TableFileDescription.label");
+    private final String LABEL_SIMOUT_PARAM = PluginUtils.i18n("HydrographKlemPlugin.OutputSimLabelTable.label");
+    private final String VALUE_SIMOUT_PARAM = PluginUtils.i18n("HydrographKlemPlugin.OutputSimValueTable.label");
+    private final String DIRECT_LABEL = PluginUtils.i18n(
             "HydrographKlemPlugin.OutputDirectLabel.message");
-    private final String BASE_LABEL = PluginUtils.getResources().getString(
+    private final String BASE_LABEL = PluginUtils.i18n(
             "HydrographKlemPlugin.OutputBaseLabel.message");
-    private final String TOTAL_LABEL = PluginUtils.getResources().getString(
+    private final String TOTAL_LABEL = PluginUtils.i18n(
             "HydrographKlemPlugin.OutputTotalLabel.message");
     private final LayerablesList layerablesList;
 

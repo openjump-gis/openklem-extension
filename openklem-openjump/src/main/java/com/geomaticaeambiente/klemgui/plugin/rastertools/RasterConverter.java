@@ -28,7 +28,7 @@ public class RasterConverter {
         // Just copy
         final Format inputFormat = findFormat(input);
         if (inputFormat == null) {
-            throw new WarningException(PluginUtils.getResources().getString(
+            throw new WarningException(PluginUtils.i18n(
                     "RasterConverter.UnknownInputFormat"));
         }
         if (inputFormat == outputFormat) {

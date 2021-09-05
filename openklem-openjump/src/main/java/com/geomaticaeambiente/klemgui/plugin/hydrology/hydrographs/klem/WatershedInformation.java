@@ -80,9 +80,7 @@ public class WatershedInformation {
 
             } else {
                 throw new WarningException(
-                        PluginUtils
-                                .getResources()
-                                .getString(
+                        PluginUtils.i18n(
                                         "HydrographKlemPlugin.CoordsOutsideRaster.message"));
             }
             // TODO: delete stack trace when there is the error

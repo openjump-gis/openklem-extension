@@ -69,12 +69,12 @@ public class KlemUtils {
 
         if (area < 0.01 || area > 400) {
 
-            throw new WarningException(PluginUtils.getResources().getString(
+            throw new WarningException(PluginUtils.i18n(
                     "HydrographKlemPlugin.BasinArea.label")
                     + ": "
                     + PluginUtils.getFourDecimalFormatToString(area)
                     + "\n"
-                    + PluginUtils.getResources().getString(
+                    + PluginUtils.i18n(
                             "HydrographKlemPlugin.CheckArea.message1"));
         }
 
@@ -94,9 +94,7 @@ public class KlemUtils {
 
             if (aS.equals("") || nS.equals("") || nLessHourS.equals("")) {
                 throw new WarningException(
-                        PluginUtils
-                                .getResources()
-                                .getString(
+                        PluginUtils.i18n(
                                         "HydrographKlemPlugin.CheckLSPPParams.msgInvalidParams"));
             }
 
@@ -112,17 +110,13 @@ public class KlemUtils {
                 }
             } catch (final Exception ex) {
                 throw new WarningException(
-                        PluginUtils
-                                .getResources()
-                                .getString(
+                        PluginUtils.i18n(
                                         "HydrographKlemPlugin.CheckLSPPParams.msgInvalidParams"));
             }
 
             if (aD < 30 || aD > 120 || nD <= 0 || nD > 1) {
                 throw new WarningException(
-                        PluginUtils
-                                .getResources()
-                                .getString(
+                        PluginUtils.i18n(
                                         "HydrographKlemPlugin.CheckLSPPParams.msgInvalidParams"));
             }
 
@@ -143,8 +137,7 @@ public class KlemUtils {
 
             final LsppModel lsppModel = klemProps.getLsppModel();
             if (lsppModel == null) {
-                throw new WarningException(PluginUtils.getResources()
-                        .getString(
+                throw new WarningException(PluginUtils.i18n(
                                 "HydrographKlemPlugin.DistributedModel.label"));
             } else if (lsppModel == LsppCalculator.LsppModel.GUMBEL
                     || lsppModel == LsppCalculator.LsppModel.GEV) {
@@ -282,8 +275,7 @@ public class KlemUtils {
 
         // hyeto params
         if (hyetoShape == null) {
-            throw new NullPointerException(PluginUtils.getResources()
-                    .getString("HydrographKlemPlugin.HyetoTypeSel.label"));
+            throw new NullPointerException(PluginUtils.i18n("HydrographKlemPlugin.HyetoTypeSel.label"));
         } else {
             klemProps.setHyetoType(hyetoShape);
         }
@@ -313,17 +305,13 @@ public class KlemUtils {
         if (initAbsUnit == InitialAbstraction.AbstractionUnits.FRACTION) {
             if (initialAbstraction < 0 || initialAbstraction >= 1) {
                 throw new WarningException(
-                        PluginUtils
-                                .getResources()
-                                .getString(
+                        PluginUtils.i18n(
                                         "HydrographKlemPlugin.InvalidInitAbsFractionValueException"));
             }
         } else if (initAbsUnit == InitialAbstraction.AbstractionUnits.MILLIMETERS) {
             if (initialAbstraction < 0) {
                 throw new WarningException(
-                        PluginUtils
-                                .getResources()
-                                .getString(
+                        PluginUtils.i18n(
                                         "HydrographKlemPlugin.InvalidInitAbsMmValueException"));
             }
         }

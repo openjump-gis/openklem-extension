@@ -41,15 +41,15 @@ public class HydroUtils {
         
         String time = "";
         if(xUnit == TimeInterval.TimeIntervalUnit.HOUR) {
-            time = PluginUtils.getResources().getString("HyetographPlugin.Graph_TimeHour.label");
+            time = PluginUtils.i18n("HyetographPlugin.Graph_TimeHour.label");
         } else if (xUnit == TimeInterval.TimeIntervalUnit.MINUTE){
-            time = PluginUtils.getResources().getString("HyetographPlugin.Graph_TimeMin.label"); //TODO: modify label
+            time = PluginUtils.i18n("HyetographPlugin.Graph_TimeMin.label"); //TODO: modify label
             
         }
         
         DefaultTableModel dtm = new DefaultTableModel(data, new String[]{
             time,
-            PluginUtils.getResources().getString("HydroUtils.Discharge.label")});
+            PluginUtils.i18n("HydroUtils.Discharge.label")});
         
         return dtm;
     }
@@ -81,8 +81,8 @@ public class HydroUtils {
         
         String type = getHydroTypeAsString(hydroType);
         String[] headerRows = new String[]{
-                PluginUtils.getResources().getString("KlemGUI.HydrographTypeLabel.label") + type,
-                PluginUtils.getResources().getString("HydroUtils.TimeH.label") + "," + PluginUtils.getResources().getString("HydroUtils.Discharge.label")};
+                PluginUtils.i18n("KlemGUI.HydrographTypeLabel.label") + type,
+                PluginUtils.i18n("HydroUtils.TimeH.label") + "," + PluginUtils.i18n("HydroUtils.Discharge.label")};
         
         return headerRows;
     }
@@ -92,19 +92,19 @@ public class HydroUtils {
         
         switch(type){
             case SCS:{
-                return PluginUtils.getResources().getString("HydroUtils.SCS.label");
+                return PluginUtils.i18n("HydroUtils.SCS.label");
             }
             case TRIANGULAR : {
-                return PluginUtils.getResources().getString("HydroUtils.Triangular.label");
+                return PluginUtils.i18n("HydroUtils.Triangular.label");
             }
             case NASH : {
-                return PluginUtils.getResources().getString("HydroUtils.Nash.label");
+                return PluginUtils.i18n("HydroUtils.Nash.label");
             }
             case GEOMORPHOLOGICAL: {
-                return PluginUtils.getResources().getString("HydroUtils.Geomorphological.label");
+                return PluginUtils.i18n("HydroUtils.Geomorphological.label");
             }
             case KINEMATIC:{
-                return PluginUtils.getResources().getString("HydroUtils.Kinematic.label");
+                return PluginUtils.i18n("HydroUtils.Kinematic.label");
             }
         }
         return null;
@@ -122,13 +122,13 @@ public class HydroUtils {
         PersonalTable personalTable = new PersonalTable(
                 HydroUtils.setTableModel(
                         unitHydrograph, xUnit,
-                        PluginUtils.getResources().getString("HyetographPlugin.Graph_Rainfall.label"),
+                        PluginUtils.i18n("HyetographPlugin.Graph_Rainfall.label"),
                         false),
                 new Header(HydroUtils.setHydrographHeaderString(type)),
                 false, true, false, false, false, null, new String[]{"txt", "csv"}, false);
 
         //set values for save file
-        personalTable.setPrintableDefaultTableModel(HydroUtils.setTableModel(unitHydrograph, xUnit, PluginUtils.getResources().getString("HyetographPlugin.Graph_Rainfall.label"), true));
+        personalTable.setPrintableDefaultTableModel(HydroUtils.setTableModel(unitHydrograph, xUnit, PluginUtils.i18n("HyetographPlugin.Graph_Rainfall.label"), true));
 
         initialData.setParam_PersonalTable(personalTable, new FileNameExtensionFilter("Hydrograph", new String[]{"txt","csv"}), GUIUtils.OUTPUT); //table
 
@@ -154,11 +154,11 @@ public class HydroUtils {
     public static void checkHydroValue(String field, double value, double minValue, double maxValue){
         
         if(!checkRangeParameter(value, minValue, maxValue)) throw new IllegalArgumentException(
-            PluginUtils.getResources().getString("HydroUtils.ThresholdValue_TheValue.message")
+            PluginUtils.i18n("HydroUtils.ThresholdValue_TheValue.message")
                         .concat(field)
-                        .concat(PluginUtils.getResources().getString("HydroUtils.ThresholdValue_MustBe.message"))
+                        .concat(PluginUtils.i18n("HydroUtils.ThresholdValue_MustBe.message"))
                         .concat(Double.toString(0d))
-                        .concat(PluginUtils.getResources().getString("HydroUtils.ThresholdValue_and.message"))
+                        .concat(PluginUtils.i18n("HydroUtils.ThresholdValue_and.message"))
                         .concat(Double.toString(maxValue))
         );
   

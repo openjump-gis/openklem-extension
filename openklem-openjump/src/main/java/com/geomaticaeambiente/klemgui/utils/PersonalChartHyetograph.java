@@ -94,7 +94,7 @@ public class PersonalChartHyetograph extends PersonalChart{
         }
         
         XYBarDataset xyBarDataset = new XYBarDataset(xyDataset, barWidth);
-        xyDataset.addSeries(PluginUtils.getResources().getString("HyetographPlugin.Graph_Rain.label"), data);
+        xyDataset.addSeries(PluginUtils.i18n("HyetographPlugin.Graph_Rain.label"), data);
 
         // Distance between series
         IntervalBarRenderer intervalBarRenderer = new IntervalBarRenderer();
@@ -103,16 +103,16 @@ public class PersonalChartHyetograph extends PersonalChart{
         // Labels
         String graphTimeLabel = "";
         if (units == TimeInterval.TimeIntervalUnit.HOUR) {
-            graphTimeLabel = PluginUtils.getResources().getString("HyetographPlugin.Graph_TimeHour.label");
+            graphTimeLabel = PluginUtils.i18n("HyetographPlugin.Graph_TimeHour.label");
         } else if (units == TimeInterval.TimeIntervalUnit.MINUTE){
-            graphTimeLabel = PluginUtils.getResources().getString("HyetographPlugin.Graph_TimeMin.label");
+            graphTimeLabel = PluginUtils.i18n("HyetographPlugin.Graph_TimeMin.label");
         }
         
         DateAxis xAxis = new DateAxis(graphTimeLabel);
         xAxis.setTickLabelFont(new Font(xAxis.getLabelFont().getName(), Font.PLAIN, 8));
         xAxis.setMinimumDate(new Date(0));
         
-        NumberAxis yAxis = new NumberAxis(PluginUtils.getResources().getString("HyetographPlugin.Graph_Rainfall.label"));
+        NumberAxis yAxis = new NumberAxis(PluginUtils.i18n("HyetographPlugin.Graph_Rainfall.label"));
         
         JFreeChart chart = ChartFactory.createXYBarChart(
                 null,
@@ -127,7 +127,7 @@ public class PersonalChartHyetograph extends PersonalChart{
 
         // Rendering
         XYPlot plot = chart.getXYPlot();
-        chart.setTitle(PluginUtils.getResources().getString("HyetographPlugIn.PlugInName.label"));
+        chart.setTitle(PluginUtils.i18n("HyetographPlugIn.PlugInName.label"));
         
         Paint backgroundPaint = new GradientPaint(
                 0.0f, 0.0f, new Color(255, 255, 255), 0.0f, 0.0f, new Color(128, 128, 128));

@@ -49,10 +49,10 @@ public class HydrographNashPlugin extends AbstractInputKlemPlugin {
         initialData.setParam_Label_TextBox(GUIUtils.setGUILabel(SCALE_PARAM), "", GUIUtils.OTHER);
 
         //graphic unit
-        initialData.setParam_Labels(new String[]{GUIUtils.setGUILabel(PluginUtils.getResources().getString("HyetographPlugIn.XUnits.label"))}, GUIUtils.OTHER); //label x unit
+        initialData.setParam_Labels(new String[]{GUIUtils.setGUILabel(PluginUtils.i18n("HyetographPlugIn.XUnits.label"))}, GUIUtils.OTHER); //label x unit
         initialData.setParam_Action(new ActionObject(
-                new String[]{PluginUtils.getResources().getString("KlemGUI.hours.label"),
-                    PluginUtils.getResources().getString("KlemGUI.minutes.label")}), GUIUtils.OTHER);//radio buttons: hours and minutes
+                new String[]{PluginUtils.i18n("KlemGUI.hours.label"),
+                    PluginUtils.i18n("KlemGUI.minutes.label")}), GUIUtils.OTHER);//radio buttons: hours and minutes
 
         return initialData;
 
@@ -73,7 +73,7 @@ public class HydrographNashPlugin extends AbstractInputKlemPlugin {
             return this.mainPanel;
         }
         this.mainPanel = new MainPanel(super.getInitialDialog(), componentsWithActions, false, false, true,
-                PluginUtils.getResources().getString("MainPanel.ExecuteButton.text"), layerablesList) {
+                PluginUtils.i18n("MainPanel.ExecuteButton.text"), layerablesList) {
 
             @Override
             public void rightButton() {
@@ -140,7 +140,7 @@ public class HydrographNashPlugin extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString("HydrographNashPlugin.PluginName.label");
+        return PluginUtils.i18n("HydrographNashPlugin.PluginName.label");
     }
 
     private void checksParameters(double baseFlow, double shapeParam, double scaleParam) {
@@ -158,9 +158,9 @@ public class HydrographNashPlugin extends AbstractInputKlemPlugin {
     private TimeInterval.TimeIntervalUnit xUnit;
     private double timeStep;
     private UnitHydrograph unitHydrograph;
-    private final String BASE_FLOW = PluginUtils.getResources().getString("HydrographCommonLabels.BaseFlow.label");
-    private final String SHAPE_PARAM = PluginUtils.getResources().getString("HydrographNashPlugin.ShapeParam.label");
-    private final String SCALE_PARAM = PluginUtils.getResources().getString("HydrographNashPlugin.ScaleParam.label");
+    private final String BASE_FLOW = PluginUtils.i18n("HydrographCommonLabels.BaseFlow.label");
+    private final String SHAPE_PARAM = PluginUtils.i18n("HydrographNashPlugin.ShapeParam.label");
+    private final String SCALE_PARAM = PluginUtils.i18n("HydrographNashPlugin.ScaleParam.label");
 
     private final LayerablesList layerablesList;
 }

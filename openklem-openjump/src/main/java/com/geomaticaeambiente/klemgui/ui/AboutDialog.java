@@ -6,7 +6,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ResourceBundle;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -28,8 +27,8 @@ class AboutDialog extends JDialog {
 
     public AboutDialog() {
 
-        setTitle("About"); // bundle.getString("InitialDialog.jButton_About.text"));
-                           // //NOI18N
+        setTitle(PluginUtils.i18n("InitialDialog.jButton_About.text"));
+
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 
@@ -48,9 +47,7 @@ class AboutDialog extends JDialog {
         titleLabel2.setFont(new Font("monospaced", Font.BOLD, 13));
         titleLabel2.setAlignmentX(0.5f);
 
-        final JTextArea textArea = new JTextArea(java.util.ResourceBundle
-                .getBundle("com/geomaticaeambiente/klemgui/language/Bundle")
-                .getString("AboutDialog.TextArea.text"));
+        final JTextArea textArea = new JTextArea(PluginUtils.i18n("AboutDialog.TextArea.text"));
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
         textArea.setAlignmentX(0.5f);
@@ -67,9 +64,7 @@ class AboutDialog extends JDialog {
 
         add(Box.createRigidArea(new Dimension(0, 10)));
 
-        final JButton close = new JButton(java.util.ResourceBundle.getBundle(
-            "com/geomaticaeambiente/klemgui/language/Bundle").getString(
-                "InitialDialog.jButton_Close.text"));
+        final JButton close = new JButton(PluginUtils.i18n("InitialDialog.jButton_Close.text"));
         close.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
@@ -85,8 +80,5 @@ class AboutDialog extends JDialog {
         setResizable(false);
         // pack();
     }
-
-    ResourceBundle bundle = java.util.ResourceBundle
-            .getBundle("com/geomaticaeambiente/klemgui/language/Bundle"); // NOI18N
 
 }

@@ -177,8 +177,7 @@ public class AggregateRastersPlugin extends AbstractInputKlemPlugin {
         RasterUtils.displayRasterFileOnOJ(context.getWorkbenchContext(),
                 new File(outRasterName), null);
 
-        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils
-                .getResources().getString("SetWorkspacePlugin.Done.message"),
+        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils.i18n("SetWorkspacePlugin.Done.message"),
                 PluginUtils.plugInName, JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -189,8 +188,7 @@ public class AggregateRastersPlugin extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -216,9 +214,7 @@ public class AggregateRastersPlugin extends AbstractInputKlemPlugin {
                                 @Override
                                 public void run(TaskMonitor monitor,
                                         PlugInContext context) throws Exception {
-                                    monitor.report(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    monitor.report(PluginUtils.i18n(
                                                     "OpenKlem.executing-process"));
                                     reportNothingToUndoYet(context);
                                     monitor.allowCancellationRequests();
@@ -252,7 +248,7 @@ public class AggregateRastersPlugin extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "AggregateRastersPlugin.PlugInName.text");
     }
 
@@ -359,17 +355,14 @@ public class AggregateRastersPlugin extends AbstractInputKlemPlugin {
         try {
             final double cellSizeVal = Double.parseDouble(cellSize);
             if (cellSizeVal < 0) {
-                throw new IOException(PluginUtils.getResources()
-                        .getString("Check.CheckStringValue.message")
+                throw new IOException(PluginUtils.i18n("Check.CheckStringValue.message")
                         .concat(CELLSIZE_LABEL));
             }
         } catch (final NumberFormatException ex) {
-            throw new IOException(PluginUtils.getResources()
-                    .getString("Check.CheckStringValue.message")
+            throw new IOException(PluginUtils.i18n("Check.CheckStringValue.message")
                     .concat(CELLSIZE_LABEL));
         } catch (final IOException ex) {
-            throw new IOException(PluginUtils.getResources()
-                    .getString("Check.CheckStringValue.message")
+            throw new IOException(PluginUtils.i18n("Check.CheckStringValue.message")
                     .concat(CELLSIZE_LABEL));
         }
 
@@ -382,20 +375,19 @@ public class AggregateRastersPlugin extends AbstractInputKlemPlugin {
     //    private RasterImageLayer[] rasterImageLayers;
     private final PlugInContext context;
     private MainPanel mainPanel;
-    private final String AGG_MIN = "MIN"; //PluginUtils.getResources().getString("ReclassRasterPlugin.StDev.text");
+    private final String AGG_MIN = "MIN"; //PluginUtils.i18n("ReclassRasterPlugin.StDev.text");
     private final String AGG_MAX = "MAX";
     private final String AGG_MEAN = "MEAN";
     private final String AGG_SUM = "SUM";
     private final String AGG_MAJORITY = "MAJORITY";
 
-    private final String OVER_MOST_SIGNIFICANT_FIRST = "MOST_SIGNIFICANT_FIRST"; //PluginUtils.getResources().getString("ReclassRasterPlugin.StDev.text");
+    private final String OVER_MOST_SIGNIFICANT_FIRST = "MOST_SIGNIFICANT_FIRST"; //PluginUtils.i18n("ReclassRasterPlugin.StDev.text");
     private final String OVER_MOST_SIGNIFICANT_LAST = "MOST_SIGNIFICANT_LAST";
     private final String OVER_MEAN = "MEAN";
     private final String OVER_MAX = "MAX";
     private final String OVER_MIN = "MIN";
 
-    private final String RASTER_IN_LABEL = PluginUtils.getResources()
-            .getString("KlemGUI.InputRaster.label");
+    private final String RASTER_IN_LABEL = PluginUtils.i18n("KlemGUI.InputRaster.label");
     private final String AGGREGATION_LABEL = "Aggregation method";
     private final String OVERLAY_LABEL = "Overlay method";
     private final String CELLSIZE_LABEL = "Output cell size";

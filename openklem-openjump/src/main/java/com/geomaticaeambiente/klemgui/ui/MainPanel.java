@@ -154,7 +154,7 @@ public abstract class MainPanel extends JPanel implements LayersChangedListener 
     private void initMandatoryButton() {
 
         // JButton rightButton = new
-        // JButton(PluginUtils.getResources().getString("MainPanel.ExecuteButton.text"));
+        // JButton(PluginUtils.i18n("MainPanel.ExecuteButton.text"));
         rightButton = new JButton(rightButtonText);
 
         final GridBagConstraints gridBagConstraints = new java.awt.GridBagConstraints();
@@ -385,13 +385,12 @@ public abstract class MainPanel extends JPanel implements LayersChangedListener 
     private final int countOptionalButto = 0;
     private final boolean rightButtonVisible;
     // private JPanel subPanel;
-    private String rightButtonText = PluginUtils.getResources().getString(
+    private String rightButtonText = PluginUtils.i18n(
             "MainPanel.ExecuteButton.text");
-    private String centerButtonText = PluginUtils.getResources().getString(
+    private String centerButtonText = PluginUtils.i18n(
             "MainPanel.SaveButton.text");
-    private final String centerButtonTooltip = PluginUtils.getResources()
-            .getString("MainPanel.SaveButton.tooltip");
-    private String leftButtonText = PluginUtils.getResources().getString(
+    private final String centerButtonTooltip = PluginUtils.i18n("MainPanel.SaveButton.tooltip");
+    private String leftButtonText = PluginUtils.i18n(
             "MainPanel.LoadButton.text");
     private JButton rightButton;
     private JButton leftButton;

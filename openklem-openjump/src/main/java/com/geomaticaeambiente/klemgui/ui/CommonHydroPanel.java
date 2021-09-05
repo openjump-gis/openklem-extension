@@ -61,10 +61,7 @@ public class CommonHydroPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.GridBagLayout());
 
-        final java.util.ResourceBundle bundle = java.util.ResourceBundle
-                .getBundle("com/geomaticaeambiente/klemgui/language/Bundle"); // NOI18N
-        jLabel_Hyetograph.setText(bundle
-                .getString("CommonHydroPanel.jLabel_Hyetograph.text")); // NOI18N
+        jLabel_Hyetograph.setText(PluginUtils.i18n("CommonHydroPanel.jLabel_Hyetograph.text")); // NOI18N
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -100,8 +97,7 @@ public class CommonHydroPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new Insets(7, 6, 0, 10);
         add(jButton_Chooser, gridBagConstraints);
 
-        jLabel_Duration.setText(bundle
-                .getString("CommonHydroPanel.jLabel_Duration.text")); // NOI18N
+        jLabel_Duration.setText(PluginUtils.i18n("CommonHydroPanel.jLabel_Duration.text")); // NOI18N
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -122,8 +118,7 @@ public class CommonHydroPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new Insets(6, 4, 0, 10);
         add(jTextField_Duration, gridBagConstraints);
 
-        jLabel_BasinArea.setText(bundle
-                .getString("CommonHydroPanel.jLabel_BasinArea.text")); // NOI18N
+        jLabel_BasinArea.setText(PluginUtils.i18n("CommonHydroPanel.jLabel_BasinArea.text")); // NOI18N
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -142,8 +137,7 @@ public class CommonHydroPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new Insets(6, 4, 0, 10);
         add(jTextField_BasinArea, gridBagConstraints);
 
-        jLabel_FlowFraction.setText(bundle
-                .getString("CommonHydroPanel.jLabel_FlowFraction.text")); // NOI18N
+        jLabel_FlowFraction.setText(PluginUtils.i18n("CommonHydroPanel.jLabel_FlowFraction.text")); // NOI18N
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
@@ -161,7 +155,7 @@ public class CommonHydroPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new Insets(6, 4, 0, 10);
         add(jTextField_FlowFraction, gridBagConstraints);
 
-        jLabel_Cn.setText(bundle.getString("CommonHydroPanel.jLabel_Cn.text")); // NOI18N
+        jLabel_Cn.setText(PluginUtils.i18n("CommonHydroPanel.jLabel_Cn.text")); // NOI18N
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -180,8 +174,7 @@ public class CommonHydroPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new Insets(6, 4, 0, 10);
         add(jTextField_CN, gridBagConstraints);
 
-        jLabel_FlowCoeff.setText(bundle
-                .getString("CommonHydroPanel.jLabel_FlowCoeff.text")); // NOI18N
+        jLabel_FlowCoeff.setText(PluginUtils.i18n("CommonHydroPanel.jLabel_FlowCoeff.text")); // NOI18N
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -200,8 +193,7 @@ public class CommonHydroPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new Insets(6, 4, 0, 10);
         add(jTextField_FlowCoeff, gridBagConstraints);
 
-        jLabel_DeepFlow.setText(bundle
-                .getString("CommonHydroPanel.jLabel_DeepFlow.text")); // NOI18N
+        jLabel_DeepFlow.setText(PluginUtils.i18n("CommonHydroPanel.jLabel_DeepFlow.text")); // NOI18N
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;

@@ -98,8 +98,7 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, true, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, true, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), true,
                 MainPanel.ExtraSubPanelPosition.INITIAL, layerablesList) {
 
@@ -126,8 +125,7 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
                         @Override
                         public void run(TaskMonitor monitor,
                                 PlugInContext context) {
-                            monitor.report(PluginUtils.getResources()
-                                    .getString("OpenKlem.executing-process"));
+                            monitor.report(PluginUtils.i18n("OpenKlem.executing-process"));
                             // monitor.allowCancellationRequests();
                             reportNothingToUndoYet(context);
                             try {
@@ -173,18 +171,18 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
             }
         };
 
-        mainPanel.setRightButtonText(PluginUtils.getResources().getString(
+        mainPanel.setRightButtonText(PluginUtils.i18n(
                 "HydrographKlemPlugin.NextButton.label"));
         mainPanel.setEnableExecute(false);
 
-        mainPanel.setLeftButtonText(PluginUtils.getResources().getString(
+        mainPanel.setLeftButtonText(PluginUtils.i18n(
                 "KlemGUI.Help.label"));
         return mainPanel;
     }
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "HyetographPlugIn.KinematicLocalExcessModel");
     }
 
@@ -194,18 +192,14 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
 
         initialData
                 .setParam_MoreActions(
-                        // GUIUtils.setGUILabel(PluginUtils.getResources().getString("HydrographKlemPlugin.ChooseMode.label")),
+                        // GUIUtils.setGUILabel(PluginUtils.i18n("HydrographKlemPlugin.ChooseMode.label")),
 
                         new ActionObject[] {
                                 new ActionObject(
-                                        PluginUtils
-                                                .getResources()
-                                                .getString(
+                                        PluginUtils.i18n(
                                                         "HydrographKlemPlugin.CreateProject.label")),
                                 new ActionObject(
-                                        PluginUtils
-                                                .getResources()
-                                                .getString(
+                                        PluginUtils.i18n(
                                                         "HydrographKlemPlugin.LoadProjectButton.label")) },
                         GUIUtils.EXTRA);
 
@@ -271,8 +265,7 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
 
                         @Override
                         public void run(TaskMonitor monitor, PlugInContext context) {
-                            monitor.report(PluginUtils.getResources()
-                                    .getString("OpenKlem.executing-process"));
+                            monitor.report(PluginUtils.i18n("OpenKlem.executing-process"));
                             // monitor.allowCancellationRequests();
                             reportNothingToUndoYet(context);
                             try {
@@ -316,7 +309,7 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
 
                     @Override
                     public void run(TaskMonitor monitor, PlugInContext context) {
-                        monitor.report(PluginUtils.getResources().getString(
+                        monitor.report(PluginUtils.i18n(
                                 "OpenKlem.executing-process"));
                         // monitor.allowCancellationRequests();
                         reportNothingToUndoYet(context);
@@ -396,7 +389,7 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
         } else {
             final int ret = JOptionPane.showOptionDialog(
                     super.getInitialDialog(),
-                    PluginUtils.getResources().getString(
+                    PluginUtils.i18n(
                             "HydrographKlemPlugin.FolderExist.message"),
                     PluginUtils.plugInName, JOptionPane.YES_NO_OPTION,
                     JOptionPane.INFORMATION_MESSAGE, null, null, null);
@@ -754,8 +747,7 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
                 || klemProp.getUpslopeAreaFile() == null
                 || klemProp.getFlowDir() == null) {
 
-            throw new NullPointerException(PluginUtils.getResources()
-                    .getString("HydrographKlemPlugin.ProjectNotValid.label"));
+            throw new NullPointerException(PluginUtils.i18n("HydrographKlemPlugin.ProjectNotValid.label"));
         }
 
         if (klemProp.getDemFile().getAbsolutePath().isEmpty()
@@ -764,8 +756,7 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
                 || klemProp.getUpslopeAreaFile().getAbsolutePath().isEmpty()
                 || klemProp.getFlowDir().getAbsolutePath().isEmpty()) {
 
-            throw new NullPointerException(PluginUtils.getResources()
-                    .getString("HydrographKlemPlugin.ProjectNotValid.label"));
+            throw new NullPointerException(PluginUtils.i18n("HydrographKlemPlugin.ProjectNotValid.label"));
         }
 
         if (!klemProp.getDemFile().exists() || !klemProp.getCNFile().exists()
@@ -773,8 +764,7 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
                 || !klemProp.getUpslopeAreaFile().exists()
                 || !klemProp.getFlowDir().exists()) {
 
-            throw new NullPointerException(PluginUtils.getResources()
-                    .getString("HydrographKlemPlugin.ProjectNotValid.label"));
+            throw new NullPointerException(PluginUtils.i18n("HydrographKlemPlugin.ProjectNotValid.label"));
         }
     }
 
@@ -924,104 +914,104 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
         doc.remove(0, doc.getLength());
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.Title")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.TITLE1));
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.Text1")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.REGULAR));
 
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.CreatingTitle")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.TITLE2));
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.CreatingText")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.REGULAR));
 
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.SimParamsTitle")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.TITLE2));
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.SimParamsText")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.REGULAR));
 
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.AdvParamsTitle")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.TITLE2));
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.AdvParamsText")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.REGULAR));
 
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.RoutingTimeTitle")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.BOLD));
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.RoutingTimeText")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.REGULAR));
 
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.HyteographTitle")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.BOLD));
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.HyetographText")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.REGULAR));
 
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.HydrographTitle")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.BOLD));
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.HydrographText")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.REGULAR));
 
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.OutputTitle")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.TITLE2));
         doc.insertString(
                 doc.getLength(),
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "HydrographKlemPlugin.Help.OutputText")
                         + System.getProperty("line.separator"),
                 doc.getStyle(TextStyles.REGULAR));
@@ -1034,18 +1024,18 @@ public class HydrographKlemPlugin extends AbstractInputKlemPlugin {
     private final PlugInContext context;
     // private RasterImageLayer[] rasterImageLayers;
     // private Layer[] layers;
-    private final String DEM_RASTER = PluginUtils.getResources().getString(
+    private final String DEM_RASTER = PluginUtils.i18n(
             "KlemGUI.InputFilledDem.label");
-    private final String CN_RASTER = PluginUtils.getResources().getString(
+    private final String CN_RASTER = PluginUtils.i18n(
             "HydrographKlemPlugin.CNRaster.label");
-    private final String BLUELINES = PluginUtils.getResources().getString(
+    private final String BLUELINES = PluginUtils.i18n(
             "HydrographKlemPlugin.Bluelines.label");
-    private final String PRJ_NAME = PluginUtils.getResources().getString(
+    private final String PRJ_NAME = PluginUtils.i18n(
             "HydrographKlemPlugin.ProjectName.label");
-    private final String PRJ_PATH = PluginUtils.getResources().getString(
+    private final String PRJ_PATH = PluginUtils.i18n(
             "HydrographKlemPlugin.ProjectFolder.label");
     // private final String ADVANCED_PARAMS =
-    // PluginUtils.getResources().getString("HydrographKlemPlugin.AdvancedParams.label");
+    // PluginUtils.i18n("HydrographKlemPlugin.AdvancedParams.label");
 
     private KlemProperties klemProps;
     private boolean loadedPrj = false;

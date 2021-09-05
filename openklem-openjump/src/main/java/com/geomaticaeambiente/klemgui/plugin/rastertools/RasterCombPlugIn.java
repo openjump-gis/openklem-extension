@@ -134,8 +134,7 @@ public class RasterCombPlugIn extends AbstractInputKlemPlugin {
 
         prc.updateRasterList();
 
-        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils
-                .getResources().getString("SetWorkspacePlugin.Done.message"),
+        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils.i18n("SetWorkspacePlugin.Done.message"),
                 PluginUtils.plugInName, JOptionPane.INFORMATION_MESSAGE);
 
     }
@@ -146,8 +145,7 @@ public class RasterCombPlugIn extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -173,9 +171,7 @@ public class RasterCombPlugIn extends AbstractInputKlemPlugin {
                                 @Override
                                 public void run(TaskMonitor monitor,
                                         PlugInContext context) throws Exception {
-                                    monitor.report(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    monitor.report(PluginUtils.i18n(
                                                     "OpenKlem.executing-process"));
                                     reportNothingToUndoYet(context);
                                     monitor.allowCancellationRequests();
@@ -211,8 +207,7 @@ public class RasterCombPlugIn extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -277,7 +272,7 @@ public class RasterCombPlugIn extends AbstractInputKlemPlugin {
 
                     JOptionPane.showMessageDialog(
                             super.getInitialDialog(),
-                            PluginUtils.getResources().getString(
+                            PluginUtils.i18n(
                                     "SetWorkspacePlugin.Done.message"),
                             PluginUtils.plugInName,
                             JOptionPane.INFORMATION_MESSAGE);
@@ -286,7 +281,7 @@ public class RasterCombPlugIn extends AbstractInputKlemPlugin {
                     JOptionPane
                             .showMessageDialog(
                                     super.getInitialDialog(),
-                                    PluginUtils.getResources().getString(
+                                    PluginUtils.i18n(
                                             "SpatiallyInconsistentRasters"),
                                     PluginUtils.plugInName,
                                     JOptionPane.WARNING_MESSAGE);
@@ -315,7 +310,7 @@ public class RasterCombPlugIn extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "RasterCombPlugin.PlugInName.label");
     }
 
@@ -332,8 +327,7 @@ public class RasterCombPlugIn extends AbstractInputKlemPlugin {
             }
         }
         if (foundRaster == false) {
-            throw new NullPointerException(PluginUtils.getResources()
-                    .getString("RasterComboPlugIn.CheckExpression.message"));
+            throw new NullPointerException(PluginUtils.i18n("RasterComboPlugIn.CheckExpression.message"));
         }
 
         GUIUtils.checkFileValue(outRaster, "raster out");

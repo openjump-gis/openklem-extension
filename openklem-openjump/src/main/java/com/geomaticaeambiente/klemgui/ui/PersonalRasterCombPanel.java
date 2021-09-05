@@ -32,7 +32,7 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         fixComponents();
         
         jTable_Rasters.setModel(dtmRasters);
-        jTable_Rasters.getColumnModel().getColumn(0).setHeaderValue(PluginUtils.getResources().getString("PersonalRasterCombPanel.RasterList.label"));
+        jTable_Rasters.getColumnModel().getColumn(0).setHeaderValue(PluginUtils.i18n("PersonalRasterCombPanel.RasterList.label"));
 //        dtmRasters.setNumRows(1);
         
         
@@ -123,15 +123,14 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
         add(jScrollPane_RasterList, gridBagConstraints);
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("com/geomaticaeambiente/klemgui/language/Bundle"); // NOI18N
-        jPanel_Operators.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("PersonalRasterCombPanel.jPanel_Operators.border.title"))); // NOI18N
+        jPanel_Operators.setBorder(javax.swing.BorderFactory.createTitledBorder(PluginUtils.i18n("PersonalRasterCombPanel.jPanel_Operators.border.title"))); // NOI18N
         jPanel_Operators.setMaximumSize(new java.awt.Dimension(225, 150));
         jPanel_Operators.setMinimumSize(new java.awt.Dimension(225, 150));
         jPanel_Operators.setPreferredSize(new java.awt.Dimension(225, 150));
         jPanel_Operators.setLayout(new java.awt.GridBagLayout());
 
-        jButton_Subtraction2.setText(bundle.getString("PersonalRasterCombPanel.jButton_Subtraction2.text")); // NOI18N
-        jButton_Subtraction2.setToolTipText(bundle.getString("PersonalRasterCombPanel.jButton_Subtraction2.toolTipText")); // NOI18N
+        jButton_Subtraction2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_Subtraction2.text")); // NOI18N
+        jButton_Subtraction2.setToolTipText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_Subtraction2.toolTipText")); // NOI18N
         jButton_Subtraction2.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton_Subtraction2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_Subtraction2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -148,8 +147,8 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(16, 6, 0, 0);
         jPanel_Operators.add(jButton_Subtraction2, gridBagConstraints);
 
-        jButton_Multiplication2.setText(bundle.getString("PersonalRasterCombPanel.jButton_Multiplication2.text")); // NOI18N
-        jButton_Multiplication2.setToolTipText(bundle.getString("PersonalRasterCombPanel.jButton_Multiplication2.toolTipText")); // NOI18N
+        jButton_Multiplication2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_Multiplication2.text")); // NOI18N
+        jButton_Multiplication2.setToolTipText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_Multiplication2.toolTipText")); // NOI18N
         jButton_Multiplication2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_Multiplication2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_Multiplication2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -166,8 +165,8 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(16, 6, 0, 0);
         jPanel_Operators.add(jButton_Multiplication2, gridBagConstraints);
 
-        jButton_Division2.setText(bundle.getString("PersonalRasterCombPanel.jButton_Division2.text")); // NOI18N
-        jButton_Division2.setToolTipText(bundle.getString("PersonalRasterCombPanel.jButton_Division2.toolTipText")); // NOI18N
+        jButton_Division2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_Division2.text")); // NOI18N
+        jButton_Division2.setToolTipText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_Division2.toolTipText")); // NOI18N
         jButton_Division2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_Division2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_Division2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -184,8 +183,8 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(16, 6, 0, 0);
         jPanel_Operators.add(jButton_Division2, gridBagConstraints);
 
-        jButton_Power2.setText(bundle.getString("PersonalRasterCombPanel.jButton_Power2.text")); // NOI18N
-        jButton_Power2.setToolTipText(bundle.getString("PersonalRasterCombPanel.jButton_Power2.toolTipText")); // NOI18N
+        jButton_Power2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_Power2.text")); // NOI18N
+        jButton_Power2.setToolTipText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_Power2.toolTipText")); // NOI18N
         jButton_Power2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_Power2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_Power2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -202,8 +201,8 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(16, 6, 0, 0);
         jPanel_Operators.add(jButton_Power2, gridBagConstraints);
 
-        jButton_Addition2.setText(bundle.getString("PersonalRasterCombPanel.jButton_Addition2.text")); // NOI18N
-        jButton_Addition2.setToolTipText(bundle.getString("PersonalRasterCombPanel.jButton_Addition2.toolTipText")); // NOI18N
+        jButton_Addition2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_Addition2.text")); // NOI18N
+        jButton_Addition2.setToolTipText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_Addition2.toolTipText")); // NOI18N
         jButton_Addition2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_Addition2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_Addition2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -220,8 +219,8 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(16, 12, 0, 0);
         jPanel_Operators.add(jButton_Addition2, gridBagConstraints);
 
-        jButton_Modulus2.setText(bundle.getString("PersonalRasterCombPanel.jButton_Modulus2.text")); // NOI18N
-        jButton_Modulus2.setToolTipText(bundle.getString("PersonalRasterCombPanel.jButton_Modulus2.toolTipText")); // NOI18N
+        jButton_Modulus2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_Modulus2.text")); // NOI18N
+        jButton_Modulus2.setToolTipText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_Modulus2.toolTipText")); // NOI18N
         jButton_Modulus2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_Modulus2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_Modulus2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -238,8 +237,8 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(16, 6, 0, 0);
         jPanel_Operators.add(jButton_Modulus2, gridBagConstraints);
 
-        jButton_LessThan2.setText(bundle.getString("PersonalRasterCombPanel.jButton_LessThan2.text")); // NOI18N
-        jButton_LessThan2.setToolTipText(bundle.getString("PersonalRasterCombPanel.jButton_LessThan2.toolTipText")); // NOI18N
+        jButton_LessThan2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_LessThan2.text")); // NOI18N
+        jButton_LessThan2.setToolTipText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_LessThan2.toolTipText")); // NOI18N
         jButton_LessThan2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_LessThan2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_LessThan2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -257,8 +256,8 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(6, 12, 0, 0);
         jPanel_Operators.add(jButton_LessThan2, gridBagConstraints);
 
-        jButton_GreaterThan2.setText(bundle.getString("PersonalRasterCombPanel.jButton_GreaterThan2.text")); // NOI18N
-        jButton_GreaterThan2.setToolTipText(bundle.getString("PersonalRasterCombPanel.jButton_GreaterThan2.toolTipText")); // NOI18N
+        jButton_GreaterThan2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_GreaterThan2.text")); // NOI18N
+        jButton_GreaterThan2.setToolTipText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_GreaterThan2.toolTipText")); // NOI18N
         jButton_GreaterThan2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_GreaterThan2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_GreaterThan2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -276,7 +275,7 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
         jPanel_Operators.add(jButton_GreaterThan2, gridBagConstraints);
 
-        jButton_Equal2.setText(bundle.getString("PersonalRasterCombPanel.jButton_Equal2.text")); // NOI18N
+        jButton_Equal2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_Equal2.text")); // NOI18N
         jButton_Equal2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_Equal2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_Equal2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -294,8 +293,8 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
         jPanel_Operators.add(jButton_Equal2, gridBagConstraints);
 
-        jButton_NotEqual2.setText(bundle.getString("PersonalRasterCombPanel.jButton_NotEqual2.text")); // NOI18N
-        jButton_NotEqual2.setToolTipText(bundle.getString("PersonalRasterCombPanel.jButton_NotEqual2.toolTipText")); // NOI18N
+        jButton_NotEqual2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_NotEqual2.text")); // NOI18N
+        jButton_NotEqual2.setToolTipText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_NotEqual2.toolTipText")); // NOI18N
         jButton_NotEqual2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_NotEqual2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_NotEqual2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -313,8 +312,8 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
         jPanel_Operators.add(jButton_NotEqual2, gridBagConstraints);
 
-        jButton_LessOrEqual2.setText(bundle.getString("PersonalRasterCombPanel.jButton_LessOrEqual2.text")); // NOI18N
-        jButton_LessOrEqual2.setToolTipText(bundle.getString("PersonalRasterCombPanel.jButton_LessOrEqual2.toolTipText")); // NOI18N
+        jButton_LessOrEqual2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_LessOrEqual2.text")); // NOI18N
+        jButton_LessOrEqual2.setToolTipText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_LessOrEqual2.toolTipText")); // NOI18N
         jButton_LessOrEqual2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_LessOrEqual2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_LessOrEqual2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -332,8 +331,8 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
         jPanel_Operators.add(jButton_LessOrEqual2, gridBagConstraints);
 
-        jButton_MoreOrEqual2.setText(bundle.getString("PersonalRasterCombPanel.jButton_MoreOrEqual2.text")); // NOI18N
-        jButton_MoreOrEqual2.setToolTipText(bundle.getString("PersonalRasterCombPanel.jButton_MoreOrEqual2.toolTipText")); // NOI18N
+        jButton_MoreOrEqual2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_MoreOrEqual2.text")); // NOI18N
+        jButton_MoreOrEqual2.setToolTipText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_MoreOrEqual2.toolTipText")); // NOI18N
         jButton_MoreOrEqual2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_MoreOrEqual2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_MoreOrEqual2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -351,8 +350,8 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
         jPanel_Operators.add(jButton_MoreOrEqual2, gridBagConstraints);
 
-        jButton_BooleanNot2.setText(bundle.getString("PersonalRasterCombPanel.jButton_BooleanNot2.text")); // NOI18N
-        jButton_BooleanNot2.setToolTipText(bundle.getString("PersonalRasterCombPanel.jButton_BooleanNot2.toolTipText")); // NOI18N
+        jButton_BooleanNot2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_BooleanNot2.text")); // NOI18N
+        jButton_BooleanNot2.setToolTipText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_BooleanNot2.toolTipText")); // NOI18N
         jButton_BooleanNot2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_BooleanNot2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_BooleanNot2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -369,8 +368,8 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(6, 12, 19, 0);
         jPanel_Operators.add(jButton_BooleanNot2, gridBagConstraints);
 
-        jButton_BooleanAnd2.setText(bundle.getString("PersonalRasterCombPanel.jButton_BooleanAnd2.text")); // NOI18N
-        jButton_BooleanAnd2.setToolTipText(bundle.getString("PersonalRasterCombPanel.jButton_BooleanAnd2.toolTipText")); // NOI18N
+        jButton_BooleanAnd2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_BooleanAnd2.text")); // NOI18N
+        jButton_BooleanAnd2.setToolTipText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_BooleanAnd2.toolTipText")); // NOI18N
         jButton_BooleanAnd2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_BooleanAnd2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_BooleanAnd2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -387,8 +386,8 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 19, 0);
         jPanel_Operators.add(jButton_BooleanAnd2, gridBagConstraints);
 
-        jButton_BooleanOr2.setText(bundle.getString("PersonalRasterCombPanel.jButton_BooleanOr2.text")); // NOI18N
-        jButton_BooleanOr2.setToolTipText(bundle.getString("PersonalRasterCombPanel.jButton_BooleanOr2.toolTipText")); // NOI18N
+        jButton_BooleanOr2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_BooleanOr2.text")); // NOI18N
+        jButton_BooleanOr2.setToolTipText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_BooleanOr2.toolTipText")); // NOI18N
         jButton_BooleanOr2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_BooleanOr2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_BooleanOr2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -414,7 +413,7 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(6, 20, 0, 6);
         jPanel_Operators.add(jSeparator6, gridBagConstraints);
 
-        jButton_ParOpen2.setText(bundle.getString("PersonalRasterCombPanel.jButton_ParOpen2.text")); // NOI18N
+        jButton_ParOpen2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_ParOpen2.text")); // NOI18N
         jButton_ParOpen2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_ParOpen2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_ParOpen2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -431,7 +430,7 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 19, 0);
         jPanel_Operators.add(jButton_ParOpen2, gridBagConstraints);
 
-        jButton_ParClose2.setText(bundle.getString("PersonalRasterCombPanel.jButton_ParClose2.text")); // NOI18N
+        jButton_ParClose2.setText(PluginUtils.i18n("PersonalRasterCombPanel.jButton_ParClose2.text")); // NOI18N
         jButton_ParClose2.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton_ParClose2.setMaximumSize(new java.awt.Dimension(29, 29));
         jButton_ParClose2.setMinimumSize(new java.awt.Dimension(29, 29));
@@ -455,13 +454,13 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 8);
         add(jPanel_Operators, gridBagConstraints);
 
-        jPanel_Functions.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("PersonalRasterCombPanel.jPanel_Functions.border.title"))); // NOI18N
+        jPanel_Functions.setBorder(javax.swing.BorderFactory.createTitledBorder(PluginUtils.i18n("PersonalRasterCombPanel.jPanel_Functions.border.title"))); // NOI18N
         jPanel_Functions.setMaximumSize(new java.awt.Dimension(225, 85));
         jPanel_Functions.setMinimumSize(new java.awt.Dimension(225, 85));
         jPanel_Functions.setPreferredSize(new java.awt.Dimension(225, 85));
         jPanel_Functions.setLayout(new java.awt.GridBagLayout());
 
-        jLabel_FunMath.setText(bundle.getString("PersonalRasterCombPanel.jLabel_FunMath.text")); // NOI18N
+        jLabel_FunMath.setText(PluginUtils.i18n("PersonalRasterCombPanel.jLabel_FunMath.text")); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -486,7 +485,7 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
         jPanel_Functions.add(jComboBox_FunMath, gridBagConstraints);
 
-        jLabel_FunTrig.setText(bundle.getString("PersonalRasterCombPanel.jLabel_FunTrig.text")); // NOI18N
+        jLabel_FunTrig.setText(PluginUtils.i18n("PersonalRasterCombPanel.jLabel_FunTrig.text")); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -535,7 +534,7 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 10);
         add(jScrollPane_Expression, gridBagConstraints);
 
-        jToggleButton_Help.setText(bundle.getString("PersonalRasterCombPanel.jToggleButton_Help.text")); // NOI18N
+        jToggleButton_Help.setText(PluginUtils.i18n("PersonalRasterCombPanel.jToggleButton_Help.text")); // NOI18N
         jToggleButton_Help.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton_HelpActionPerformed(evt);
@@ -838,16 +837,16 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
     private StyledDocument getPrjFileHelpDoc() throws BadLocationException{       
             
         StyledDocument style = new DefaultStyledDocument();
-        style.insertString(style.getLength(), PluginUtils.getResources().getString("RasterComboPlugIn.How1.text").concat(newLine), null);
-        style.insertString(style.getLength(), PluginUtils.getResources().getString("RasterComboPlugIn.How2.text").concat(newLine), null);
-        style.insertString(style.getLength(), PluginUtils.getResources().getString("RasterComboPlugIn.How3.text").concat(newLine), null);
-        style.insertString(style.getLength(), PluginUtils.getResources().getString("RasterComboPlugIn.How4.text").concat(newLine), null);
-        style.insertString(style.getLength(), PluginUtils.getResources().getString("RasterComboPlugIn.How5.text").concat(newLine), null);
-        style.insertString(style.getLength(), PluginUtils.getResources().getString("RasterComboPlugIn.How6.text").concat(newLine), null);
-        style.insertString(style.getLength(), PluginUtils.getResources().getString("RasterComboPlugIn.How7.text").concat(newLine), null);
-        style.insertString(style.getLength(), PluginUtils.getResources().getString("RasterComboPlugIn.How8.text").concat(newLine), null);
-        style.insertString(style.getLength(), PluginUtils.getResources().getString("RasterComboPlugIn.How9.text").concat(newLine), null);
-        style.insertString(style.getLength(), PluginUtils.getResources().getString("RasterComboPlugIn.How10.text").concat(newLine), null);
+        style.insertString(style.getLength(), PluginUtils.i18n("RasterComboPlugIn.How1.text").concat(newLine), null);
+        style.insertString(style.getLength(), PluginUtils.i18n("RasterComboPlugIn.How2.text").concat(newLine), null);
+        style.insertString(style.getLength(), PluginUtils.i18n("RasterComboPlugIn.How3.text").concat(newLine), null);
+        style.insertString(style.getLength(), PluginUtils.i18n("RasterComboPlugIn.How4.text").concat(newLine), null);
+        style.insertString(style.getLength(), PluginUtils.i18n("RasterComboPlugIn.How5.text").concat(newLine), null);
+        style.insertString(style.getLength(), PluginUtils.i18n("RasterComboPlugIn.How6.text").concat(newLine), null);
+        style.insertString(style.getLength(), PluginUtils.i18n("RasterComboPlugIn.How7.text").concat(newLine), null);
+        style.insertString(style.getLength(), PluginUtils.i18n("RasterComboPlugIn.How8.text").concat(newLine), null);
+        style.insertString(style.getLength(), PluginUtils.i18n("RasterComboPlugIn.How9.text").concat(newLine), null);
+        style.insertString(style.getLength(), PluginUtils.i18n("RasterComboPlugIn.How10.text").concat(newLine), null);
         return style;
             
     }
@@ -908,7 +907,7 @@ public class PersonalRasterCombPanel extends javax.swing.JPanel {
 //        
 //        private void initComponents() throws BadLocationException{
 //            
-//            setTitle(PluginUtils.getResources().getString("PersonalRasterCombPanel.jToggleButton_Help.text"));
+//            setTitle(PluginUtils.i18n("PersonalRasterCombPanel.jToggleButton_Help.text"));
 //            
 //            GridBagConstraints gridBagConstraints = new GridBagConstraints();
 //            JPanel jPanel_Help = new JPanel();

@@ -133,8 +133,7 @@ public class CutRasterPlugin extends AbstractInputKlemPlugin {
         RasterUtils.displayRasterFileOnOJ(context.getWorkbenchContext(),
                 new File(outRasterName), null);
 
-        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils
-                .getResources().getString("SetWorkspacePlugin.Done.message"),
+        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils.i18n("SetWorkspacePlugin.Done.message"),
                 PluginUtils.plugInName, JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -145,8 +144,7 @@ public class CutRasterPlugin extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -172,9 +170,7 @@ public class CutRasterPlugin extends AbstractInputKlemPlugin {
                                 @Override
                                 public void run(TaskMonitor monitor,
                                         PlugInContext context) throws Exception {
-                                    monitor.report(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    monitor.report(PluginUtils.i18n(
                                                     "OpenKlem.executing-process"));
                                     reportNothingToUndoYet(context);
                                     monitor.allowCancellationRequests();
@@ -206,18 +202,18 @@ public class CutRasterPlugin extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "CutRasterPlugIn.PlugInName.label");
     }
 
     private final PlugInContext context;
     private MainPanel mainPanel;
     //    private RasterImageLayer[] ar_rasterImageLayers;
-    private final String RASTER_IN = PluginUtils.getResources().getString(
+    private final String RASTER_IN = PluginUtils.i18n(
             "KlemGUI.InputRaster.label");
-    private final String RASTER_MASK = PluginUtils.getResources().getString(
+    private final String RASTER_MASK = PluginUtils.i18n(
             "CutRasterPlugIn.InputData.MaskRaster");
-    private final String RASTER_OUT = PluginUtils.getResources().getString(
+    private final String RASTER_OUT = PluginUtils.i18n(
             "CutRasterPlugIn.OutputData.OutputRaster");
 
     private final LayerablesList layerablesList;

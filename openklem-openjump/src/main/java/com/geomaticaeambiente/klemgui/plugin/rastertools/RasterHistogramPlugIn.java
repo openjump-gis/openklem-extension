@@ -139,8 +139,7 @@ public class RasterHistogramPlugIn extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -166,9 +165,7 @@ public class RasterHistogramPlugIn extends AbstractInputKlemPlugin {
                                 @Override
                                 public void run(TaskMonitor monitor,
                                         PlugInContext context) throws Exception {
-                                    monitor.report(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    monitor.report(PluginUtils.i18n(
                                                     "OpenKlem.executing-process"));
                                     reportNothingToUndoYet(context);
                                     monitor.allowCancellationRequests();
@@ -232,26 +229,25 @@ public class RasterHistogramPlugIn extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "RasterHistogram.PlugInName.label");
     }
 
     private final PlugInContext context;
     private MainPanel mainPanel;
 
-    private final String IN_RAS = PluginUtils.getResources().getString(
+    private final String IN_RAS = PluginUtils.i18n(
             "KlemGUI.InputRaster.label");
-    private final String CLASSALGO_LABEL = PluginUtils.getResources()
-            .getString("KlemGUI.ClassAlgo.label");
-    private final String AUTO = PluginUtils.getResources().getString(
+    private final String CLASSALGO_LABEL = PluginUtils.i18n("KlemGUI.ClassAlgo.label");
+    private final String AUTO = PluginUtils.i18n(
             "KlemGUI.ClassAlgo.Algo.Auto");
-    private final String UNIQUE_VALS = PluginUtils.getResources().getString(
+    private final String UNIQUE_VALS = PluginUtils.i18n(
             "KlemGUI.ClassAlgo.Algo.UniqueVals");
-    private final String GIVEN_INTERVAL = PluginUtils.getResources().getString(
+    private final String GIVEN_INTERVAL = PluginUtils.i18n(
             "KlemGUI.ClassAlgo.Algo.GivenInterval");
-    private final String INTERVAL_LABEL = PluginUtils.getResources().getString(
+    private final String INTERVAL_LABEL = PluginUtils.i18n(
             "RasterHistogramPlugIn.IntervalLabel.text");
-    private final String BASE_LABEL = PluginUtils.getResources().getString(
+    private final String BASE_LABEL = PluginUtils.i18n(
             "RasterHistogramPlugIn.BaseLabel.text");
 
     private final LayerablesList layerablesList;

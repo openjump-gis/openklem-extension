@@ -62,7 +62,7 @@ public class RoutingTimePlugIn extends AbstractInputKlemPlugin {
                         PluginUtils.getRasterImageLayers(layerablesList
                                 .getLayerables()), GUIUtils.INPUT);//dem
         initialData.setParam_Label_TextBox(
-                GUIUtils.setGUILabel(PluginUtils.getResources().getString(
+                GUIUtils.setGUILabel(PluginUtils.i18n(
                         "HydrographKlemPlugin.Bluelines.label")),
                 PluginUtils.getLayers(layerablesList.getLayerables()),
                 GUIUtils.INPUT); // Bluelines
@@ -170,8 +170,7 @@ public class RoutingTimePlugIn extends AbstractInputKlemPlugin {
         RasterUtils.displayRasterFileOnOJ(context.getWorkbenchContext(),
                 new File(outRasterName), null);
 
-        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils
-                .getResources().getString("SetWorkspacePlugin.Done.message"),
+        JOptionPane.showMessageDialog(super.getInitialDialog(), PluginUtils.i18n("SetWorkspacePlugin.Done.message"),
                 PluginUtils.plugInName, JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -182,8 +181,7 @@ public class RoutingTimePlugIn extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -210,9 +208,7 @@ public class RoutingTimePlugIn extends AbstractInputKlemPlugin {
                                 @Override
                                 public void run(TaskMonitor monitor,
                                         PlugInContext context) throws Exception {
-                                    monitor.report(PluginUtils
-                                            .getResources()
-                                            .getString(
+                                    monitor.report(PluginUtils.i18n(
                                                     "OpenKlem.executing-process"));
                                     reportNothingToUndoYet(context);
                                     monitor.allowCancellationRequests();
@@ -294,7 +290,7 @@ public class RoutingTimePlugIn extends AbstractInputKlemPlugin {
 
                           JOptionPane.showMessageDialog(
                                   super.getInitialDialog(),
-                                  PluginUtils.getResources().getString(
+                                  PluginUtils.i18n(
                                           "SetWorkspacePlugin.Done.message"),
                                   PluginUtils.plugInName,
                                   JOptionPane.INFORMATION_MESSAGE);
@@ -324,29 +320,24 @@ public class RoutingTimePlugIn extends AbstractInputKlemPlugin {
 
     @Override
     public String toString() {
-        return PluginUtils.getResources().getString(
+        return PluginUtils.i18n(
                 "RoutingTimePlugIn.RoutingTime.label");
     }
 
     private MainPanel mainPanel;
     private final PlugInContext context;
-    private final String DEM_LABEL = PluginUtils.getResources().getString(
+    private final String DEM_LABEL = PluginUtils.i18n(
             "KlemGUI.InputFilledDem.label");
-    //private final String UPSLOPE_LABEL = PluginUtils.getResources().getString("KlemGUI.InputUpslope.label");
-    private final String SLOPE_VELOCITY_LABEL = PluginUtils.getResources()
-            .getString("RoutingTimePlugIn.SlopeVelociti.label");
-    private final String CHANNEL_VELOCITY_LABEL = PluginUtils.getResources()
-            .getString("RoutingTimePlugIn.ChannelVelocity.label");
-    private final String MIN_THRESHOLD_LABEL = PluginUtils.getResources()
-            .getString("RoutingTimePlugIn.MinThreshold.label");
-    private final String MAX_THRESHOLD_LABEL = PluginUtils.getResources()
-            .getString("RoutingTimePlugIn.MaxThreshold.label");
-    private final String EXPONENT = PluginUtils.getResources().getString(
+    //private final String UPSLOPE_LABEL = PluginUtils.i18n("KlemGUI.InputUpslope.label");
+    private final String SLOPE_VELOCITY_LABEL = PluginUtils.i18n("RoutingTimePlugIn.SlopeVelociti.label");
+    private final String CHANNEL_VELOCITY_LABEL = PluginUtils.i18n("RoutingTimePlugIn.ChannelVelocity.label");
+    private final String MIN_THRESHOLD_LABEL = PluginUtils.i18n("RoutingTimePlugIn.MinThreshold.label");
+    private final String MAX_THRESHOLD_LABEL = PluginUtils.i18n("RoutingTimePlugIn.MaxThreshold.label");
+    private final String EXPONENT = PluginUtils.i18n(
             "RoutingTimePlugIn.Exponent.label");
     private final String M_S = "[m/s]";
     private final String KMQ = "[km2]";
-    private final String ROUTINGTIME_LABEL = PluginUtils.getResources()
-            .getString("RoutingTimePlugIn.RoutingTime.label");
+    private final String ROUTINGTIME_LABEL = PluginUtils.i18n("RoutingTimePlugIn.RoutingTime.label");
 
     private final LayerablesList layerablesList;
 

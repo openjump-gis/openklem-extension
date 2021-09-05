@@ -128,15 +128,11 @@ public class InitialDialog extends JDialog {
         jTabbedPane2.setPreferredSize(new Dimension(450, 44));
 
         jPanel3.setLayout(new GridBagLayout());
-        final java.util.ResourceBundle bundle = java.util.ResourceBundle
-                .getBundle("com/geomaticaeambiente/klemgui/language/Bundle"); // NOI18N
-        jTabbedPane2.addTab(bundle
-                .getString("InitialDialog.jPanel3.TabConstraints.tabTitle_1"),
+        jTabbedPane2.addTab(PluginUtils.i18n("InitialDialog.jPanel3.TabConstraints.tabTitle_1"),
                 jPanel3); // NOI18N
 
         jPanel4.setLayout(new GridBagLayout());
-        jTabbedPane2.addTab(bundle
-                .getString("InitialDialog.jPanel4.TabConstraints.tabTitle_1"),
+        jTabbedPane2.addTab(PluginUtils.i18n("InitialDialog.jPanel4.TabConstraints.tabTitle_1"),
                 jPanel4); // NOI18N
 
         gridBagConstraints = new GridBagConstraints();
@@ -162,8 +158,7 @@ public class InitialDialog extends JDialog {
         gridBagConstraints.weighty = 1.0;
         getContentPane().add(jSplitPane1, gridBagConstraints);
 
-        jButton_Close.setText(bundle
-                .getString("InitialDialog.jButton_Close.text")); // NOI18N
+        jButton_Close.setText(PluginUtils.i18n("InitialDialog.jButton_Close.text")); // NOI18N
         jButton_Close.addActionListener(this::jButton_CloseActionPerformed);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -172,8 +167,7 @@ public class InitialDialog extends JDialog {
         gridBagConstraints.insets = new Insets(6, 10, 6, 6);
         getContentPane().add(jButton_Close, gridBagConstraints);
 
-        jButton_About.setText(bundle
-                .getString("InitialDialog.jButton_About.text")); // NOI18N
+        jButton_About.setText(PluginUtils.i18n("InitialDialog.jButton_About.text")); // NOI18N
         jButton_About.addActionListener(this::jButton_AboutActionPerformed);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -254,10 +248,10 @@ public class InitialDialog extends JDialog {
                         jTabbedPane2.removeAll();
                         jTabbedPane2.add(panel1, "Input"); // NOI18N
                         jTabbedPane2.add(new JScrollPane(),
-                            PluginUtils.getResources().getString(
+                            PluginUtils.i18n(
                                 "HydrographKlemPlugin.Params.label"));
                         jTabbedPane2.add(new JScrollPane(),
-                            PluginUtils.getResources().getString(
+                            PluginUtils.i18n(
                                 "HydrographKlemPlugin.AdvancedParams.label"));
                         jTabbedPane2.add(new JScrollPane(), "Output"); // NOI18N
                         jTabbedPane2.add(new JScrollPane(), "Output2");
@@ -338,29 +332,29 @@ public class InitialDialog extends JDialog {
                 label.setText(o.toString());
             } else {
                 if (value.toString().equals(
-                        PluginUtils.getResources().getString(
+                        PluginUtils.i18n(
                                 "KlemGUI.TreeSettingTools.label"))) { // NOI18N
                     label.setIcon(new ImageIcon(
                             getClass()
                                     .getResource(
                                         "/com/geomaticaeambiente/klemgui/images/wrench_orange.png")));
                 } else if (value.toString().equals(
-                        PluginUtils.getResources().getString(
+                        PluginUtils.i18n(
                                 "KlemGUI.TreeRasterTools.label"))) {
                     label.setIcon(new ImageIcon(
                             getClass()
                                     .getResource(
                                         "/com/geomaticaeambiente/klemgui/images/Raster_01.png")));
                 } else if (value.toString().equals(
-                        PluginUtils.getResources().getString(
+                        PluginUtils.i18n(
                                 "KlemGUI.HydrologyTools.label"))
                         || value.toString().equals(
-                                PluginUtils.getResources().getString(
+                                PluginUtils.i18n(
                                         "KlemGUI.TreeGeomorphometry.label"))) {
                     label.setIcon(new ImageIcon(getClass().getResource(
                         "/com/geomaticaeambiente/klemgui/images/cog.png")));
                 } else if (value.toString().equals(
-                        PluginUtils.getResources().getString(
+                        PluginUtils.i18n(
                                 "KlemGUI.TreeHydrographName.label"))) {
                     label.setIcon(new ImageIcon(
                             getClass()

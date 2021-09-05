@@ -59,7 +59,7 @@ public class HydroOutputPanel extends AbstractInputKlemPlugin {
             return this.mainPanel;
         }
         this.mainPanel = new MainPanel(super.getInitialDialog(), componentsWithActions, false, false, false,
-                PluginUtils.getResources().getString("MainPanel.ExecuteButton.text"), layerablesList) {
+                PluginUtils.i18n("MainPanel.ExecuteButton.text"), layerablesList) {
 
             @Override
             public void rightButton() {

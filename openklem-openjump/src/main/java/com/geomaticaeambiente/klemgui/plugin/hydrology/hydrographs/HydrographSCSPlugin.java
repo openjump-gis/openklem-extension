@@ -51,8 +51,8 @@ public class HydrographSCSPlugin extends AbstractInputKlemPlugin{
         //graphic unit
         initialData.setParam_Labels(new String[]{GUIUtils.setGUILabel(X_UNITS)}, GUIUtils.OTHER); //label x unit
         initialData.setParam_Action(new ActionObject(
-                new String[]{PluginUtils.getResources().getString("KlemGUI.hours.label"), 
-                    PluginUtils.getResources().getString("KlemGUI.minutes.label")}), GUIUtils.OTHER);//radio buttons: hours and minutes
+                new String[]{PluginUtils.i18n("KlemGUI.hours.label"), 
+                    PluginUtils.i18n("KlemGUI.minutes.label")}), GUIUtils.OTHER);//radio buttons: hours and minutes
         
         return initialData;
     }
@@ -72,7 +72,7 @@ public class HydrographSCSPlugin extends AbstractInputKlemPlugin{
             return this.mainPanel;
         }
         this.mainPanel = new MainPanel(super.getInitialDialog(), componentsWithActions, false, false, true,
-                PluginUtils.getResources().getString("MainPanel.ExecuteButton.text"), layerablesList) {
+                PluginUtils.i18n("MainPanel.ExecuteButton.text"), layerablesList) {
             
             @Override
             public void rightButton() {
@@ -130,7 +130,7 @@ public class HydrographSCSPlugin extends AbstractInputKlemPlugin{
     }
     
     public String toString(){
-        return PluginUtils.getResources().getString("HyetographPlugIn.Scs");
+        return PluginUtils.i18n("HyetographPlugIn.Scs");
     }
     
     private void checksParameters(double baseFlow, double lag){
@@ -147,10 +147,10 @@ public class HydrographSCSPlugin extends AbstractInputKlemPlugin{
     private TimeInterval.TimeIntervalUnit xUnit;
     private double timeStep;
     private final LayerablesList layerablesList;
-    private final String HYETOGRAPH_FILE = PluginUtils.getResources().getString("HydrographSCSPlugin.HyetoFile.label"); 
-    private final String TIME_LABEL = PluginUtils.getResources().getString("HydrographSCSPlugin.TimeBox.label");
-    private final String BASIN_AREA = PluginUtils.getResources().getString("HydrographSCSPlugin.BasinArea.label");
-    private final String BASE_FLOW = PluginUtils.getResources().getString("HydrographCommonLabels.BaseFlow.label");
-    private final String LAG_LABEL = PluginUtils.getResources().getString("HydrographSCSPlugin.Lag.label");
-    private final String X_UNITS = PluginUtils.getResources().getString("HyetographPlugIn.XUnits.label");  
+    private final String HYETOGRAPH_FILE = PluginUtils.i18n("HydrographSCSPlugin.HyetoFile.label"); 
+    private final String TIME_LABEL = PluginUtils.i18n("HydrographSCSPlugin.TimeBox.label");
+    private final String BASIN_AREA = PluginUtils.i18n("HydrographSCSPlugin.BasinArea.label");
+    private final String BASE_FLOW = PluginUtils.i18n("HydrographCommonLabels.BaseFlow.label");
+    private final String LAG_LABEL = PluginUtils.i18n("HydrographSCSPlugin.Lag.label");
+    private final String X_UNITS = PluginUtils.i18n("HyetographPlugIn.XUnits.label");  
 }

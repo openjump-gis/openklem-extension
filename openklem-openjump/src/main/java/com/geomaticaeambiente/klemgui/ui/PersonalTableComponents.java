@@ -78,8 +78,7 @@ public class PersonalTableComponents extends javax.swing.JPanel {
         add(jScrollPane1, gridBagConstraints);
 
         jButton_RemoveRows.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/geomaticaeambiente/klemgui/images/cross.png"))); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("com/geomaticaeambiente/klemgui/language/Bundle"); // NOI18N
-        jButton_RemoveRows.setToolTipText(bundle.getString("PersonalTableComponents.jButton_RemoveRows.text")); // NOI18N
+        jButton_RemoveRows.setToolTipText(PluginUtils.i18n("PersonalTableComponents.jButton_RemoveRows.text")); // NOI18N
         jButton_RemoveRows.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton_RemoveRows.setContentAreaFilled(false);
         jButton_RemoveRows.setMargin(new java.awt.Insets(2, 2, 2, 2));
@@ -100,7 +99,7 @@ public class PersonalTableComponents extends javax.swing.JPanel {
         add(jButton_RemoveRows, gridBagConstraints);
 
         jButton_AddRow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/geomaticaeambiente/klemgui/images/add.png"))); // NOI18N
-        jButton_AddRow.setToolTipText(bundle.getString("PersonalTableComponents.jButton_AddRow.text")); // NOI18N
+        jButton_AddRow.setToolTipText(PluginUtils.i18n("PersonalTableComponents.jButton_AddRow.text")); // NOI18N
         jButton_AddRow.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton_AddRow.setContentAreaFilled(false);
         jButton_AddRow.setMargin(new java.awt.Insets(2, 2, 2, 2));
@@ -121,7 +120,7 @@ public class PersonalTableComponents extends javax.swing.JPanel {
         add(jButton_AddRow, gridBagConstraints);
 
         jButton_Load.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/geomaticaeambiente/klemgui/images/folder_page.png"))); // NOI18N
-        jButton_Load.setToolTipText(bundle.getString("PersonalTableComponents1.jButton_Load.text")); // NOI18N
+        jButton_Load.setToolTipText(PluginUtils.i18n("PersonalTableComponents1.jButton_Load.text")); // NOI18N
         jButton_Load.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton_Load.setContentAreaFilled(false);
         jButton_Load.setMargin(new java.awt.Insets(2, 2, 2, 2));
@@ -141,7 +140,7 @@ public class PersonalTableComponents extends javax.swing.JPanel {
         add(jButton_Load, gridBagConstraints);
 
         jButton_Save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/geomaticaeambiente/klemgui/images/disk.png"))); // NOI18N
-        jButton_Save.setToolTipText(bundle.getString("KlemGUI.SaveButton.label")); // NOI18N
+        jButton_Save.setToolTipText(PluginUtils.i18n("KlemGUI.SaveButton.label")); // NOI18N
         jButton_Save.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton_Save.setContentAreaFilled(false);
         jButton_Save.setMargin(new java.awt.Insets(2, 2, 2, 2));

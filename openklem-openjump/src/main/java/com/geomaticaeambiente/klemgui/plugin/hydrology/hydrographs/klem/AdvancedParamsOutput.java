@@ -98,9 +98,9 @@ class AdvancedParamsOutput extends AbstractInputKlemPlugin {
         initialData.setParam_Label_TextBox(GUIUtils.setGUILabel(
                 GUIUtils.setLeftSpace(THRESHOLD_RAINFALL_RECESSION)), klemProps.getRainfallRecessionThreshold(), GUIUtils.OTHER);//23
 
-        //Initial abstraction 
+        //Initial abstraction
         initialData.setParam_Label_TextBox_Button(GUIUtils.setGUILabel(INITIAL_ABSTRACTION), klemProps.getInitialAbstraction().getAbstractionValue(),
-                new ActionObject(new String[]{"mm", PluginUtils.getResources().getString("HydrographKlemPlugin.InitialAbstractionUnitsFractionS.label")}), GUIUtils.OTHER);//24 //NOI18N
+                new ActionObject(new String[]{"mm", PluginUtils.i18n("HydrographKlemPlugin.InitialAbstractionUnitsFractionS.label")}), GUIUtils.OTHER);//24 //NOI18N
         initialData.setParam_Labels(new String[]{""}, GUIUtils.OTHER);//25
 
         //Hydrograph
@@ -373,7 +373,7 @@ class AdvancedParamsOutput extends AbstractInputKlemPlugin {
             return this.mainPanel;
         }
         this.mainPanel = new MainPanel(super.getInitialDialog(), componentsWithActions, false, false, true,
-                PluginUtils.getResources().getString("MainPanel.ExecuteButton.text"), layerablesList) {
+                PluginUtils.i18n("MainPanel.ExecuteButton.text"), layerablesList) {
                     
             @Override
             public void rightButton() {
@@ -596,36 +596,36 @@ class AdvancedParamsOutput extends AbstractInputKlemPlugin {
 
     private ComponentsTreeMap componentsWithActions;
     private MainPanel mainPanel;
-    private final String ROUTING_TIME = PluginUtils.getResources().getString("HydrographKlemPlugin.RoutingTime.label");
-    private final String SLOPE_VELOCITY = PluginUtils.getResources().getString("HydrographKlemPlugin.SlopeVelocity.label");
-    private final String MIN = PluginUtils.getResources().getString("HydrographKlemPlugin.Min.label");
-    private final String MAX = PluginUtils.getResources().getString("HydrographKlemPlugin.Max.label");
-    private final String K_V = PluginUtils.getResources().getString("HydrographKlemPlugin.CostV.label");
-    private final String K_S = PluginUtils.getResources().getString("HydrographKlemPlugin.CostS.label");
-    private final String CHANNEL_VELOCITY = PluginUtils.getResources().getString("HydrographKlemPlugin.ChannelVelocity.label");
-    private final String THRESHOLD = PluginUtils.getResources().getString("HydrographKlemPlugin.Threshold.label");
-    private final String HYETOGRAPH = PluginUtils.getResources().getString("HydrographKlemPlugin.Hetograph.label");
-    private final String HYDRO_TYPE = PluginUtils.getResources().getString("HydrographKlemPlugin.HyetoType.label");
-    private final String PEAK = PluginUtils.getResources().getString("HydrographKlemPlugin.RunPeak.label");
-    private final String RAINFALL_STEP = PluginUtils.getResources().getString("HydrographKlemPlugin.StepRainfallData.label");
-    private final String RAINFALL_RECESSION = PluginUtils.getResources().getString("HydrographKlemPlugin.RainfallRecession.label");
-    private final String THRESHOLD_RAINFALL_RECESSION = PluginUtils.getResources().getString("HydrographKlemPlugin.ThresholdRainfallRecession.label");
-    private final String INITIAL_ABSTRACTION = PluginUtils.getResources().getString("HydrographKlemPlugin.InitialAbstraction.label");
-//    private final String INITIAL_ABSTRACTION_UNIT = PluginUtils.getResources().getString("HydrographKlemPlugin.InitialAbstractionUnit.label");
-//    private final String INITIAL_ABSTRACTION_VALUE = PluginUtils.getResources().getString("HydrographKlemPlugin.InitialAbstractionValue.label");
-    private final String SIMPLE_KINEMATICS = PluginUtils.getResources().getString("HydrographNashPlugin.SimpleKinematics.label");
-    private final String ADVANCED_KINEMATICS = PluginUtils.getResources().getString("HydrographKlemPlugin.AdvancedKinematics.label");
-    private final String HYDROGRAPH = PluginUtils.getResources().getString("HydrographKlemPlugin.Hydrograph.label");
-    private final String STEP_OUTPUT = PluginUtils.getResources().getString("HydrographKlemPlugin.StepOutput.label");
-    private final String AMC = PluginUtils.getResources().getString("HydrographKlemPlugin.AMC.label");
-    private final String BASE_FLOW_TYPE = PluginUtils.getResources().getString("HydrographKlemPlugin.BaseflowType.label");
-    private final String BASE_FLOW = PluginUtils.getResources().getString("HydrographKlemPlugin.BaseFlow.label");
-    private final String DISCHARGE_CONST = PluginUtils.getResources().getString("HydrographKlemPlugin.BaseflowRecession.label");
-    private final String ARF = PluginUtils.getResources().getString("HydrographKlemPlugin.ARF.label");
-    private final String FRPM_TC = PluginUtils.getResources().getString("HydrographKlemPlugin.FRPM-TC.label");
-    private final String GEOMORPH_FACTOR = PluginUtils.getResources().getString("HydrographKlemPlugin.GeomorphologicalFactor.label");
-    private final String GEOMORH_THRESHOLD = PluginUtils.getResources().getString("HydrographKlemPlugin.ThresholdGeomorphologicalFactor.label");
-    private final String SUBSURFACE_DRAINAGE_LOSS = PluginUtils.getResources().getString("HydrographKlemPlugin.SubSurfDrainageLoss.label");
+    private final String ROUTING_TIME = PluginUtils.i18n("HydrographKlemPlugin.RoutingTime.label");
+    private final String SLOPE_VELOCITY = PluginUtils.i18n("HydrographKlemPlugin.SlopeVelocity.label");
+    private final String MIN = PluginUtils.i18n("HydrographKlemPlugin.Min.label");
+    private final String MAX = PluginUtils.i18n("HydrographKlemPlugin.Max.label");
+    private final String K_V = PluginUtils.i18n("HydrographKlemPlugin.CostV.label");
+    private final String K_S = PluginUtils.i18n("HydrographKlemPlugin.CostS.label");
+    private final String CHANNEL_VELOCITY = PluginUtils.i18n("HydrographKlemPlugin.ChannelVelocity.label");
+    private final String THRESHOLD = PluginUtils.i18n("HydrographKlemPlugin.Threshold.label");
+    private final String HYETOGRAPH = PluginUtils.i18n("HydrographKlemPlugin.Hetograph.label");
+    private final String HYDRO_TYPE = PluginUtils.i18n("HydrographKlemPlugin.HyetoType.label");
+    private final String PEAK = PluginUtils.i18n("HydrographKlemPlugin.RunPeak.label");
+    private final String RAINFALL_STEP = PluginUtils.i18n("HydrographKlemPlugin.StepRainfallData.label");
+    private final String RAINFALL_RECESSION = PluginUtils.i18n("HydrographKlemPlugin.RainfallRecession.label");
+    private final String THRESHOLD_RAINFALL_RECESSION = PluginUtils.i18n("HydrographKlemPlugin.ThresholdRainfallRecession.label");
+    private final String INITIAL_ABSTRACTION = PluginUtils.i18n("HydrographKlemPlugin.InitialAbstraction.label");
+//    private final String INITIAL_ABSTRACTION_UNIT = PluginUtils.i18n("HydrographKlemPlugin.InitialAbstractionUnit.label");
+//    private final String INITIAL_ABSTRACTION_VALUE = PluginUtils.i18n("HydrographKlemPlugin.InitialAbstractionValue.label");
+    private final String SIMPLE_KINEMATICS = PluginUtils.i18n("HydrographNashPlugin.SimpleKinematics.label");
+    private final String ADVANCED_KINEMATICS = PluginUtils.i18n("HydrographKlemPlugin.AdvancedKinematics.label");
+    private final String HYDROGRAPH = PluginUtils.i18n("HydrographKlemPlugin.Hydrograph.label");
+    private final String STEP_OUTPUT = PluginUtils.i18n("HydrographKlemPlugin.StepOutput.label");
+    private final String AMC = PluginUtils.i18n("HydrographKlemPlugin.AMC.label");
+    private final String BASE_FLOW_TYPE = PluginUtils.i18n("HydrographKlemPlugin.BaseflowType.label");
+    private final String BASE_FLOW = PluginUtils.i18n("HydrographKlemPlugin.BaseFlow.label");
+    private final String DISCHARGE_CONST = PluginUtils.i18n("HydrographKlemPlugin.BaseflowRecession.label");
+    private final String ARF = PluginUtils.i18n("HydrographKlemPlugin.ARF.label");
+    private final String FRPM_TC = PluginUtils.i18n("HydrographKlemPlugin.FRPM-TC.label");
+    private final String GEOMORPH_FACTOR = PluginUtils.i18n("HydrographKlemPlugin.GeomorphologicalFactor.label");
+    private final String GEOMORH_THRESHOLD = PluginUtils.i18n("HydrographKlemPlugin.ThresholdGeomorphologicalFactor.label");
+    private final String SUBSURFACE_DRAINAGE_LOSS = PluginUtils.i18n("HydrographKlemPlugin.SubSurfDrainageLoss.label");
 
     private final LayerablesList layerablesList;
 

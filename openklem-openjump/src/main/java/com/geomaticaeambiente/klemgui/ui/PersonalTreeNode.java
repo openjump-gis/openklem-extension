@@ -65,9 +65,9 @@ public class PersonalTreeNode {
     public DefaultMutableTreeNode getTreeNodes() {
 
         final DefaultMutableTreeNode treeNode1 = new DefaultMutableTreeNode(
-                PluginUtils.getResources().getString("KlemGUI.TreeName.label"));
+                PluginUtils.i18n("KlemGUI.TreeName.label"));
         DefaultMutableTreeNode treeNode2 = new DefaultMutableTreeNode(
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "KlemGUI.TreeSettingTools.label"));
         DefaultMutableTreeNode treeNode3 = new DefaultMutableTreeNode(
                 new SetWorkspacePlugin(context, initialDialog, layerablesList));
@@ -78,8 +78,7 @@ public class PersonalTreeNode {
         // treeNode2.add(treeNode3);
         treeNode1.add(treeNode2);
 
-        treeNode2 = new DefaultMutableTreeNode(PluginUtils.getResources()
-                .getString("KlemGUI.TreeRasterTools.label"));
+        treeNode2 = new DefaultMutableTreeNode(PluginUtils.i18n("KlemGUI.TreeRasterTools.label"));
 
         treeNode3 = new DefaultMutableTreeNode(new RasterHistogramPlugIn(
                 context, initialDialog, layerablesList));
@@ -107,16 +106,14 @@ public class PersonalTreeNode {
         treeNode2.add(treeNode3);
 
         treeNode1.add(treeNode2);
-        treeNode2 = new DefaultMutableTreeNode(PluginUtils.getResources()
-                .getString("KlemGUI.TreeGeomorphometry.label"));
+        treeNode2 = new DefaultMutableTreeNode(PluginUtils.i18n("KlemGUI.TreeGeomorphometry.label"));
 
         treeNode3 = new javax.swing.tree.DefaultMutableTreeNode(
                 new SlopeAspectHillshadePlugIn(context, initialDialog,
                         layerablesList));
         treeNode2.add(treeNode3);
         treeNode1.add(treeNode2);
-        treeNode2 = new DefaultMutableTreeNode(PluginUtils.getResources()
-                .getString("KlemGUI.HydrologyTools.label"));
+        treeNode2 = new DefaultMutableTreeNode(PluginUtils.i18n("KlemGUI.HydrologyTools.label"));
         treeNode3 = new javax.swing.tree.DefaultMutableTreeNode(
                 new DemFillerPlugIn(context, initialDialog, layerablesList));
         treeNode2.add(treeNode3);
@@ -152,7 +149,7 @@ public class PersonalTreeNode {
         treeNode1.add(treeNode2);
 
         final DefaultMutableTreeNode treeNode4 = new javax.swing.tree.DefaultMutableTreeNode(
-                PluginUtils.getResources().getString(
+                PluginUtils.i18n(
                         "KlemGUI.TreeHydrographName.label"));
         treeNode3 = new javax.swing.tree.DefaultMutableTreeNode(
                 new HydrographSCSPlugin(context, initialDialog, layerablesList));
@@ -180,12 +177,8 @@ public class PersonalTreeNode {
         return treeNode1;
     }
 
-    public static final String SCS_HYDROGRAPH = java.util.ResourceBundle
-            .getBundle("com/geomaticaeambiente/klemgui/language/Bundle")
-            .getString("HyetographPlugIn.Scs");
-    public static final String KINEMATIC_HYDROGRAPH = java.util.ResourceBundle
-            .getBundle("com/geomaticaeambiente/klemgui/language/Bundle")
-            .getString("HyetographPlugIn.KinematicLocalExcessModel");
+    public static final String SCS_HYDROGRAPH = PluginUtils.i18n("HyetographPlugIn.Scs");
+    public static final String KINEMATIC_HYDROGRAPH = PluginUtils.i18n("HyetographPlugIn.KinematicLocalExcessModel");
 
     private PlugInContext context;
     private InitialDialog initialDialog;

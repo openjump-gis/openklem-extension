@@ -56,8 +56,8 @@ public class HydrographGeomorphologicalPlugin extends AbstractInputKlemPlugin{
         //graphic unit
         initialData.setParam_Labels(new String[]{GUIUtils.setGUILabel(X_UNITS)}, GUIUtils.OTHER); //label x unit
         initialData.setParam_Action(new ActionObject(
-                new String[]{PluginUtils.getResources().getString("KlemGUI.hours.label"), 
-                    PluginUtils.getResources().getString("KlemGUI.minutes.label")}), GUIUtils.OTHER);//radio buttons: hours and minutes
+                new String[]{PluginUtils.i18n("KlemGUI.hours.label"), 
+                    PluginUtils.i18n("KlemGUI.minutes.label")}), GUIUtils.OTHER);//radio buttons: hours and minutes
         
         return initialData;
         
@@ -78,7 +78,7 @@ public class HydrographGeomorphologicalPlugin extends AbstractInputKlemPlugin{
             return this.mainPanel;
         }
         this.mainPanel = new MainPanel(super.getInitialDialog(), componentsWithActions, false, false, true,
-                PluginUtils.getResources().getString("MainPanel.ExecuteButton.text"), layerablesList) {
+                PluginUtils.i18n("MainPanel.ExecuteButton.text"), layerablesList) {
 
             @Override
             public void rightButton() {
@@ -149,7 +149,7 @@ public class HydrographGeomorphologicalPlugin extends AbstractInputKlemPlugin{
     }
     
     public String toString(){
-        return PluginUtils.getResources().getString("HydrographGeomorphological.PlugInName.label");
+        return PluginUtils.i18n("HydrographGeomorphological.PlugInName.label");
     }
     
     private final PlugInContext context;
@@ -160,10 +160,10 @@ public class HydrographGeomorphologicalPlugin extends AbstractInputKlemPlugin{
     private TimeInterval.TimeIntervalUnit xUnit;
     private double timeStep;
     private UnitHydrograph unitHydrograph;
-        private final String BASE_FLOW = PluginUtils.getResources().getString("HydrographCommonLabels.BaseFlow.label");
-    private final String ROUTING_TIME_RAS = PluginUtils.getResources().getString("HydrographGeomorphologicalPlugin.RoutingTimeRaster.label");
-    private final String REC_FLOW_DEEP = PluginUtils.getResources().getString("HydrographGeomorphologicalPlugin.RecFlowDeep.label");
-    private final String X_UNITS = PluginUtils.getResources().getString("HyetographPlugIn.XUnits.label");
+        private final String BASE_FLOW = PluginUtils.i18n("HydrographCommonLabels.BaseFlow.label");
+    private final String ROUTING_TIME_RAS = PluginUtils.i18n("HydrographGeomorphologicalPlugin.RoutingTimeRaster.label");
+    private final String REC_FLOW_DEEP = PluginUtils.i18n("HydrographGeomorphologicalPlugin.RecFlowDeep.label");
+    private final String X_UNITS = PluginUtils.i18n("HyetographPlugIn.XUnits.label");
     
     
     private final LayerablesList layerablesList;

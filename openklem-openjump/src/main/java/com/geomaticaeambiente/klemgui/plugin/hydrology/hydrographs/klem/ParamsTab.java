@@ -98,8 +98,7 @@ public class ParamsTab extends AbstractInputKlemPlugin {
             return mainPanel;
         }
         mainPanel = new MainPanel(super.getInitialDialog(),
-                componentsWithActions, false, false, true, PluginUtils
-                        .getResources().getString(
+                componentsWithActions, false, false, true, PluginUtils.i18n(
                                 "MainPanel.ExecuteButton.text"), layerablesList) {
 
             /**
@@ -127,9 +126,7 @@ public class ParamsTab extends AbstractInputKlemPlugin {
                                         @Override
                                         public void run(TaskMonitor monitor,
                                                 PlugInContext context) {
-                                            monitor.report(PluginUtils
-                                                    .getResources()
-                                                    .getString(
+                                            monitor.report(PluginUtils.i18n(
                                                             "OpenKlem.executing-process"));
                                             reportNothingToUndoYet(context);
                                             try {
@@ -139,9 +136,7 @@ public class ParamsTab extends AbstractInputKlemPlugin {
                                                         .showMessageDialog(
                                                                 getInitialDialog()
                                                                         .getTabbedPane(),
-                                                                PluginUtils
-                                                                        .getResources()
-                                                                        .getString(
+                                                                PluginUtils.i18n(
                                                                                 "OpenKlem.process-interrupted"),
                                                                 PluginUtils.plugInName,
                                                                 JOptionPane.INFORMATION_MESSAGE);
@@ -202,7 +197,7 @@ public class ParamsTab extends AbstractInputKlemPlugin {
             }
         };
 
-        mainPanel.setRightButtonText(PluginUtils.getResources().getString(
+        mainPanel.setRightButtonText(PluginUtils.i18n(
                 "MainPanel.ExecuteButton.text"));
         // mainPanel.setCenterButtonText(ADVANCED_PARAMS);
 
@@ -221,12 +216,10 @@ public class ParamsTab extends AbstractInputKlemPlugin {
         initialData.setParam_Label_TextBox(GUIUtils.setGUILabel(UPSLOPE),
                 upslope, GUIUtils.INPUT);
 
-        initialData.setParam_Labels(new String[] { PluginUtils.getResources()
-                .getString("KlemGUI.Outlet.label") }, GUIUtils.OTHER); // 00}
+        initialData.setParam_Labels(new String[] { PluginUtils.i18n("KlemGUI.Outlet.label") }, GUIUtils.OTHER); // 00}
 
         // X coordinate by mouse
-        initialData.setParam_Action(new ActionObject(PluginUtils.getResources()
-                .getString("WatershedPlugin.ChooseButton.label")),
+        initialData.setParam_Action(new ActionObject(PluginUtils.i18n("WatershedPlugin.ChooseButton.label")),
                 GUIUtils.OTHER); // 01
 
         if (klemProps.getOutletCoords() != null) {
@@ -498,7 +491,7 @@ public class ParamsTab extends AbstractInputKlemPlugin {
         final JTextField jTextField_area = (JTextField) personalTreeMap
                 .getComponent("04", GUIUtils.OTHER, 1);
         jTextField_area.setEditable(false);
-        jTextField_area.setToolTipText(PluginUtils.getResources().getString(
+        jTextField_area.setToolTipText(PluginUtils.i18n(
                 "HydrographKlemPlugin.CheckArea.message1"));
         GUIUtils.setJTextAction(loadedPrj, jTextField_area,
                 klemProps.getCatchmentArea(), jlabel_ExclArea);
@@ -843,39 +836,37 @@ public class ParamsTab extends AbstractInputKlemPlugin {
     private KlemProperties.RainfallType rainfallParamType;
 
     private ComponentsTreeMap componentsWithActions;
-    private final String FLOW_DIR = PluginUtils.getResources().getString(
+    private final String FLOW_DIR = PluginUtils.i18n(
             "KlemGUI.InputFlowDir.label");
-    private final String UPSLOPE = PluginUtils.getResources().getString(
+    private final String UPSLOPE = PluginUtils.i18n(
             "KlemGUI.InputUpslope.label");
-    private final String BASIN_AREA = PluginUtils.getResources().getString(
+    private final String BASIN_AREA = PluginUtils.i18n(
             "HydrographKlemPlugin.BasinArea.label");
-    private final String ELEVATION = PluginUtils.getResources().getString(
+    private final String ELEVATION = PluginUtils.i18n(
             "HydrographKlemPlugin.Elevation.label");
-    private final String XCOORD = PluginUtils.getResources().getString(
+    private final String XCOORD = PluginUtils.i18n(
             "KlemGUI.XCoord.label");
-    private final String YCOORD = PluginUtils.getResources().getString(
+    private final String YCOORD = PluginUtils.i18n(
             "KlemGUI.YCoord.label");
-    private final String RAINFALL = PluginUtils.getResources().getString(
+    private final String RAINFALL = PluginUtils.i18n(
             "KlemGUI.Rainfall.label");
-    private final String DISTRIBUTED_RAINFALL = PluginUtils.getResources()
-            .getString("HydrographKlemPlugin.DistributedRainfall.label");
-    private final String POINT_RAINFALL = PluginUtils.getResources().getString(
+    private final String DISTRIBUTED_RAINFALL = PluginUtils.i18n("HydrographKlemPlugin.DistributedRainfall.label");
+    private final String POINT_RAINFALL = PluginUtils.i18n(
             "HydrographKlemPlugin.PointRainfall.label");
-    public static final String HISTORICAL_RAINFALL = PluginUtils.getResources()
-            .getString("HydrographKlemPlugin.HistoricRainfall.label");
-    private final String MODEL = PluginUtils.getResources().getString(
+    public static final String HISTORICAL_RAINFALL = PluginUtils.i18n("HydrographKlemPlugin.HistoricRainfall.label");
+    private final String MODEL = PluginUtils.i18n(
             "HydrographKlemPlugin.ModelRainfall.label");
-    private final String RETURN_TIME = PluginUtils.getResources().getString(
+    private final String RETURN_TIME = PluginUtils.i18n(
             "HydrographKlemPlugin.returnTime.label");
     // private final String ADVANCED_PARAMS =
-    // PluginUtils.getResources().getString("HydrographKlemPlugin.AdvancedParams.label");
-    public static final String FILE_A = PluginUtils.getResources().getString(
+    // PluginUtils.i18n("HydrographKlemPlugin.AdvancedParams.label");
+    public static final String FILE_A = PluginUtils.i18n(
             "HydrographKlemPlugin.FileA.label");
-    public static final String FILE_N = PluginUtils.getResources().getString(
+    public static final String FILE_N = PluginUtils.i18n(
             "HydrographKlemPlugin.FileN.label");
-    public static final String FILE_CV = PluginUtils.getResources().getString(
+    public static final String FILE_CV = PluginUtils.i18n(
             "HydrographKlemPlugin.FileCV.label");
-    private final String NLESSHOUR = PluginUtils.getResources().getString(
+    private final String NLESSHOUR = PluginUtils.i18n(
             "HydrographKlemPlugin.nLessHour.label");
 
     private final LayerablesList layerablesList;
