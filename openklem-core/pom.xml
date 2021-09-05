@@ -5,13 +5,9 @@
     <parent>
         <artifactId>openklem</artifactId>
         <groupId>org.openjump</groupId>
-        <version>2.0.0</version>
+        <version>${project.build.version}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>openklem-core</artifactId>
-
-    <properties>
-    </properties>
-
 </project>
