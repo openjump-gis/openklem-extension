@@ -6,7 +6,7 @@
   <groupId>org.openjump</groupId>
   <artifactId>openklem</artifactId>
   <packaging>pom</packaging>
-  <!-- reuse version property as suported by maven 3.5+ -->
+  <!-- reuse version property as supported by maven 3.5+ -->
   <version>${project.build.version}</version>
   <modules>
     <module>openklem-core</module>
